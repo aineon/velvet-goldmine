@@ -37,7 +37,7 @@
   <body>
     
     <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-black d-lg-flex">
+        <div id="topnav" class="row bg-black d-none d-lg-flex">
            <div class="col-12 col-lg-3 mt-3">
                 <form method="GET" action="">
                     <div class="input-group w-100">
@@ -104,6 +104,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span ><i class="fas fa-bars"></i></span>
                 </button>
+                {% include 'includes/main-nav.html' %}
             </nav>
         </div>
         <div id="delivery-banner" class="row text-center">
@@ -126,6 +127,13 @@
 
     {% block postloadjs %}
     {% endblock %}
+
+    <footer>
+    <div class="row">
+        <div class="col">SOCIAL ICONS GO HERE</div>
+    </div>
+</footer>
+
 
   
     <!-- Option 2: Separate Popper and Bootstrap JS -->
