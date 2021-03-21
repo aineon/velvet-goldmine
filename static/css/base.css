@@ -122,6 +122,14 @@ input[name='q']::placeholder {
     text-shadow: 5px 5px 9px black;
 }
 
+.display-4 {
+    font-weight: 500;
+    font-family: 'Permanent Marker', cursive;
+    padding-top:4rem;
+    font-size: 6rem;
+    text-shadow: 5px 5px 9px black;
+}
+
 .home-text {
     background-color: rgba(222, 226, 230, 0.2); 
 }
@@ -144,6 +152,19 @@ input[name='q']::placeholder {
     box-shadow: 3px 3px 7px #ee6aa7;
 }
 
+/* Mobile Header */
+.mobile-list {
+    padding-left: 0;
+}
+
+ .mobile-logo {
+    font-family: 'Sedgwick Ave Display', cursive;
+    color:#ee6aa7;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+
 footer {
     bottom: 0;
     left: 0;
@@ -152,4 +173,35 @@ footer {
     background-color: black;
     color: #ee6aa7;
     position: fixed;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 664px) {
+    .shop-now-btn {
+        font-size: 1.25rem;  
+        margin-top: 2rem; 
+    }
+
+    .display-4 {
+        font-size: 4.5rem;
+    }
+
+    .mobile-icon {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .nav-link.mobile-link {
+        padding: 0;
+    }
+
+    .mobile-item.list-inline-item {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .banner-text {
+        font-size: 1rem;
+    }
 }
