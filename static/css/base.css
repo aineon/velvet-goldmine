@@ -4,6 +4,7 @@ html {
 
 body {
     height: calc(100vh - 164px);
+    background-color: #dee2e6;
 }
 
 /* Navbar */
@@ -112,6 +113,18 @@ input[name='q']::placeholder {
     font-weight: 700;
 }
 
+/* Mobile Header */
+.mobile-list {
+    padding-left: 0;
+}
+
+ .mobile-logo {
+    font-family: 'Sedgwick Ave Display', cursive;
+    color:#ee6aa7;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
 /* Home Page */
 .display-3 {
     font-weight: 500;
@@ -152,18 +165,57 @@ input[name='q']::placeholder {
     box-shadow: 3px 3px 7px #ee6aa7;
 }
 
-/* Mobile Header */
-.mobile-list {
-    padding-left: 0;
+/* Carousel */
+.carousel-container {
+    margin-top: 190px;
+    margin-bottom: 50px;
+}
+.carousel-cell {
+    width: 33%;
+    margin-right:10px; 
+    max-height: 320px; 
+    min-height: 280px; 
 }
 
- .mobile-logo {
+.carousel-img {
+    position: relative;
+    text-align: center;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ee6aa7 !important;
+    font-size: 2.5rem;
     font-family: 'Sedgwick Ave Display', cursive;
-    color:#ee6aa7;
-    font-size: 2rem;
-    margin-top: 10px;
+    font-weight: 700;
 }
 
+/* Cards */
+.card {
+    border-radius: 5px;   
+    box-shadow: 5px 5px 7px #85878a;
+}
+
+.card-body {
+    background-color: #c7cbcf;
+}
+
+/* Dividers */
+.pink-divider {
+    background-color: #ee6aa7;
+}
 
 footer {
     bottom: 0;
