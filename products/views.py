@@ -25,6 +25,8 @@ def all_products(request):
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
+            if sortkey == 'subcategory':
+                sortkey = 'subcategory__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -40,7 +42,7 @@ def all_products(request):
         if 'subcategory' in request.GET:
             subcategories = request.GET['subcategory'].split(',')
             products = products.filter(subcategory__name__in=subcategories)
-            categories = Subcategory.objects.filter(name__in=subcategories)
+            subcategories = Subcategory.objects.filter(name__in=subcategories)
 
         if 'q' in request.GET:
             query = request.GET['q']

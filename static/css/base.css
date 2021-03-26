@@ -256,7 +256,7 @@ input[name='q']::placeholder {
     width: 10%;
     background-color: #ee6aa7;
 }
-
+/* Products/Product Details */
 .product-name {
     font-size: 1.75rem;
     color: #ee6aa7;
@@ -265,6 +265,33 @@ input[name='q']::placeholder {
 .product-price {
     font-size: 1.25rem;
 }
+
+.category-badge {
+    color: #ee6aa7;
+    background-color: #c7cbcf;
+    border: 2px solid #ee6aa7;
+    margin-right: 7px;
+    font-size: 1.5rem;
+}
+
+a.badge > span.category-badge:hover {
+    background-color: #ee6aa7;
+    color: #c7cbcf;
+    border: 2px solid #c7cbcf;
+}
+
+a.back-link {
+    color: #ee6aa7 !important;
+}
+
+.custom-select {
+    color: #ee6aa7;
+    font-weight: 600;
+}
+
+option {
+     font-weight: 600;
+ }
 
 footer {
     bottom: 0;
