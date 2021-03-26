@@ -3,8 +3,9 @@ html {
 }
 
 body {
-    height: calc(100vh - 164px);
+   /* height: calc(100vh - 164px); */
     background-color: #dee2e6;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .header-container {
@@ -53,6 +54,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+  height: 100%;
 }
 
 /* Header */
@@ -105,6 +107,7 @@ a.icon-link {
 
 input[name='q']::placeholder {
     color: #ee6aa7;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .banner {
@@ -133,8 +136,8 @@ input[name='q']::placeholder {
     font-weight: 500;
     font-family: 'Permanent Marker', cursive;
     padding-left: 1.5rem;
-    padding-top: 4.5rem;
-    font-size: 8rem;
+    padding-top: 4rem;
+    font-size: 7rem;
     text-shadow: 5px 5px 9px black;
 }
 
@@ -174,10 +177,10 @@ input[name='q']::placeholder {
     margin-bottom: 50px;
 }
 .carousel-cell {
-    width: 33%;
+    width: 25%;
     margin-right: 10px; 
-    max-height: 320px; 
-    min-height: 280px; 
+    max-height: 250px; 
+    min-height: 220px; 
 }
 
 .carousel-img {
@@ -213,29 +216,54 @@ input[name='q']::placeholder {
     display: none;
 }
 
-.carousel-cell.random {
+.carousel-cell-random {
     width: 15%;
     margin-right: 10px;
-    max-height: 200px;  
+    max-height: 250px; 
+    min-height: 200px; 
+    padding-bottom: 20px;
 }
 
 .rand-carousel-container {
-    display: inline;
+    display: inline;  
+    margin-bottom: 20px;
+}
+
+.carousel-header {
+    color: #ee6aa7;
+    font-weight: 700;
 }
 
 /* Cards */
 .card {
     border-radius: 5px;   
     box-shadow: 5px 5px 7px #85878a;
+    border: 2px solid #c7cbcf;
 }
 
 .card-body {
     background-color: #c7cbcf;
+    color: #ff3895;
+    font-weight: 600;
 }
 
 /* Dividers */
 .pink-divider {
     background-color: #ee6aa7;
+}
+
+.detail-hr {
+    width: 10%;
+    background-color: #ee6aa7;
+}
+
+.product-name {
+    font-size: 1.75rem;
+    color: #ee6aa7;
+}
+
+.product-price {
+    font-size: 1.25rem;
 }
 
 footer {
