@@ -4,7 +4,6 @@ html {
 }
 
 body {
-   /* height: calc(100vh - 164px); */
     background-color: #dee2e6;
     font-family: 'Quicksand', sans-serif;
 }
@@ -80,11 +79,9 @@ body {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-    color:#ee6aa7;
 }
 
-.fa,
-.fas {
+.pink-icon {
     color:#ee6aa7;
     font-size: 1.75rem;
 }
@@ -125,12 +122,20 @@ input[name='q']::placeholder {
     padding-left: 0;
 }
 
- .mobile-logo {
+.mobile-logo {
     font-family: 'Sedgwick Ave Display', cursive;
     color:#ee6aa7;
     font-size: 2rem;
     margin-top: 10px;
 }
+
+.mobile-icon {
+        font-size: 1.5rem;
+        margin: 0;
+        color: #ee6aa7;
+        margin-right: 3px;
+}
+
 
 /* Home Page */
 .display-3 {
@@ -198,15 +203,23 @@ input[name='q']::placeholder {
     background-color: rgba(0,0,0,0.4);
 }
 
+.centered-bag,
 .centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ee6aa7 !important;
-    font-size: 2.5rem;
     font-family: 'Sedgwick Ave Display', cursive;
     font-weight: 700;
+}
+
+.centered {
+    font-size: 2.5rem;
+}
+
+.centered-bag {
+    font-size: 1.5rem;
 }
 
 .random-carousel {
@@ -220,14 +233,10 @@ input[name='q']::placeholder {
 .carousel-cell-random {
     width: 15%;
     margin-right: 10px;
-    max-height: 250px; 
-    min-height: 200px; 
-    padding-bottom: 20px;
 }
 
 .rand-carousel-container {
     display: inline;  
-    margin-bottom: 20px;
 }
 
 .carousel-header {
@@ -269,6 +278,7 @@ input[name='q']::placeholder {
 
 .detail-icon {
     font-size: .75rem;
+    color: #ee6aa7;
 }
 
 .category-badge {
@@ -330,6 +340,19 @@ option {
     cursor: pointer;   
 }
 
+.shop-btn {
+    background-color: #ee6aa7;
+    color: black;
+    border: 2px solid black;
+    font-weight: 600;
+    box-shadow: 2px 2px 3px black; 
+}
+
+.shop-btn:hover {
+    background-color: black;
+    color: #ee6aa7; 
+}
+
 footer {
     bottom: 0;
     left: 0;
@@ -341,6 +364,8 @@ footer {
 }
 
 /* Media Queries */
+
+
 @media only screen and (max-width: 664px) {
     .shop-now-btn {
         font-size: 1.25rem;  
@@ -349,11 +374,6 @@ footer {
 
     .display-4 {
         font-size: 4.5rem;
-    }
-
-    .mobile-icon {
-        font-size: 1rem;
-        margin: 0;
     }
 
     .nav-link.mobile-link {
