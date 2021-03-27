@@ -72,6 +72,10 @@ body {
     background-color: #ee6aa7;
 }
 
+.text-pink {
+    color: #ee6aa7;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -363,6 +367,10 @@ footer {
     position: fixed;
 }
 
+.bag-header {
+    padding-top: 2rem;
+}
+
 /* Media Queries */
 
 
@@ -383,6 +391,12 @@ footer {
     .mobile-item.list-inline-item {
         margin-right: 0;
     }
+
+    .bag-header {
+        padding-top: .5rem;
+    }
+
+    .header-container {}
 }
 
 @media only screen and (max-width: 768px) {
