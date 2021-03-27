@@ -181,7 +181,7 @@ input[name='q']::placeholder {
     box-shadow: 3px 3px 7px #ee6aa7;
 }
 
-/* Carousel */
+/* Carousels */
 .carousel-container {
     margin-top: 40px;
     margin-bottom: 50px;
@@ -237,6 +237,8 @@ input[name='q']::placeholder {
 .carousel-cell-random {
     width: 15%;
     margin-right: 10px;
+    height: 180px;
+
 }
 
 .rand-carousel-container {
@@ -285,6 +287,14 @@ input[name='q']::placeholder {
     color: #ee6aa7;
 }
 
+.grey-icon {
+    color: #c7cbcf;
+}
+
+.grey-icon:hover {
+    color: #ee6aa7;
+}
+
 .category-badge {
     color: #ee6aa7;
     background-color: #c7cbcf;
@@ -309,7 +319,19 @@ a.back-link {
 }
 
 option {
-     font-weight: 600;
+     font-weight: 500;
+}
+
+option[selected],
+#id_product_size_c,
+#id_product_size {
+     color: #ee6aa7;
+}
+
+#sort-selector,
+#id_product_size,
+#id_product_size_c { 
+     font-weight: 700;
 }
 
 .grey-icon {
