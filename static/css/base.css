@@ -283,6 +283,20 @@ input[name='q']::placeholder {
     background-color: #ee6aa7;
 }
 /* Products/Product Details */
+.breadcrumb {
+    padding: 0;
+    background-color: #dee2e6;
+    color: #ee6aa7;
+}
+
+.breadcrumb-item a {
+    color: #ee6aa7;
+}
+
+.product-breadcrumb {
+    padding-top: 50px;
+}
+
 .product-name {
     font-size: 1.75rem;
     color: #ee6aa7;
@@ -311,6 +325,7 @@ input[name='q']::placeholder {
     border: 2px solid #ee6aa7;
     margin-right: 7px;
     font-size: 1.5rem;
+    box-shadow: 3px 3px 5px #85878a;   
 }
 
 a.badge > span.category-badge:hover {
@@ -354,6 +369,7 @@ option[selected],
 
 .update-qty {
     cursor: pointer;
+    margin-left: 25px;
 }
 
 a small:hover {
@@ -400,6 +416,7 @@ a.remove-item:hover {
     background-color: #ee6aa7;
     border-radius: 3px;
     box-shadow: 3px 3px 3px #85878a;     
+    font-size: 1.5rem; 
 }
 
 .scroll-btn:hover {

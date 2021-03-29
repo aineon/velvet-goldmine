@@ -12,9 +12,9 @@
 {% block content %}
     <div class="container-fluid">
        
-         {% include 'includes/carousel.html' %}       
+        {% include 'includes/carousel.html' %}       
         <hr>
-
+        {% include 'products/includes/breadcrumbs.html' %}
         <div class="row">
             <div class="col text-center mt-3">
                 {% for category in current_categories %}
@@ -37,7 +37,19 @@
                         {% endif %}
                     {% endfor %}
                 {% if current_categories|length == 0 and current_subcategories|length == 0 %}
-                <h2 class="logo mt-2">All Products</h2>
+                    <h2 class="logo mt-2">All Products</h2>
+                         <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">
+                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Clothing</span>
+                        </a>
+                          <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=footwear">
+                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Footwear</span>
+                        </a>
+                          <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=swimwear">
+                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Swimwear</span>
+                        </a>
+                        <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=accessories">
+                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Accessories</span>
+                        </a>
                 {% endif %}
             </div>
         </div>
@@ -148,10 +160,10 @@
     <script type="text/javascript">
 
         $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
 
-            var selectedVal = selector.val();
+            let selectedVal = selector.val();
             if(selectedVal != "reset"){
                 var sort = selectedVal.split("_")[0];
                 var direction = selectedVal.split("_")[1];
