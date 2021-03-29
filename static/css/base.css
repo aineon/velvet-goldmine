@@ -469,13 +469,63 @@ footer {
     overflow: visible;
 }
 
-.border-pink {
-    border-bottom: 2px solid #ee6aa7
+.toast-logo {
+    font-size: 1.25rem;
 }
 
+.border-pink {
+    border: 3px solid #ee6aa7;
+    
+}
 
+.border-grey {
+    border: 3px solid #85878a;
+}
+
+.border-yellow {
+    border: 3px solid #ffd700; 
+}
+
+.border-red {
+    border: 3px solid #cc0000; 
+}
 .fade {
     transition: none;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+    padding-top:3px;
+}
+
+.arrow-pink {
+    border-bottom-color: #ee6aa7 !important;
+}
+
+.arrow-grey {
+    border-bottom-color: #85878a !important;
+}
+
+.arrow-yellow {
+    border-bottom-color: #ffd700 !important;
+}
+
+.arrow-red {
+    border-bottom-color: #cc0000 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Media Queries */
