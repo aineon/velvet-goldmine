@@ -352,16 +352,16 @@ option[selected],
     color: black;
 }
 
-.update-link {
+.update-qty {
     cursor: pointer;
 }
 
-a.update-link small:hover {
+a small:hover {
     color: #ee6aa7;
     font-weight: 700;
 }
 
-a.update-link:hover {
+a.update-qty:hover {
     text-decoration: none;
 }
 
@@ -463,7 +463,7 @@ footer {
         padding-top: .5rem;
     }
 
-    .header-container {}
+
 }
 
 @media only screen and (max-width: 768px) {

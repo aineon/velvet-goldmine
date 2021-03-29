@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -47,7 +48,7 @@
                             <p class="my-0 text-center">${{ item.product.price }}</p>
                         </td>
                         <td class="py-3 w-25">
-                            <form class="form update-form" method="POST" action="">
+                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group w-75 m-auto">
                                     <div class="input-group">
@@ -76,16 +77,17 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                            </form>
+                             </form>
                                 <p class="text-center">
-                                    <a class="update-link text-pink text-center"><small>Update Quantity</small></a> 
+                                    <a class="update-qty text-pink text-center"><small>Update Quantity</small></a> 
                                     <span>|</span>
-                                        <a class="remove-item text-center" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                        <a class="remove-item text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}">
                                     <small>Remove from Bag</small></a>
                                 </p>
+                               
                         </td>
                         <td class="py-3">
-                            <p class="my-0 text-center">${{ item.product.price }}</p>
+                            <p class="my-0 text-center">${{ item.product.price | calc_subtotal:item.quantity  }}</p>
                         </td>
                     </tr>
                 {% endfor %}
@@ -147,7 +149,7 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
+    $('.update-qty').click(function(e) {
         let form = $(this).prev('.update-form');
         form.submit();
     })
@@ -156,9 +158,9 @@
     $('.remove-item').click(function(e) {
         let csrfToken = "{{ csrf_token }}";
         let itemId = $(this).attr('id').split('remove_')[1];
-        let size = $(this).data('size');
-        let url = `/bag/remove/${itemId}`;
-        let data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        let size = $(this).data('product_size');
+        let url = `/bag/remove/${itemId}/`;
+        let data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
          .done(function() {
