@@ -4,8 +4,9 @@
 
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
-{% block content %}
-    <h1>{% trans "E-mail Addresses" %}</h1>
+{% block inner_content %}
+    <h2 class="text-pink allauth-logo font-weight-bold">{% trans "E-mail Addresses" %}</h2>
+    <hr>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
@@ -31,9 +32,9 @@
   {% endfor %}
 
 <div class="buttonHolder">
-      <button class="secondaryAction" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-      <button class="secondaryAction" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-      <button class="primaryAction" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+      <button class="secondaryAction shop-btn btn rounded-0 text-uppercase" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
+      <button class="secondaryAction shop-btn btn rounded-0 text-uppercase" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
+      <button class="primaryAction shop-btn btn rounded-0 text-uppercase" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
 </div>
 
 </fieldset>
@@ -45,12 +46,13 @@
 {% endif %}
 
   {% if can_add_email %}
-    <h2>{% trans "Add E-mail Address" %}</h2>
+  <hr>
+    <h4 class="text-pink font-weight-bold mt-3">{% trans "Add E-mail Address" %}</h4>
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+        {{ form|crispy }}
+        <button name="action_add" type="submit" class="shop-btn btn rounded-0 text-uppercase">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
 
@@ -60,8 +62,8 @@
 {% block extra_body %}
 <script type="text/javascript">
 (function() {
-  var message = "{% trans 'Do you really want to remove the selected e-mail address?' %}";
-  var actions = document.getElementsByName('action_remove');
+  let message = "{% trans 'Do you really want to remove the selected e-mail address?' %}";
+  let actions = document.getElementsByName('action_remove');
   if (actions.length) {
     actions[0].addEventListener("click", function(e) {
       if (! confirm(message)) {
