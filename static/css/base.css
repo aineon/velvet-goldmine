@@ -530,7 +530,7 @@ footer {
 
 /* Allauth templates */
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
+    margin-top: 1.5rem; 
     color: #4c4c4c;
 }
 
