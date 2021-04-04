@@ -324,15 +324,14 @@ input[name='q']::placeholder {
     color: #ee6aa7;
     background-color: #c7cbcf;
     border: 2px solid #ee6aa7;
-    margin-right: 7px;
-    font-size: 1.5rem;
-    box-shadow: 3px 3px 5px #85878a;   
+    margin-right: 2px;
+    font-size: 1rem;
+    box-shadow: 2px 2px 4px #85878a;   
 }
 
 a.badge > span.category-badge:hover {
     background-color: #ee6aa7;
     color: #c7cbcf;
-    border: 2px solid #c7cbcf;
 }
 
 a.back-link {

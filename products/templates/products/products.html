@@ -16,41 +16,55 @@
         <hr>
         {% include 'products/includes/breadcrumbs.html' %}
         <div class="row">
-            <div class="col text-center mt-3">
-                {% for category in current_categories %}
-                    {% if current_categories|length > 1 %}
+            <div class="col text-center">
+            {% for category in current_categories %}
+                {% if current_categories|length > 1 %}
+                    {% if forloop.first %}
+                        <h2 class="logo mb-3">Clothing</h2>
+                    {% endif %}
                         <a class="badge text-decoration-none mb-2" href="{% url 'products' %}?category={{category.name }}">
                             <span class="p-2 mt-2 mb-2 category-badge rounded-0 text-center">{{category.friendly_name }}</span>
                         </a> 
-                    {% else %}
+                {% else %}
                         <h2 class="logo">{{category.friendly_name}}</h2>
                     {% for subcategory in current_subcategories %}
                         <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?subcategory={{subcategory.name }}">
                             <span class="p-2 mt-2 category-badge rounded-0 text-center">{{ subcategory.friendly_name }}</span>
                         </a>
                     {% endfor %}
-                    {% endif %}
-                {% endfor %}
-                    {% for subcategory in current_subcategories %}
-                        {% if current_subcategories|length == 1 %}
-                            <h2 class="logo mt-2">{{subcategory.friendly_name}}</h2>
-                        {% endif %}
-                    {% endfor %}
-                {% if current_categories|length == 0 and current_subcategories|length == 0 %}
-                    <h2 class="logo mt-2">All Products</h2>
-                         <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">
-                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Clothing</span>
-                        </a>
-                          <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=footwear">
-                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Footwear</span>
-                        </a>
-                          <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=swimwear">
-                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Swimwear</span>
-                        </a>
-                        <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=accessories">
-                            <span class="p-2 mt-2 category-badge rounded-0 text-center">Accessories</span>
-                        </a>
                 {% endif %}
+            {% endfor %}
+
+            {% for subcategory in current_subcategories %}
+                {% if current_subcategories|length == 1 %}
+                    <h2 class="logo">{{subcategory.friendly_name}}</h2>
+                {% endif %}
+
+                {% if subcategory.category.name == 'accessories' and current_subcategories|length == 3 %}
+                    {% if forloop.first %}
+                        <h2 class="logo mb-3">Jewellery</h2>
+                    {% endif %}
+                    <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?subcategory={{subcategory.name }}">
+                        <span class="p-2 mt-2 category-badge rounded-0 text-center">{{ subcategory.friendly_name }}</span>
+                    </a>
+                {% endif %}
+            {% endfor %}
+
+            {% if current_categories|length == 0 and current_subcategories|length == 0 %}
+                <h2 class="logo">All Products</h2>
+                    <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">
+                        <span class="p-2 mt-2 category-badge rounded-0 text-center">Clothing</span>
+                    </a>
+                    <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=footwear">
+                        <span class="p-2 mt-2 category-badge rounded-0 text-center">Footwear</span>
+                    </a>
+                    <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=swimwear">
+                        <span class="p-2 mt-2 category-badge rounded-0 text-center">Swimwear</span>
+                    </a>
+                    <a class="badge text-decoration-none mb-2 mt-2" href="{% url 'products' %}?category=accessories">
+                        <span class="p-2 mt-2 category-badge rounded-0 text-center">Accessories</span>
+                    </a>
+            {% endif %}
             </div>
         </div>
 
@@ -106,18 +120,16 @@
                         </div>
                                           
                         {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-4">
-                                <hr class="mt-5 pink-divider w-75">
-                            </div>
+                            <div class="col-12 d-sm-none mb-4"> </div>
                         {% endif %}                        
                         {% if forloop.counter|divisibleby:2 %}
                             <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-4">
-                                <hr class="mt-5 pink-divider">
+                                <hr class="mt-5 pink-divider w-75">
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
                             <div class="col-12 d-none d-lg-block d-xl-none mb-4">
-                                <hr class="mt-5 pink-divider">
+                                <hr class="mt-5 pink-divider w-75">
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
@@ -140,20 +152,20 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }} 
+{{ block.super }} 
     <script type="text/javascript">
 
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 100) {
-            $('.scroll-btn').removeClass('hide');
-        } else {
-            $('.scroll-btn').addClass('hide');
-        }
-    });
-        
-    $('.scroll-btn').click(function(){
-        window.scrollTo(0,0)
-    });
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.scroll-btn').removeClass('hide');
+            } else {
+                $('.scroll-btn').addClass('hide');
+            }
+        });
+            
+        $('.scroll-btn').click(function(){
+            window.scrollTo(0,0)
+        });
 
     </script>
 
@@ -165,8 +177,8 @@
 
             let selectedVal = selector.val();
             if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+                let sort = selectedVal.split("_")[0];
+                let direction = selectedVal.split("_")[1];
 
                 currentUrl.searchParams.set("sort", sort);
                 currentUrl.searchParams.set("direction", direction);
