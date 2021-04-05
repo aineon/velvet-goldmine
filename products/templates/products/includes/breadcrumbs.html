@@ -4,7 +4,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{% url 'products' %}">All Products</a></li>
         {% if product.category.name == 'dresses' or product.category.name == 'bottoms' or product.category.name == 'tops_ts' or product.category.name == 'outerwear'%}
-                <li class="breadcrumb-item"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">All Clothing</a></li> 
+                <li class="breadcrumb-item"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
         {% endif %}
                 <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}">{{product.category.friendly_name}}</a></li>
         {% if product.subcategory %}
@@ -29,9 +29,9 @@
                 <li class="breadcrumb-item"><a href="{% url 'products' %}">All Products</a></li> 
                 
             {% if current_categories|length > 1 %}
-                 <li class="breadcrumb-item"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">All Clothing</a></li> 
+                 <li class="breadcrumb-item"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
             {% elif current_categories|length == 1 and category.name == 'dresses' or category.name == 'bottoms' or category.name == 'tops_ts' or category.name == 'outerwear' %}
-                <li class="breadcrumb-item"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">All Clothing</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li>
                 <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ category.name }}">{{category.friendly_name}}</a></li>
             {% elif current_categories|length == 1 and category.name != 'dresses' or category.name != 'bottoms' or category.name != 'tops_ts' or category.name != 'outwear'%}
                 <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{category.name}}">{{category.friendly_name}}</a></li>
