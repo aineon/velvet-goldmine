@@ -370,15 +370,14 @@ option[selected],
 .update-qty {
     cursor: pointer;
     margin-left: 25px;
+    color: #ee6aa7;
 }
 
-a small:hover {
+a.update-qty small:hover,
+.update-qty:hover {
+    text-decoration: none;
     color: #ee6aa7;
     font-weight: 700;
-}
-
-a.update-qty:hover {
-    text-decoration: none;
 }
 
 .remove-item {
@@ -386,12 +385,14 @@ a.update-qty:hover {
     cursor: pointer;    
 }
 
-a.remove-item small:hover {
+.remove-item:hover,
+a.remove-item small:hover  {
     color: #85878a;
     font-weight: 700;
 }
 
-a.remove-item:hover {
+
+.remove-item:hover {
     text-decoration: none;
 }
 
@@ -457,10 +458,12 @@ footer {
 
 .input-shadow {
     box-shadow: 1px 1px 3px 1px #ee6aa7;
-    border: 1px solid transparent;
-    
+    border: 1px solid transparent; 
 }
-
+ #id_image {
+     box-shadow: none;
+     border: none;
+ }
 /* Toasts */
 
 .message-container {
