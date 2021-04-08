@@ -143,6 +143,11 @@
     {% block content %}
     {% endblock %}
 
+    {% url 'home' as home %}
+    {% if  request.get_full_path != home %}
+    {% include 'includes/footer.html' %}
+    {% endif %}
+
     {% block postloadjs %}
     
         <script type="text/javascript">
@@ -150,13 +155,7 @@
         </script>
 
     {% endblock %}
-<!--
-    <footer>
-    <div class="row">
-        <div class="col">SOCIAL ICONS GO HERE</div>
-    </div>
-</footer>
--->
+
 
   
     <!-- Option 2: Separate Popper and Bootstrap JS -->
