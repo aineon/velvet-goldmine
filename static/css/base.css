@@ -100,6 +100,10 @@ body {
     font-size: 2.25rem;
 }
 
+.footer-icon:hover {
+    font-weight: bold;
+}
+
 a.icon-link {
     color: #dee2e6;
 }
@@ -288,6 +292,9 @@ input[name='q']::placeholder {
     background-color: #ee6aa7;
 }
 
+.grey-divider {
+    background-color: #85878a;
+}
 
 /* Products/Product Details */
 .breadcrumb {
@@ -466,7 +473,7 @@ footer {
 .home-overlay {
     height: 100%;
 	width: 100%;
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.5);
 	z-index: -1;
    
 }
@@ -489,6 +496,13 @@ footer {
     box-shadow: 1px 1px 3px 1px #ee6aa7;
     border: 1px solid transparent; 
 }
+
+.input-shadow.form-control:focus,
+.input-shadow.form-control:active {
+   box-shadow:2px 2px 3px 1px #85878a;
+   border: 1px solid black;
+}
+
  #id_image {
      box-shadow: none;
      border: none;
