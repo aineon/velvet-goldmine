@@ -9,21 +9,44 @@
 
 <h2 class="logo allauth-logo">{% trans "Sign In" %}</h2>
 <hr>
+
 {% get_providers as socialaccount_providers %}
 
+<div class="row">
+    <div class="col-12 mb-3">
 {% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}" class="form-link">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+      <p>{% blocktrans with site.name as site_name %}If you don't already have an account, you can <a href="{{ signup_url }}" class="form-link">sign up here</a>
+          and sign in below:{% endblocktrans %}</p>
+    </div>
+</div>
 
-<div class="socialaccount_ballot">
+<div class="row">
+    <div class="col-12 col-md-6 text-center">
+      <h4 class="text-pink">Log In</h4>
+        <form class="login w-75 mx-auto" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+          <a class="shop-btn btn rounded-0 text-uppercase" href="{% url 'home' %}">Home</a>
+          <button class="primaryAction shop-btn btn rounded-0 text-uppercase " type="submit">{% trans "Sign In" %}</button>
+          <p class="mt-2">
+          <a class="form-link secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+          </p>
+       </form>
+    </div>
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-
-  <div class="login-or">{% trans 'or' %}</div>
-
+    <div class="col-12 col-md-6 text-center">
+      <div class="login-or text-pink font-weight-bold mb-3">
+        <h4>{% trans 'or' %} log in with social media</h4>
+      </div>
+        <div class="socialaccount_ballot">
+          <ul class="socialaccount_providers list-unstyled">
+            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+          </ul>
+        </div>
+    </div>
 </div>
 
 {% include "socialaccount/snippets/login_extra.html" %}
@@ -33,17 +56,6 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <a href="{{ signup_url }}" class="form-link">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="shop-btn btn rounded-0 text-uppercase" href="{% url 'home' %}">Home</a>
-  <button class="primaryAction shop-btn btn rounded-0 text-uppercase " type="submit">{% trans "Sign In" %}</button>
-  <p class="mt-2">
-  <a class="form-link secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  </p>
-</form>
+
 
 {% endblock %}

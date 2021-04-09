@@ -668,6 +668,25 @@ footer {
     margin-bottom: 1rem;
 }
 
+ 
+.social-btn {
+    background-color: #ee6aa7;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+    width: 50%;
+    font-weight: 600;
+}
+
+.social-btn:hover {
+    background-color: #000;
+    color: #ee6aa7;
+}
+
+.social-icon {
+    padding-right: 5px;
+}
+
+
 
 /* Media Queries */
 
