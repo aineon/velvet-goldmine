@@ -686,7 +686,9 @@ footer {
     padding-right: 5px;
 }
 
-
+.allauth-carousel {
+    margin-top: 40px;
+}
 
 /* Media Queries */
 

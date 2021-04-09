@@ -7,8 +7,6 @@ from django.db.models.functions import Lower
 from .models import Product, Category, Subcategory
 from .forms import ProductForm
 
-import random
-
 
 def all_products(request):
     """ A view to show all products, including sorting and searching """
@@ -76,13 +74,9 @@ def product_detail(request, product_id):
     """A view to show individual product details"""
 
     product = get_object_or_404(Product, pk=product_id)
-    """Generate list of random products"""
-    all_products = list(Product.objects.all())
-    rand_products = random.sample(all_products, 7)
 
     context = {
         'product': product,
-        'rand_products': rand_products,
     }
 
     return render(request, 'products/product_detail.html', context)
