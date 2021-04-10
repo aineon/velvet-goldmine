@@ -535,6 +535,11 @@ footer {
     border-radius: 0;
 }
 
+.blog-logo {
+    color: #ee6aa7;
+    font-family: 'Sedgwick Ave Display', cursive; 
+    padding: 0 3px 0 3px
+}
 /* Toasts */
 
 .message-container {
@@ -568,9 +573,11 @@ footer {
 .border-red {
     border: 3px solid #dc3545;
 }
+
 .fade {
     transition: none;
 }
+
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
