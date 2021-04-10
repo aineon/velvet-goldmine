@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-blog">
+        <div class="row bag-header">
+            <div class="col-10 offset-1 text-center">
+                <h2 class="text-pink font-weight-bold">{{ post.title }}</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 offset-1 mt-4">
+                <div class="blog-image h-50">
+                    {% if post.image %}
+                        <img class="img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 offset-1">
+                <p class="mb-1 float-left">
+                {% if post.author %}
+                    {{ post.author }}  
+                {% endif %}
+                <span>  {{post.date_created|date:'j F, Y' }}</span> </p>
+                {% if request.user.is_superuser %}
+                    <small class="ml-3 float-right">
+                        <a class="text-pink form-link" href="">Edit</a>
+                        <span class="text-black">| </span> 
+                        <a class="delete-link" href="">Delete</a>
+                    </small>
+                {% endif %}
+            </div>
+        </div>
+
+        <hr class="pink-divider w-75">
+
+        <div class="row">
+            <div class="col-10 offset-1">
+                <p class="mb-2 float-left">{{ post.intro }}</p>
+                <p class="mb-4 float-left">{{post.section_one}}</p>
+                {% if post.section_two %}
+                <p class="mb-4 float-left">{{post.section_two}}</p>
+                {% endif %}
+                {% if post.section_three %}
+                <p class="mb-4 float-left">{{post.section_three}}</p>
+                {% endif %}
+            </div>
+        </div>
+
+       
+        <div class="row">
+            <div class="col-10 offset-1">
+            {% if post.original_url %}
+                <a href="{{post.original_url}}" target="_blank" class="btn shop-btn rounded-0 float-right">Read the full article here</a>
+            {% endif %}
+                <a href="{% url 'all_posts' %}" class="btn shop-btn rounded-0 float-right">Back to Blog</a>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-10 offset-1 float-right text-pink">
+                <small class="text-muted"><em>{% if post.credit %} credit: {{post.credit}}{% endif %} {% if post.source %} originally posted by: {{post.source}} {% endif %} 
+                {% if post.original_url %}<a href="{{post.original_url}}" target="_blank" class="form-link">original article</a> {% endif %}</em></small> 
+            </div>
+        </div>        
+    </div>
+
+{% endblock %}

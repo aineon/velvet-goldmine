@@ -33,7 +33,7 @@
     
                     <div class="col-12 col-md-8 text-center">
                         <div>
-                            <h2 class="">{{ post.title }}</h2>
+                            <h2 class="text-pink font-weight-bold">{{ post.title }}</h2>
                             {% if request.user.is_superuser %}
                             <small class="ml-3">
                                 <a class="text-pink form-link" href="">Edit</a>
@@ -51,7 +51,7 @@
                             <hr class="pink-divider w-25">
                         <div>
                             <p class="mb-1 text-center">{{ post.intro }}</p>
-                            <a href="" class="btn shop-btn rounded float-right">Read More...</a>
+                            <a href="{% url 'post_detail' post.id %}" class="btn shop-btn rounded float-right">Read More...</a>
                         </div>
                         <div>
                             {% if post.source %}
