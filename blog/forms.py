@@ -23,6 +23,7 @@ class BlogForm(forms.ModelForm):
             'section_three': 'Section 3',
             'original_url': 'Article Link',
             'image': 'Image',
+            'credit': 'Credit',
             'source': 'Source',
         }
 

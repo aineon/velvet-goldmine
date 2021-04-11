@@ -5,7 +5,7 @@ from .models import BlogPost
 from .forms import BlogForm
 
 
-def all_posts(request):
+def all_blogposts(request):
     """A view to show all blog posts"""
     posts = BlogPost.objects.all()
 
@@ -17,7 +17,7 @@ def all_posts(request):
     return render(request, template, context)
 
 
-def post_detail(request, post_id):
+def blogpost_detail(request, post_id):
     """A view to show individual blog post"""
     post = get_object_or_404(BlogPost, pk=post_id)
 
@@ -28,7 +28,7 @@ def post_detail(request, post_id):
     return render(request, 'blog/blogpost_detail.html', context)
 
 
-def add_post(request):
+def add_blogpost(request):
     """ Add a post to the blog """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -39,7 +39,7 @@ def add_post(request):
         if form.is_valid():
             post = form.save()
             messages.success(request, f'Successfully added {post.title}!')
-            return redirect(reverse('post_detail', args=[post.id]))
+            return redirect(reverse('blogpost_detail', args=[post.id]))
         else:
             messages.error(request,
                            'Failed to add blog post.'
@@ -54,3 +54,45 @@ def add_post(request):
     }
 
     return render(request, template, context)
+
+
+def edit_blogpost(request, post_id):
+    """ Add a post to the blog """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    post = get_object_or_404(BlogPost, pk=post_id)
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {post.title}!')
+            return redirect(reverse('blogpost_detail', args=[post.id]))
+        else:
+            messages.error(request, f'Failed to update {post.title}.\
+                                     Please ensure the form is valid.')
+    else:
+        form = BlogForm(instance=post)
+        messages.info(request, f'You are editing {post.title}')
+
+    template = 'blog/edit_blogpost.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
+
+
+def delete_blogpost(request, post_id):
+    """ Delete a product from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    post = get_object_or_404(BlogPost, pk=post_id)
+    post.delete()
+    messages.success(request, f'{post.title} deleted!')
+    return redirect(reverse('all_blogposts'))
+

@@ -21,7 +21,7 @@
 
         <div class="row">
             <div class="col-10 offset-1 mt-4">
-                <div class="blog-image h-50">
+                <div class="blog-image-detail h-50">
                     {% if post.image %}
                         <img class="img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
                     {% endif %}
@@ -38,9 +38,9 @@
                 <span>  {{post.date_created|date:'j F, Y' }}</span> </p>
                 {% if request.user.is_superuser %}
                     <small class="ml-3 float-right">
-                        <a class="text-pink form-link" href="">Edit</a>
+                        <a class="text-pink form-link" href="{% url 'edit_blogpost' post.id %}">Edit</a>
                         <span class="text-black">| </span> 
-                        <a class="delete-link" href="">Delete</a>
+                        <a class="remove-item" href="{% url 'delete_blogpost' post.id %}">Delete</a>
                     </small>
                 {% endif %}
             </div>
@@ -65,9 +65,10 @@
         <div class="row">
             <div class="col-10 offset-1">
             {% if post.original_url %}
-                <a href="{{post.original_url}}" target="_blank" class="btn shop-btn rounded-0 float-right">Read the full article here</a>
+                <a href="{{post.original_url}}" target="_blank" class="btn shop-btn rounded-0 float-right mr-1">Read the full article here</a>
             {% endif %}
-                <a href="{% url 'all_posts' %}" class="btn shop-btn rounded-0 float-right">Back to Blog</a>
+                <a href="{% url 'all_blogposts' %}" class="btn shop-btn rounded-0 float-right mr-1">
+                    <span><i class="fas fa-chevron-left pr-1"></i></span>Back to Blog</a>
             </div>
         </div>
         

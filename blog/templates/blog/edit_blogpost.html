@@ -14,19 +14,25 @@
         <div class="row">
             <div class="col bag-header">
                 <h2 class="text-pink font-weight-bold mb-4">Blog Management</h2>
-                <h4 class="text-pink">Add Blog Post</h4>
+                <h4 class="text-pink">Edit Blog Post</h4>
                 <hr>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_blogpost' %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'edit_blogpost' post.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{form|crispy}}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
                     <div class="float-right mb-2">
                         <a class="btn shop-btn rounded-0 text-uppercase" href="{% url 'all_blogposts' %}">Cancel</a>
-                        <button class="btn shop-btn rounded-0 text-uppercase" type="submit">Add Post</button>
+                        <button class="btn shop-btn rounded-0 text-uppercase" type="submit">Update</button>
                     </div>
                 </form>
             </div>            

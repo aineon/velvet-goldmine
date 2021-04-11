@@ -535,11 +535,14 @@ footer {
     border-radius: 0;
 }
 
+/* Blog */
 .blog-logo {
     color: #ee6aa7;
     font-family: 'Sedgwick Ave Display', cursive; 
     padding: 0 3px 0 3px
 }
+
+
 /* Toasts */
 
 .message-container {
