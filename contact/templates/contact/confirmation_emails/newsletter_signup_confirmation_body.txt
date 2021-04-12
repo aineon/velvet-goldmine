@@ -1,0 +1,12 @@
+Hi {{ instance.email }}
+
+Welcome to The Velvet Goldmine Community!
+
+You'll receive our newsletter every fortnight jammed packed with news, collaborations, new arrivals and exclusive special offers!
+
+You are receiving this email as you have added your email address to our mailing list.
+If this email address was added in error you can unsubscribe here :
+
+
+Sincerely,
+The Velvet Goldmine xx
