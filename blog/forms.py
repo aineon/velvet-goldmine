@@ -1,11 +1,15 @@
 from django import forms
 from .models import BlogPost
+from .widgets import CustomClearableFileInput
 
 
 class BlogForm(forms.ModelForm):
     class Meta:
         model = BlogPost
         fields = '__all__'
+
+    image = forms.ImageField(label='Image', required=False,
+                             widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         """
@@ -14,7 +18,7 @@ class BlogForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'title': 'title',
+            'title': 'Title',
             'slug': 'Slug',
             'author': 'Author',
             'intro': 'Intro',
@@ -34,5 +38,5 @@ class BlogForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'input-shadow rounded-0'
+            self.fields[field].widget.attrs['class'] = 'input-shadow'
             self.fields[field].label = False

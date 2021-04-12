@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import BlogPost
 from .forms import BlogForm
@@ -28,6 +29,7 @@ def blogpost_detail(request, post_id):
     return render(request, 'blog/blogpost_detail.html', context)
 
 
+@login_required
 def add_blogpost(request):
     """ Add a post to the blog """
     if not request.user.is_superuser:
@@ -56,8 +58,9 @@ def add_blogpost(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_blogpost(request, post_id):
-    """ Add a post to the blog """
+    """ Edit a blogpost """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -85,8 +88,9 @@ def edit_blogpost(request, post_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_blogpost(request, post_id):
-    """ Delete a product from the store """
+    """ Delete a blogpost """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -95,4 +99,3 @@ def delete_blogpost(request, post_id):
     post.delete()
     messages.success(request, f'{post.title} deleted!')
     return redirect(reverse('all_blogposts'))
-
