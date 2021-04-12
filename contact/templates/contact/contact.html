@@ -33,8 +33,9 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                     <button type="Submit" class="btn shop-btn rounded-0 float-right text-uppercase">Send</button>
+                    <a href="{% url 'contact' %}"  class="btn shop-btn rounded-0 float-right text-uppercase mr-2">Cancel</a>
                 </form>
-            </div>}
+            </div>
         </div>
     </div>
 {% endblock %}

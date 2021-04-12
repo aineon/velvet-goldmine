@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Message, NewsletterSubscription
+from .models import ReceivedMessage, NewsletterSubscription
+
+
+class ReceivedMessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'subject', 'date_sent',)
 
 
 class NewsletterAdmin(admin.ModelAdmin):
@@ -7,4 +11,4 @@ class NewsletterAdmin(admin.ModelAdmin):
 
 
 admin.site.register(NewsletterSubscription, NewsletterAdmin)
-admin.site.register(Message)
+admin.site.register(ReceivedMessage, ReceivedMessageAdmin)

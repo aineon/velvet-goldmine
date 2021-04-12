@@ -1,0 +1,10 @@
+Hi {{ instance.name }}  
+
+Thanks for your message!
+
+We have received your message re: {{ instance.subject }}
+
+And will be in touch shortly!
+
+Sincerely, 
+The Velvet Goldmine xx

@@ -1,7 +1,11 @@
 from django.db import models
 
 
-class Message(models.Model):
+class ReceivedMessage(models.Model):
+
+    class Meta:
+        verbose_name = 'Message'
+
     name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=50, null=False, blank=False)
     subject = models.CharField(max_length=254, null=False, blank=False)

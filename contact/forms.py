@@ -1,11 +1,11 @@
 from django import forms
-from .models import Message, NewsletterSubscription
+from .models import ReceivedMessage, NewsletterSubscription
 
 
 # Contact Form
 class ContactForm(forms.ModelForm):
     class Meta:
-        model = Message
+        model = ReceivedMessage
         fields = ('name', 'email', 'subject', 'message')
 
     def __init__(self, *args, **kwargs):

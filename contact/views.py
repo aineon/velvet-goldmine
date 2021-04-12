@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
-from .models import NewsletterSubscription
+from .models import NewsletterSubscription, ReceivedMessage
 from .forms import ContactForm, SubscriptionForm
 
 
@@ -14,6 +17,24 @@ def contact(request):
             form.save()
             messages.success(request,
                              "Message Sent! We'll be in touch shortly!")
+            instance = form.save()
+            """Send email confirming message received"""
+            sender_email = instance.email
+            print(sender_email)
+            subject = render_to_string(
+                'contact/confirmation_emails/message_confirmation_subject.txt',
+                {'instance': instance})
+            body = render_to_string(
+                'contact/confirmation_emails/message_confirmation_body.txt',
+                {'instance': instance,
+                 'contact_email': settings.DEFAULT_FROM_EMAIL})
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [sender_email],
+                fail_silently=False,
+            )
 
         else:
             messages.error(request, 'Message failed to send.'
@@ -44,4 +65,3 @@ def newsletter_signup(request):
             messages.success(request, "Congratulations! "
                              " You've been added to our mailing list!")
     return redirect(news_sub_redirect)
-
