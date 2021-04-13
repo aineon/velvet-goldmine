@@ -8,23 +8,27 @@
                     Sign up to our fortnightly newsletter to get the exclusive on new arrivals, 
                     special offers, new collaborations and all things fashion directly to your inbox!
                 </p>
-                <form method="POST" action="{% url 'newsletter_signup' %}" id="subscription_form" class="mb-2" >
-                    <div class="form-group w-50 mx-auto">
+                <form method="POST" action="{% url 'newsletter_signup' %}" id="subscription_form" class="mb-2">
+                    <div class="form-group w-50 mx-auto mb-1">
                         {% csrf_token %}
                         {{ news_sub_form|crispy }}   
-                    <small class="text-pink text-center">We'll never share your email address with anybody else.</small> 
+                        <small class="text-pink text-center p-2">We'll never share your email address with anybody else.</small> 
                     </div>
-                    <button type="submit" class="btn btn-sm shop-btn rounded-0 text-center text-uppercase">Sign Up</button> 
-                    <input type="hidden" name="news_sub_redirect" value="{{ request.path }}"> 
+
+                    <button type="submit" class="btn btn-sm shop-btn rounded-0 text-center text-uppercase">Sign Up</button>
+                    <input type="hidden" name="news_sub_redirect" value="{{ request.path }}">   
                 </form>
+                <small class="text-pink text-center">If you want to <a href="{% url 'newsletter_unsubscribe' %}" class="form-link-line">unsubscribe</a> 
+                    from our newsletter please click <a href="{% url 'newsletter_unsubscribe' %}" class="form-link-line">here</a> 
+                </small>
             </div>
         <hr class="d-block d-md-none detail-hr">
             <div class="col-12 col-md-6 text-center">
                 <h4 class="text-pink font-weight-bold text-center pt-2">Social Media</h4>
-                <hr class="w-75 grey-divider">
-                <p class="text-pink text-center">
-                    Follow us on social media for the latest news, collections and collaborations.
-                </p>
+                    <hr class="w-75 grey-divider">
+                    <p class="text-pink text-center">
+                        Follow us on social media for the latest news, collections and collaborations.
+                    </p>
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <a href="" target="_blank" aria-label="Like us on Facebook">
@@ -46,14 +50,13 @@
                         </li>
                     </ul>
                     <p class="mb-0">
-                     Or contact us directly
+                        Or contact us directly
                     </p>
                     <a href="{% url 'contact' %}"> <i class="fas fa-envelope footer-icon p-2 hvr-grow"></i></a>
-            </div>
-           
-                
+            </div>     
         </div>
-        <div class="row footer-btm text-center p-1">
+
+        <div class="row footer-btm text-center p-1 mt-3">
             <div class="col">
                 <small class="text-pink">copyright &copy; <span id="date"> </span> Aine O Neill. For educational purposes only </small>
             </div>

@@ -20,7 +20,6 @@ def contact(request):
             instance = form.save()
             """Send email confirming message received"""
             sender_email = instance.email
-            print(sender_email)
             subject = render_to_string(
                 'contact/confirmation_emails/message_confirmation_subject.txt',
                 {'instance': instance})
@@ -82,3 +81,42 @@ def newsletter_signup(request):
                                                          'text/html')
             signup_confirmation_email.send()
     return redirect(news_sub_redirect)
+
+
+def newsletter_unsubscribe(request):
+    news_sub_form = SubscriptionForm(request.POST or None)
+
+    if news_sub_form.is_valid():
+        instance = news_sub_form.save(commit=False)
+        if (NewsletterSubscription.objects.filter(
+                email=instance.email).exists()):
+            NewsletterSubscription.objects.filter(
+                email=instance.email).delete()
+            messages.success(request, f'{instance.email} \
+                             has been removed from our mailing list')
+            to_email = [instance.email]
+            subject = render_to_string(
+                'contact/confirmation_emails/newsletter_unsubscribe_confirmation_subject.txt')
+            body = render_to_string(
+                'contact/confirmation_emails/newsletter_unsubscribe_confirmation_body.txt',
+                {'instance': instance,
+                 'contact_email': settings.DEFAULT_FROM_EMAIL})
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [to_email],
+                fail_silently=False,
+            )
+
+        else:
+            messages.error(request, 'Sorry! That email address \
+                           does not exist in our database.')
+
+    news_sub_form = SubscriptionForm()
+    template = 'contact/newsletter_unsubscribe.html'
+    context = {
+        'news_sub_form': news_sub_form,
+    }
+
+    return render(request, template, context)

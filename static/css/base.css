@@ -461,6 +461,7 @@ a.remove-item small:hover  {
     margin-bottom: 50px
 }
 
+/* Footer */
 footer {
     width: 100%;
     background-color: #dee2e6;
@@ -663,14 +664,19 @@ footer {
     color: #ee6aa7
 }
 
+.form-link-line,
 .form-link {
     color: #ee6aa7;
 }
 
+.form-link-line:hover,
 .form-link:hover {
     font-weight: bold;
-    text-decoration: none;
     color: #ee6aa7;
+}
+
+.form-link:hover {
+    text-decoration: none;
 }
 
 .allauth-logo {
