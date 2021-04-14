@@ -20,29 +20,29 @@
     <div class="container">
         <div class="row">
             <div class="col bag-header">
-                <h2 class="text-pink font-weight-bold mb-4">Profile</h2>
+                <h2 class="text-pink font-weight-bold mb-4">{{ user.username }}'s Profile</h2>
                 <hr>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Default Delivery Information</p>
+                <p class="text-pink">Default Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn shop-btn text-uppercase rounded-0 text-center">Update Information</button>
+                    <button class="btn shop-btn text-uppercase rounded-0 float-right">Update Information</button>
                 </form>
             </div>
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Order History</p>
+                <p class="text-pink">Order History</p>
                 <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
                                 <th class="text-pink">Order Number</th>
-                                <th class="text-pink">Date</th>
-                                <th class="text-pink">Items</th>
+                                <th class="text-pink text-center">Date</th>
+                                <th class="text-pink text-center">Items</th>
                                 <th class="text-pink">Order Total</th>
                             </tr>
                         </thead>
@@ -51,23 +51,24 @@
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
+                                        title="{{ order.order_number }}" class="text-pink order-number">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
-                                    <td>{{ order.date }}</td>
+                                    <td><small>{{ order.date }}</small></td>
                                     <td>
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
-                                                <li class="small">
+                                                <li class="small text-center">
+                                                    {{ item.product.name }} x{{ item.quantity }}
                                                     {% if item.product.has_sizes %}
-                                                        Size {{ item.product.size }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                      - Size UK{{ item.product_size }}
+                                                    {% endif %}
                                                 </li>
                                             {% endfor %}
                                         </ul>
                                     </td>
-                                    <td>${{ order.grand_total }}</td>
+                                    <td class="text-center">€{{ order.grand_total }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
