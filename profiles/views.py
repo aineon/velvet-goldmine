@@ -24,11 +24,16 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     orders = profile.orders.all()
+    products = Product.objects.all()
+    fav_products = products.filter(favourites=request.user)
+    is_favourite = True
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'fav_products': fav_products,
+        'is_favourite': is_favourite,
         'on_profile_page': True,
     }
 
@@ -64,8 +69,10 @@ def favourite_product(request, product_id):
                                 removed from your favourites')
         else:
             product.favourites.add(request.user)
-            messages.success(request, f'{product.name} \
-                                added to your favourites')
+            item = product.name
+            message = format_html(item + ' added to your favourites. \
+                 View <a href="{}">Your Favourites</a>', reverse('profile'))
+            messages.success(request, message)
     else:
         message1 = format_html('Sorry! You need to be logged in to save a product. \
                               <a href="{}">sign in</a>', reverse(
@@ -80,8 +87,9 @@ def favourite_product(request, product_id):
 
 def fav_products_list(request):
     """Get Users favourite products"""
-    fav_products = Product.objects.filter(favourites=request.user)
-    print(fav_products)
+    products = Product.objects.all()
+    fav_products = products.filter(favourites=request.user)
+
     template = 'profile.html'
     context = {
          'fav_products': fav_products,

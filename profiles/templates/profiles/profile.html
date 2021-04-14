@@ -20,12 +20,192 @@
     <div class="container">
         <div class="row">
             <div class="col bag-header">
-                <h2 class="text-pink font-weight-bold mb-4">{{ user.username }}'s Profile</h2>
+                <h2 class="text-pink font-weight-bold mb-4 text-center">{{ user.username }}'s Profile</h2>
                 <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'favs')">My Favourites</button>
+                    <button class="tablinks" onclick="openTab(event, 'orders')">Order History</button>
+                    <button class="tablinks" onclick="openTab(event, 'info')">Delivery Info</button>
+                    <button class="tablinks" onclick="openTab(event, 'deactivate')">Deactivate Account</button>
+                </div>
             </div>
         </div>
 
         <div class="row">
+            <div class="col-12">
+                <div id="favs" class="tabcontent">
+                    <ul class="list-unstyled">
+                    {% for product in fav_products %}
+                    {% if forloop.first %}
+                    <div class="float-right mr-3">
+                        <a href="{% url 'products' %}" class="btn shop-btn rounded-0 mt-3 text-uppercase">
+                            Keep Shopping
+                        </a>
+                    </div>
+                    {% endif %}
+                        <li>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                                    <div class="image-container my-5">
+                                        {% if product.image %}
+                                            <a href="{{ product.image.url }}" target="_blank">
+                                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.description }}">
+                                            </a>
+                                            {% else %}
+                                            <a href="">
+                                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no_image.png" alt="{{ product.description }}">
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="product-details-container mb-5 mt-md-5">
+                                        <p class="mb-0 font-weight-bold text-center product-name">{{ product.name }}
+                                            <a href="{% url 'favourite_product' product.id %}" class="favourite-icon hvr-pulse-grow" data-toggle="tooltip" data-placement="right" title="Remove from Favourites"><i class="fas fa-heart"></i></a>
+                                        </p>
+                                        <p class="mb-0 font-weight-bold text-center product-price">€{{ product.price }}</p>
+
+                                        <hr class="detail-hr">
+                                        <p class="mt-3 text-center">{{ product.description }}</p>
+                                        <hr class="detail-hr">
+                                        
+                                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-row">
+                    
+                                        {% include 'products/includes/sizes.html' %} 
+                    
+                                            <div class="col-12 text-center">
+                                                <span class="pb-2 text-pink"><strong >Quantity:</strong></span>
+                                                    <div class="form-group w-50 m-auto">
+                                                        <div class="input-group mt-1">
+                                                            <div class="input-group-prepend">
+                                                                <button class="decrement-qty btn qty-btn" 
+                                                                        data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                                    <span class="icon">
+                                                                        <i class="fas fa-minus"></i>
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                            
+                                                            <input class="form-control qty_input text-center text-pink font-weight-bold" type="number" 
+                                                                    name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                                        
+                                                            <div class="input-group-append">
+                                                                <button class="increment-qty btn qty-btn"
+                                                                        data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                                    <span class="icon">
+                                                                        <i class="fas fa-plus"></i>
+                                                                    </span>
+                                                                </button>
+                                                            </div>   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <div class="col-12 text-center">
+                                                    <input type="submit" class="btn rounded-0 text-uppercase shop-btn mt-5" value="Add to Bag">
+                                                </div>
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            </div>
+                                        </form>      
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% empty %}
+                        <div class="text-center text-pink font-weight-bold mt-3">
+                            <h2 class="mb-2">You haven't saved anything to your favourites</h2>
+                            <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">Find Favourites</a>
+                        </div>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div id="orders" class="tabcontent">
+                    <div class="order-history table-responsive">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-center">
+                                <tr>
+                                    <th class="text-pink">Order Number</th>
+                                    <th class="text-pink">Date</th>
+                                    <th class="text-pink">Items</th>
+                                    <th class="text-pink">Order Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                            {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                        {% for item in order.lineitems.all %}
+                                            <li>
+                                                {{ item.product.name }} 
+                                                {% if item.product.has_sizes %}
+                                                    - Size UK{{ item.product_size }}
+                                                {% endif %}
+                                                x{{ item.quantity }}
+                                            </li>
+                                            {% empty %}
+                                            <li>
+                                                <h3>You Haven't placed any orders</h3>
+                                                <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">Go Shopping!</a>
+                                            </li>
+                                        {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>€{{ order.grand_total }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 offset-3">
+                <div id="info" class="tabcontent">
+                    <p class="text-pink text-center font-weight-bold p-2">Default Delivery Information</p>
+                    <form class="mt-3 text-center" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn shop-btn text-uppercase rounded-0 text-center">Update Information</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <div id="deactivate" class="tabcontent">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- <div class="row">
             <div class="col-12 col-lg-6">
                 <p class="text-pink">Default Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
@@ -76,11 +256,12 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>  -->
 
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    <script type="text/javascript" src="{% static 'profiles/js/tabs.js' %}"></script>
 {% endblock %}
