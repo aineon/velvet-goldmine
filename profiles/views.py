@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import (render, reverse, get_object_or_404,
+                              HttpResponseRedirect)
 from django.contrib import messages
 from django.utils.html import format_html
 from .models import UserProfile
@@ -35,6 +36,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """Get all past orders of the user"""
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -52,6 +54,7 @@ def order_history(request, order_number):
 
 
 def favourite_product(request, product_id):
+    """Add a product to the users favourites"""
     product = get_object_or_404(Product, pk=product_id)
 
     if request.user.is_authenticated:
@@ -71,4 +74,17 @@ def favourite_product(request, product_id):
                               'account_signup'))
         messages.error(request, message1 + message2)
 
-    return redirect(reverse('product_detail', args=[product.id]))
+    # refresh current page
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+
+def fav_products_list(request):
+    """Get Users favourite products"""
+    fav_products = Product.objects.filter(favourites=request.user)
+    print(fav_products)
+    template = 'profile.html'
+    context = {
+         'fav_products': fav_products,
+    }
+
+    return render(request, template, context)
