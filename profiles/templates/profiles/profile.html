@@ -2,7 +2,6 @@
 {% load static %}
 
 
-
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
@@ -20,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col bag-header">
-                <h2 class="text-pink font-weight-bold mb-4 text-center">{{ user.username }}'s Profile</h2>
+                <h2 class="text-pink font-weight-bold mb-4 text-center text-capitalize">{{ user.username }}'s Profile</h2>
                 <hr>
             </div>
         </div>
@@ -38,18 +37,21 @@
             </div>
         </div>
 
+    <!--Tab to hold users favourite products-->
         <div class="row">
             <div class="col-12">
                 <div id="favs" class="tabcontent">
                     <ul class="list-unstyled">
                     {% for product in fav_products %}
-                    {% if forloop.first %}
-                    <div class="float-right mr-3">
-                        <a href="{% url 'products' %}" class="btn shop-btn rounded-0 mt-3 text-uppercase">
-                            Keep Shopping
-                        </a>
-                    </div>
-                    {% endif %}
+                        {% if forloop.first %}
+                        <div class="row">
+                            <div class="mr-3 col-12 col-md-3 offset-9">
+                                <a href="{% url 'products' %}" class="btn shop-btn rounded-0 mt-3 text-uppercase">
+                                    Keep Shopping
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
                         <li>
                             <div class="row">
                                 <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
@@ -58,7 +60,7 @@
                                             <a href="{{ product.image.url }}" target="_blank">
                                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.description }}">
                                             </a>
-                                            {% else %}
+                                        {% else %}
                                             <a href="">
                                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no_image.png" alt="{{ product.description }}">
                                             </a>
@@ -69,7 +71,9 @@
                                 <div class="col-12 col-md-6 col-lg-4">
                                     <div class="product-details-container mb-5 mt-md-5">
                                         <p class="mb-0 font-weight-bold text-center product-name">{{ product.name }}
-                                            <a href="{% url 'favourite_product' product.id %}" class="favourite-icon hvr-pulse-grow" data-toggle="tooltip" data-placement="right" title="Remove from Favourites"><i class="fas fa-heart"></i></a>
+                                            <a href="{% url 'favourite_product' product.id %}" data-toggle="tooltip" data-placement="right" title="Remove from Favourites">
+                                                <i class="fas fa-heart favourite-icon hvr-pulse-grow"></i>
+                                            </a>
                                         </p>
                                         <p class="mb-0 font-weight-bold text-center product-price">€{{ product.price }}</p>
 
@@ -123,8 +127,10 @@
                         </li>
                     {% empty %}
                         <div class="text-center text-pink font-weight-bold mt-3">
-                            <h2 class="mb-2">You haven't saved anything to your favourites</h2>
-                            <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">Find Favourites</a>
+                            <h2 class="mb-4">You haven't saved anything to your favourites</h2>
+                            <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">
+                               <span> Find Favourites<i class="fas fa-heart red-icon pl-2"></i></span>
+                            </a>
                         </div>
                     {% endfor %}
                     </ul>
@@ -132,25 +138,28 @@
             </div>
         </div>
 
+    <!--Tab to hold users order history-->
         <div class="row">
             <div class="col-12">
                 <div id="orders" class="tabcontent">
                     <div class="order-history table-responsive">
                         <table class="table table-sm table-borderless">
                             <thead class="text-center">
+                            {% for order in orders %}
+                                {% if forloop.first %}
                                 <tr>
                                     <th class="text-pink">Order Number</th>
                                     <th class="text-pink">Date</th>
                                     <th class="text-pink">Items</th>
                                     <th class="text-pink">Order Total</th>
                                 </tr>
+                                {% endif %}
                             </thead>
                             <tbody class="text-center">
-                            {% for order in orders %}
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">
+                                        title="{{ order.order_number }}" class="text-pink order-number">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
@@ -164,17 +173,17 @@
                                                     - Size UK{{ item.product_size }}
                                                 {% endif %}
                                                 x{{ item.quantity }}
-                                            </li>
-                                            {% empty %}
-                                            <li>
-                                                <h3>You Haven't placed any orders</h3>
-                                                <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">Go Shopping!</a>
-                                            </li>
+                                            </li> 
                                         {% endfor %}
                                         </ul>
                                     </td>
                                     <td>€{{ order.grand_total }}</td>
                                 </tr>
+                            {% empty %}
+                                <div class="text-center font-weight-bold mt-3">
+                                    <h2 class="text-pink mb-4">You haven't placed any orders</h2>
+                                    <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">Go Shopping!</a>
+                                </div>
                             {% endfor %}
                             </tbody>
                         </table>
@@ -183,10 +192,11 @@
             </div>
         </div>
 
+    <!--Tab to hold users default delivery info-->
         <div class="row">
             <div class="col-12 col-md-6 offset-3">
                 <div id="info" class="tabcontent">
-                    <p class="text-pink text-center font-weight-bold p-2">Default Delivery Information</p>
+                    <h3 class="text-pink text-center font-weight-bold p-2 mt-1">Default Delivery Information</h3>
                     <form class="mt-3 text-center" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                         {% csrf_token %}
                         {{ form|crispy }}
@@ -196,72 +206,30 @@
             </div>
         </div>
 
+        <!--Tab to hold account deactivate button-->
         <div class="row">
-            <div class="col s12 m10 offset-m1">
+            <div class="col s12 m10 offset-m1 text-center">
                 <div id="deactivate" class="tabcontent">
-                </div>
+                    <a href="{% url 'deactivate_account' %}" class="btn shop-btn rounded-0 text-uppercase mt-5 mb-5">Deactivate Account</a>
+                    <p>If you would like to delete your account completely please drop us a message 
+                        <a href="{% url 'contact' %}" class="form-link">here</a>
+                    </p>
+                 </div>
             </div>
         </div>
-
     </div>
-
-        <!-- <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="text-pink">Default Delivery Information</p>
-                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn shop-btn text-uppercase rounded-0 float-right">Update Information</button>
-                </form>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-pink">Order History</p>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th class="text-pink">Order Number</th>
-                                <th class="text-pink text-center">Date</th>
-                                <th class="text-pink text-center">Items</th>
-                                <th class="text-pink">Order Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}" class="text-pink order-number">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td><small>{{ order.date }}</small></td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small text-center">
-                                                    {{ item.product.name }} x{{ item.quantity }}
-                                                    {% if item.product.has_sizes %}
-                                                      - Size UK{{ item.product_size }}
-                                                    {% endif %}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td class="text-center">€{{ order.grand_total }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>  -->
 
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+    
+    <script>
+       $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
     <script type="text/javascript" src="{% static 'profiles/js/tabs.js' %}"></script>
 {% endblock %}

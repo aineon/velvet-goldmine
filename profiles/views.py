@@ -1,7 +1,9 @@
-from django.shortcuts import (render, reverse, get_object_or_404,
+from django.shortcuts import (render, reverse, redirect,
+                              get_object_or_404,
                               HttpResponseRedirect)
 from django.contrib import messages
 from django.utils.html import format_html
+
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
@@ -24,6 +26,7 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     orders = profile.orders.all()
+    # Add users favourite products to their profile
     products = Product.objects.all()
     fav_products = products.filter(favourites=request.user)
     is_favourite = True
@@ -96,3 +99,11 @@ def fav_products_list(request):
     }
 
     return render(request, template, context)
+
+
+def deactivate_account(request):
+    user = request.user
+    user.is_active = False
+    user.save()
+    messages.success(request, 'Your account has been deactivated')
+    return redirect('products')
