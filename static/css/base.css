@@ -374,19 +374,25 @@ a.icon-link {
 .category-badge {
     color: #ee6aa7;
     background-color: #c7cbcf;
-    border: 2px solid #ee6aa7;
+    border: 2px solid #c7cbcf;
     margin-right: 2px;
     font-size: 1rem;
     box-shadow: 2px 2px 4px #85878a;   
+    padding: .5rem;
 }
 
 a.badge > span.category-badge:hover {
     background-color: #ee6aa7;
     color: #c7cbcf;
+    border: 2px solid #ee6aa7;
 }
 
 a.back-link {
     color: #ee6aa7 !important;
+}
+
+a.back-link:hover {
+    font-weight: bold;
 }
 
 /* Select Boxes */
@@ -408,7 +414,6 @@ option[selected],
 #id_product_size { 
      font-weight: 700;
 }
-
 
 /* Links */
 
@@ -762,15 +767,41 @@ input[name='q']::placeholder {
     }
 
     .bag-header {
-        padding-top: .5rem;
+        padding-top: 1.75rem;
     }
 
+    .logo {
+        font-size: 2.5rem;
+    }
 
+    .category-badge {
+        padding: .25rem;
+        font-size: .75rem;
+        margin-right: 0;
+    }
+
+    .select-box-container {
+        margin-top: 1rem;
+    }
+
+    .product-count {
+        margin-bottom: 0;
+    }
+
+    .mobile-breadcrumb {
+        padding-top: 1.5rem;
+    }
+
+    .scroll-btn {
+        height: 36px;
+        width: 36px;
+        font-size: 1rem; 
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .banner-text {
-        font-size: 1rem;
+        font-size: .75rem;
     }
 
     .header-container {
