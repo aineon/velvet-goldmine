@@ -797,15 +797,34 @@ input[name='q']::placeholder {
         width: 36px;
         font-size: 1rem; 
     }
+
+    .btn.shop-btn.rounded-0.btn-lg {
+        font-size: .75rem;
+        padding: .375rem;
+    }
+
+    .icon {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+    
+    .mobile-delivery {
+        text-align: center;
+        font-size: .9rem;
+    }
+
+    .mobile-title {
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .banner-text {
-        font-size: .75rem;
+        font-size: .85rem;
     }
 
     .header-container {
-        padding-top: 120px;
+        padding-top: 100px;
     }
 }
 
