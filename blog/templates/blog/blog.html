@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+<main>
     <div class="container-fluid mb-2">
         <div class="row">
             <div class="col bag-header">
@@ -20,7 +21,7 @@
         </div>
 
         <div class="row">
-            <div class="col-10 offset-1">
+            <div class="col-10 offset-1 mobile-center">
                 <p>Here at <span class="blog-logo">The Velvet Goldmine</span> we are passionate about all things fashion but there are 2 things we are
                  particularly passionate about - <strong class="text-pink">promoting Irish designers</strong> and <strong class="text-pink">Sustainable Fashion</strong>.
                 <br>We are all aware of the negative impact the fashion industry, and especially
@@ -39,8 +40,10 @@
                 </p>
             </div>
         </div>
+
         <hr class="w-75">
-        
+
+    <!--Blog container-->
         <div class="container-blog">
             {% for post in posts %}
                 <div class="row">
@@ -48,8 +51,10 @@
                         <h2 class="text-pink font-weight-bold text-center">{{ post.title }}</h2>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-12">
+                    <!--Edit/Delete buttons for superuser-->
                         {% if request.user.is_superuser %}
                         <small class="float-right mr-3">
                             <a class="text-pink form-link" href="{% url 'edit_blogpost' post.id %}">Edit</a>
@@ -66,6 +71,8 @@
                         <span class="ml-2 float-left">{{post.date_created|date:'j F, Y' }}</span>   
                     </div>
                 </div>
+
+                <!--Layout for blogpost with image-->
                 {% if post.image %}
                     <div class="row">
                         <div class="col-12 col-md-5">
@@ -75,7 +82,7 @@
                         </div>
     
                         <div class="col-12 col-md-7">
-                            <p class="mb-1 float-left">{{ post.intro }}</p>
+                            <p class="mb-1 mobile-center">{{ post.intro }}</p>
                             <a href="{% url 'blogpost_detail' post.id %}" class="btn shop-btn rounded-0 float-right">Read More...</a>
                         </div> 
                     </div>
@@ -97,10 +104,11 @@
                     </div>   
     
                 {% else %}
+                <!--layout for blogpost without image-->
                     <hr class="pink-divider w-25">
                      <div class="row">
                         <div class="col-10 offset-1">
-                            <p class="mb-1 float-left">{{ post.intro }}</p>
+                            <p class="mb-1 -mobile-center">{{ post.intro }}</p>
                             <a href="{% url 'blogpost_detail' post.id %}" class="btn shop-btn rounded-0 float-right mt-2">Read More...</a>
                         </div>
                      </div>   
@@ -127,6 +135,7 @@
             {% endfor %}
         </div>
 
+    <!--Scroll up btn-->
         <div class="scroll-btn hide">
             <a class="scroll-link d-flex h-100 text-decoration-none" title="back to top">
                 <i class="fas fa-angle-double-up grey-icon mx-auto my-auto"></i>
@@ -134,13 +143,13 @@
         </div>
 
     </div>
-
+</main>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }} 
     <script type="text/javascript">
-
+    //Scroll to top btn
         $(window).scroll(function(){
             if ($(this).scrollTop() > 100) {
                 $('.scroll-btn').removeClass('hide');

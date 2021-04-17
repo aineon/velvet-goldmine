@@ -11,14 +11,14 @@
 {% endblock %}
 
 {% block content %}
-
+<main>
     <div class="container-blog">
         <div class="row bag-header">
             <div class="col-10 offset-1 text-center">
                 <h2 class="text-pink font-weight-bold">{{ post.title }}</h2>
             </div>
         </div>
-
+    <!--Blog post-->
         <div class="row">
             <div class="col-10 offset-1 mt-4">
                 <div class="blog-image-detail h-50">
@@ -49,7 +49,8 @@
         </div>
 
         <hr class="pink-divider w-75">
-
+        
+    <!--blogpost body-->
         <div class="row">
             <div class="col-10 offset-1">
                 <p class="mb-2 float-left">{{ post.intro }}</p>
@@ -74,7 +75,7 @@
             </div>
         </div>
         
-
+    <!--Blogpost credits-->
         <div class="row">
             <div class="col-10 offset-1 float-right text-pink">
                 <small class="text-muted">
@@ -90,7 +91,8 @@
                 </small> 
             </div>
         </div> 
-        
+
+    <!--Scroll up btn-->
         <div class="scroll-btn hide">
             <a class="scroll-link d-flex h-100 text-decoration-none" title="back to top">
                 <i class="fas fa-angle-double-up grey-icon mx-auto my-auto"></i>
@@ -98,7 +100,7 @@
         </div>
 
     </div>
-
+</main>
 {% endblock %}
 
 {% block postloadjs %}

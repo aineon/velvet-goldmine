@@ -62,3 +62,17 @@ select option[value=""] {
 .del-details {
     line-height: 1.2;
 }
+
+.checkout-buttons {
+    text-align: right;
+}
+
+.order-confirmation-wrapper{
+    border: 1px solid #85878a;
+}
+
+@media only screen and (max-width: 664px) {
+    .checkout-buttons {
+        text-align: center;
+    }
+}

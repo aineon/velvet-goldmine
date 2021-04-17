@@ -15,20 +15,20 @@
 {% endif %}
 <li>
   {% if provider.name == 'Google' %}
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn social-btn" 
+  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn social-btn w-75" 
      href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
      <i class="fab fa-google social-icon"></i>
         Log in with {{provider.name}}
   </a>
   
   {% elif provider.name == 'Facebook' %}
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn social-btn" 
+  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn social-btn w-75" 
      href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
      <i class="fab fa-facebook-f social-icon"></i>
         Log in with {{provider.name}}
   </a>
   {% else %}
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn social-btn" 
+  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn social-btn w-75" 
   href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
       Log in with {{provider.name}}
   </a>
