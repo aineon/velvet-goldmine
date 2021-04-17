@@ -25,7 +25,8 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    orders = profile.orders.all()
+    # Arrange orders by most recent
+    orders = profile.orders.all().order_by('-date')
     # Add users favourite products to their profile
     products = Product.objects.all()
     fav_products = products.filter(favourites=request.user)
@@ -102,6 +103,7 @@ def fav_products_list(request):
 
 
 def deactivate_account(request):
+    """Deactivate users account"""
     user = request.user
     user.is_active = False
     user.save()

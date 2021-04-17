@@ -1,0 +1,46 @@
+<div class="order-history table-responsive d-none d-md-block">
+    <table class="table table-sm table-borderless">
+        <thead class="text-center">
+        {% for order in orders %}
+            {% if forloop.first %}
+            <tr>
+                <th class="text-pink">Order Number</th>
+                <th class="text-pink">Date</th>
+                <th class="text-pink">Items</th>
+                <th class="text-pink">Order Total</th>
+            </tr>
+            {% endif %}
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                <td>
+                    <a href="{% url 'order_history' order.order_number %}"
+                    title="{{ order.order_number }}" class="text-pink order-number">
+                        {{ order.order_number|truncatechars:6 }}
+                    </a>
+                </td>
+                <td>{{ order.date }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                    {% for item in order.lineitems.all %}
+                        <li>
+                            {{ item.product.name }} 
+                            {% if item.product.has_sizes %}
+                                - Size UK{{ item.product_size }}
+                            {% endif %}
+                            x{{ item.quantity }}
+                        </li> 
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>€{{ order.grand_total }}</td>
+            </tr>
+        {% empty %}
+            <div class="text-center font-weight-bold mt-3">
+                <h2 class="text-pink mb-4">You haven't placed any orders</h2>
+                <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">Go Shopping!</a>
+            </div>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
