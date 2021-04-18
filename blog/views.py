@@ -8,7 +8,7 @@ from .forms import BlogForm
 
 def all_blogposts(request):
     """A view to show all blog posts"""
-    posts = BlogPost.objects.all()
+    posts = BlogPost.objects.all().order_by('-date_created')
 
     template = 'blog/blog.html'
     context = {

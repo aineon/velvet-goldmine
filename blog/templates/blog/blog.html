@@ -20,6 +20,7 @@
             </div>
         </div>
 
+    <section>
         <div class="row">
             <div class="col-10 offset-1 mobile-center">
                 <p>Here at <span class="blog-logo">The Velvet Goldmine</span> we are passionate about all things fashion but there are 2 things we are
@@ -40,15 +41,16 @@
                 </p>
             </div>
         </div>
-
         <hr class="w-75">
-
+    </section>
+    
     <!--Blog container-->
+    <section>
         <div class="container-blog">
             {% for post in posts %}
                 <div class="row">
                     <div class="col-10 offset-1">
-                        <h2 class="text-pink font-weight-bold text-center">{{ post.title }}</h2>
+                        <h2 class="text-pink font-weight-bold text-center text-capitalize">{{ post.title }}</h2>
                     </div>
                 </div>
 
@@ -68,7 +70,7 @@
                            <em>by:  {{ post.author }}</em> 
                         {% endif %}
                         </p> 
-                        <span class="ml-2 float-left">{{post.date_created|date:'j F, Y' }}</span>   
+                        <span class="ml-3 float-left">{{post.date_created|date:'j F, Y' }}</span>   
                     </div>
                 </div>
 
@@ -88,7 +90,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-12 float-right text-pink">
+                        <div class="col-12 float-right text-pink mt-2 ml-3">
                             <small class="text-muted">
                                 <em>
                                 {% if post.credit %} credit: {{ post.credit }}{% endif %} 
@@ -106,7 +108,7 @@
                 {% else %}
                 <!--layout for blogpost without image-->
                     <hr class="pink-divider w-25">
-                     <div class="row">
+                    <div class="row">
                         <div class="col-10 offset-1">
                             <p class="mb-1 -mobile-center">{{ post.intro }}</p>
                             <a href="{% url 'blogpost_detail' post.id %}" class="btn shop-btn rounded-0 float-right mt-2">Read More...</a>
@@ -116,24 +118,25 @@
                     <div class="row">
                         <div class="col-10 offset-1 mt-4">
                             <p class="text-muted float-right">
-                            <small class="mt-4 pr-1">
-                                <em>{% if post.credit %} credit: {{post.credit}}{% endif %} 
-                                    {% if post.original_url %}
-                                    <a href="{{post.original_url}}" target="_blank" class="form-link">original article</a> 
-                                    {% endif %}
-                                    {% if post.source %} 
-                                     - posted by: 
-                                         <a href="https://{{post.source}}" target="_blank" class="form-link">{{ post.source }}</a> 
-                                    {% endif %} 
-                                </em>
-                            </small>  
-                         </p>
+                                <small class="mt-4 pr-1">
+                                    <em>{% if post.credit %} credit: {{post.credit}}{% endif %} 
+                                        {% if post.original_url %}
+                                        <a href="{{post.original_url}}" target="_blank" class="form-link">original article</a> 
+                                        {% endif %}
+                                        {% if post.source %} 
+                                        - posted by: 
+                                            <a href="https://{{post.source}}" target="_blank" class="form-link">{{ post.source }}</a> 
+                                        {% endif %} 
+                                    </em>
+                                </small>  
+                            </p>
                         </div>
                     </div>                
                 {% endif %} 
                 <hr class="pink-divider w-75 mb-4 mt-4">
             {% endfor %}
         </div>
+    </section>
 
     <!--Scroll up btn-->
         <div class="scroll-btn hide">
@@ -141,7 +144,6 @@
                 <i class="fas fa-angle-double-up grey-icon mx-auto my-auto"></i>
             </a>	
         </div>
-
     </div>
 </main>
 {% endblock %}
