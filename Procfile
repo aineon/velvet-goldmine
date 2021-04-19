@@ -1,0 +1,1 @@
+web: gunicorn velvet_goldmine.wsgi:application
