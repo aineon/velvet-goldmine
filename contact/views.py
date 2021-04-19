@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail, EmailMultiAlternatives
@@ -51,7 +51,7 @@ def contact(request):
 def newsletter_signup(request):
 
     news_sub_form = SubscriptionForm(request.POST or None)
-    news_sub_redirect = request.POST.get('news_sub_redirect')
+    # news_sub_redirect = request.POST.get('news_sub_redirect')
 
     if news_sub_form.is_valid():
         instance = news_sub_form.save(commit=False)
@@ -80,7 +80,8 @@ def newsletter_signup(request):
             signup_confirmation_email.attach_alternative(html_template,
                                                          'text/html')
             signup_confirmation_email.send()
-    return redirect(news_sub_redirect)
+    # return redirect(news_sub_redirect)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 def newsletter_unsubscribe(request):
