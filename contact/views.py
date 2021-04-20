@@ -90,10 +90,6 @@ def newsletter_unsubscribe(request):
         instance = news_sub_form.save(commit=False)
         if (NewsletterSubscription.objects.filter(
                 email=instance.email).exists()):
-            NewsletterSubscription.objects.filter(
-                email=instance.email).delete()
-            messages.success(request, f'{instance.email} \
-                             has been removed from our mailing list')
             to_email = [instance.email]
             subject = render_to_string(
                 'contact/confirmation_emails/newsletter_unsubscribe_confirmation_subject.txt')
@@ -107,6 +103,10 @@ def newsletter_unsubscribe(request):
                 settings.DEFAULT_FROM_EMAIL,
                 [to_email],
             )
+            NewsletterSubscription.objects.filter(
+                email=instance.email).delete()
+            messages.success(request, f'{instance.email} \
+                             has been removed from our mailing list')
 
         else:
             messages.error(request, 'Sorry! That email address \
