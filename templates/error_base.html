@@ -20,27 +20,27 @@
     <body>
 
         <header>
-            <div class="container-fluid logo-img">
+            <div class="container-fluid text-center">
                 <img src="{{ MEDIA_URL }}logo_img.png" alt="The Velvet Goldmine Logo">
             </div>
         </header>
 
-        <main class="bg-image error-img text-center">
+        <main>
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 text-center">
                     {% block  error_content %}
                     {% endblock %}
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-12">
-                    <h3 class="text-pink"> Ooops! Seems we took a wrong turn!</h3>
+                <div class="col-12 text-center mb-4">
+                    <h3 class="text-pink font-weight-bold mt-2"> Ooops! Seems we took a wrong turn!</h3>
                 </div>
-                <div class="col-12">
-                    <p>Let's get you back to safety!</p>
+
+                <div class="col-12 text-center">
+                    <p class="font-weight-bold">Let's get you back to safety!</p>
                     <a href="{% url 'home' %}" class="shop-now-btn btn-lg rounded-0 text-uppercase font-weight-bold">
-                        <span><i class="fas fa-chevron-left"></i></span>
                             Back to Shop
                     </a>
                 </div>
