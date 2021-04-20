@@ -106,13 +106,12 @@ def newsletter_unsubscribe(request):
                 body,
                 settings.DEFAULT_FROM_EMAIL,
                 [to_email],
-                fail_silently=False,
             )
 
         else:
             messages.error(request, 'Sorry! That email address \
                            does not exist in our database.')
-        return redirect(reverse('newsletter_unsubscribe'))
+
     news_sub_form = SubscriptionForm()
     template = 'contact/newsletter_unsubscribe.html'
     context = {
