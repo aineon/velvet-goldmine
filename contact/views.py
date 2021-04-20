@@ -91,6 +91,7 @@ def newsletter_unsubscribe(request):
         if (NewsletterSubscription.objects.filter(
                 email=instance.email).exists()):
             to_email = [instance.email]
+            print(to_email)
             subject = render_to_string(
                 'contact/confirmation_emails/newsletter_unsubscribe_confirmation_subject.txt')
             body = render_to_string(
@@ -101,7 +102,7 @@ def newsletter_unsubscribe(request):
                 subject,
                 body,
                 settings.DEFAULT_FROM_EMAIL,
-                [to_email],
+                to_email,
             )
             NewsletterSubscription.objects.filter(
                 email=instance.email).delete()
