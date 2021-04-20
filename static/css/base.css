@@ -319,6 +319,15 @@ a.icon-link {
     font-weight: 700;
 }
 
+.carousel-body {
+    color: #ff3895;
+    font-weight: 600;
+}
+
+.carousel-img-random {
+    border-radius: 3px;
+}
+
 /* Cards */
 .card {
     border-radius: 5px;   
@@ -499,9 +508,6 @@ a.remove-item small:hover  {
     cursor: pointer;   
 }
 
-
-
-
 /* Footer */
 .footer {
     width: 100%;
@@ -526,6 +532,10 @@ a.remove-item small:hover  {
 
 .footer-btm{
     background-color: #000;
+}
+
+.newsletter-signup {
+    width: 50%;
 }
 
 /* Forms */
@@ -584,6 +594,18 @@ input[name='q']::placeholder {
     padding: 0 3px 0 3px
 }
 
+/* Contact */
+.newsletter-container {
+    margin-bottom: 2rem;
+}
+
+/* Error Pages */
+.error-title {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
 /* Tooltips - from stack overflow */
 .tooltip-inner {
     max-width: 200px;
@@ -624,8 +646,8 @@ input[name='q']::placeholder {
     border: 3px solid #ee6aa7;   
 }
 
-.border-grey {
-    border: 3px solid #85878a;
+.border-blue {
+    border: 3px solid #6666ff;
 }
 
 .border-yellow {
@@ -633,7 +655,11 @@ input[name='q']::placeholder {
 }
 
 .border-red {
-    border: 3px solid #dc3545;
+    border: 3px solid #7f0000;
+}
+
+.border-top {
+    border-top: transparent;
 }
 
 .fade {
@@ -658,8 +684,8 @@ input[name='q']::placeholder {
     border-bottom-color: #ee6aa7 !important;
 }
 
-.arrow-grey {
-    border-bottom-color: #85878a !important;
+.arrow-blue {
+    border-bottom-color: #6666ff !important;
 }
 
 .arrow-yellow {
@@ -667,7 +693,7 @@ input[name='q']::placeholder {
 }
 
 .arrow-red {
-    border-bottom-color: #dc3545 !important;
+    border-bottom-color: #7f0000 !important;
 }
 
 .bag-notification-wrapper {
@@ -836,11 +862,11 @@ input[name='q']::placeholder {
     }
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
     .home-container {
         margin-bottom: 250px;
     }
-}
+} */
 
 @media only screen and (max-width: 768px) {
     .banner-text {
@@ -849,17 +875,35 @@ input[name='q']::placeholder {
 
     .header-container {
         padding-top: 100px;
-    }  
+    } 
+    
+    .newsletter-signup{
+        width: 75%;
+    }
 }
 
 @media only screen and (min-width: 1020px) {
     .display-3 {
         padding-top: 3rem;
     }
+
+    .newsletter-container {
+        margin-bottom: 6.5rem;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
     .display-3 {
         font-size: 10rem;
+    }
+}
+
+@media only screen and (min-height: 900px) {
+    .home-container {
+        margin-bottom: 250px;
+    }
+
+    .display-3 {
+        padding-top: 4.5rem;
     }
 }
