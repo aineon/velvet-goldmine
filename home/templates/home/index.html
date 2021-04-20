@@ -49,7 +49,7 @@
                     special offers, new collaborations and all things fashion directly to your inbox!
                 </p>
                 <form method="POST" action="{% url 'newsletter_signup' %}" id="subscription_form">
-                    <div class="form-group w-50 mx-auto">
+                    <div class="form-group newsletter-signup mx-auto">
                         {% csrf_token %}
                         {{ news_sub_form|crispy }}   
                         <small class="text-center">We'll never share your email address with anybody else.</small> 
