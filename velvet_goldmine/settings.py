@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = False
 
 
 ALLOWED_HOSTS = ['the-velvet-goldmine.herokuapp.com', 'localhost']
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'blog',
     'crispy_forms',
     'storages',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -157,6 +158,13 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERSION': 'v2.4'
     }
 }
+
+SOCIAL_AUTH_FACEBOOK_CLIENT_ID = os.environ.get('FACEBOOK_CLIENT_ID')
+SOCIAL_AUTH_FACEBOOK_SECRET_KEY = os.environ.get('FACEBOOK_SECRET_KEY')
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
+SOCIAL_AUTH_BACKEND_ERROR_URL = '/'
 
 WSGI_APPLICATION = 'velvet_goldmine.wsgi.application'
 
