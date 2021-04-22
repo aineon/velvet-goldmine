@@ -1,45 +1,745 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img src="/readme/readme_images/">
 
-Welcome aineon,
+## [**Table of Contents**](#table-of-contents)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+- [UX](#ux)
+    - [Overview](#overview)
+    - [Project Goals](#project-goals)
+    - [User Stories](#user-stories)
+    - [Design Process](#design-process)
+        * [Development Process](#development-process)
+        * [Colour Scheme](#colour-scheme)
+        * [Images](#images)
+        * [Typography](#typography)
+        * [Wireframes](#wireframes)
 
-## Gitpod Reminders
+- [Database Model](#database-model)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- [Features](#features)
+    - [CRUD Functionality](#crud-functionality)
+    - [Existing Features](#existing-features)
+    - [Future Features](#future-features)
 
-`python3 -m http.server`
+- [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Libraries and Frameworks](#libraries-and-frameworks)
+    - [Project Management](#project-management)
+    - [Tools](#tools)
+    - [Resources](#resources)
 
-A blue button should appear to click: *Make Public*,
+- [Testing](#testing)
 
-Another blue button should appear to click: *Open Browser*.
+- [Deployment](#deployment)
+    - [Locally](#locally)
+    - [To Heroku](#to-heroku)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [Credits](#credits)
+    - [Code](#code)
+    - [Content](#content)
+    - [Media](#media) 
+    - [Acknowledgements](#acknowledgements)
 
-A blue button should appear to click: *Make Public*,
+- [Disclaimer](#disclaimer)
 
-Another blue button should appear to click: *Open Browser*.
+---
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## **UX** 
+### **Overview**
+An e-commerce site selling womens apparel. Users are able to browse and shop anonymously or register for an account to unlock additional features such as saving default delivery info, order history and save favourite products. 
 
-## Updates Since The Instructional Video
+### **Project Goals**
+The aim of this project was to build a fully functioning, visually appealling, e-commerce site. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- As an owner my goals were:
+    - to encourage users to visit the site
+    - to encourage users to stay on the site
+    - to encourage users to explore the site
+    - to encourage users to buy from the site
+    - to encourage users to return to the site
+    - to encourage users to learn more about Irish Fashion
+    - to encourage users to learn more about Sustainable Fashion
+    - to help users understand the mission and goals of the owner of the site
+    - to curate a blog refleting the views of the owner
+    - to add, edit and delete products
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### **User Stories**
+- **As an anonymus user**:
+    - *I want to immediately understand the purpose of the site*
+    - *I want to be able to easily navigate through the site*
+    - *I want to see a list of available products*
+    - *I want products to be sorted into relevant categories*
+    - *I want to be able to search the site for a specific product*
+    - *I want to be able to view the individual product details*
+    - *I want to be able to select the size of a product*
+    - *I want to be able to adjust the quantity of a product*
+    - *I want to easily view my shopping bag*
+    - *I want to be able to remove items from my shopping bag*
+    - *I want to view the details of what is in my bag*
+    - *I want to recieve a confirmation of my order*
+    - *I want to be able to checkout securely*
+    - *I want to be able to contact the store*
+    - *I want the option to sign up for a newsletter*
+    - *I want confirmation that I have signed up for the newsletter*
+    - *I want the option to unsubscribe from the newsletter*
+    - *I want to receive confirmation that I have unsubscribed from the newsletter*
+    - *I want to understand the mission and goals of the store*
+    - *I want a site that appeals to me visually*
+    - *I want to be able to create and account*
+    - *I want to know where I am on the site at any time*
+    - *I want to view my bag total*
+    - *I want the confirmation of my order to include the details of my order*
+    - *I want to be informed of actions I make and whether they are successful or not*
+    - **
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- **As a registered user**:
+    - *I want to be able to log in and out easily*
+    - *I want to be able to reset my password*
+    - *I want to receive confirmation that I have registered for the site*
+    - *I want to have a personal profile*
+    - *I want to be able to view my order history*
+    - *I want to be able to save my favourite products to my profile*
+    - *I want to be able to remove products from my favourites*
+    - *I want to be able to save my default delivery details*
+    - *I want to be able to easily update my delivery info*
+    - *I want to be able to deactivate my account*
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- **As a super user**:
+    - *I want to be able to access the admin panel*
+    - *I want to be able to add/edit/delete categories*
+    - *I want to ba able to add/edit/delete subcategories*
+    - *I want to be able to add new products*
+    - *I want to be able to edit/delete existing products*
+    - *I want to be able to add new blog posts*
+    - *I want to be able to edit/delete existing blog posts*
+    - *I want to be able to view/manage users of the site*
+    - *I want to be able to view/manage messages from users*
+    - *I want to be able to view/manage newsletter subscriptions*
+    - *I want to be able to view/manage orders*
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### **Design Process**
+- As a dedicated follower of fashion myself, I wanted to design a site that envoked what I feel when I think about fashion. To me fashion is a form of self-expression, creativity and style, not just what is trendy at the moment or the latest look or what celebrities are wearing.  Clothing can help you feel confident, can boost your self-esteem and even cheer you up when your not feeling great. This was what I thought about while designing this site.
+- I wanted the app to be bright, colourful and visually appealling.
+- I wanted the app to be intuitive and easy to navigate
+- I wanted to achieve a clean, uncluttered aesthetic
+- I used [Bootstrap4](https://getbootstrap.com/) for the layout and structure of the site
+- I used various [Bootstrap4](https://getbootstrap.com/) classes and components to enchance and structure different elements.
+- I wanted the site to be responsive across all commonly used devices.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+ #### **Development Process**
+ Once I decided to build a clothing store, I broke the development process down into stages to help me manage the project.
+ - Figure out what I as a user want/like and expect from an online store.
+    - What elements enchance the online shopping experience for me
+    - What don't I like when shopping online
+    - What is the minimum I expect from an online store
+- Decide on a general colour scheme
+- Decide on what apps are necessary and what additional apps I would like to include
+- Decide on what features in each of those apps are necessary and what additional features I would like to include
+- Create wireframes for each page for mobile, tablet and desktop
+- Create a dataset for the products app
+- Create a minimum viable product
+    - Set up Django
+    - Set up Allauth
+    - Create the base.html and navigation with common elements, links and scripts
+    - Create the home app -  basic logic, functionality, structure and style
+    - Create the products app - basic logic, functionality, structure and style
+    - Create the bag app - basic logic, functionality, structure and style
+    - Create the checkout app - basic logic, functionality, structure and style
+    - Create the profile app - basic logic, functionality, structure and style
+    - Create common elements - footer, toasts, messages
+    - Create the contact app - basic logic, functionality, structure and style
+    - Create the blog app - basic logic, functionality, structure and style
+- Add logic and functionality for additional features
+- Adjust layout and styling
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### **Colour Scheme**
+- I wanted the colour scheme to be bold, bright and vibrant, feelings which are envoked when I think of fashion, while still being easily readable.  
 
---------
+**Colour Palette**
 
-Happy coding!
+<img src="readme/readme_images/colour_palette.png">
+
+
+#### **Primary Colour Palette**
+
+<img src="readme/readme_images/primary_palette.png">
+
+I chose #000, #ee6aa7 and #dee2e6 as my primary colour palette. I felt these colours worked well together and were in keeping with the overall aesthetic of the site.  
+
+<img src="readme/readme_images/black.png">
+
+I chose this colour for the as it enchancd any colour it was paired with, helping to improve readability.  
+
+- **Site Wide**:
+    - background for navbar/main header
+    - delivery banner text
+    - box shadow on delivery banner
+    - border/text on buttons
+    - background for buttons on hover
+    - background for copyright info 
+
+
+<img src="readme/readme_images/ee6aa7.png">
+
+I chose this colour as it stood out well against #000 and #dee2e6, and was bright and vibrant.   
+
+- **Site Wide**: 
+    - brand logo
+    - nav header icons
+    - navlinks on hover
+    - all headings/titles
+    - button backgrounds
+    - button text on hover
+    - footer text (apart from home page)
+    - footer icons
+    - copyright text
+    - toast success border
+    - form box shadow
+    - scroll button back ground  
+    - pink divider
+
+- **Products Pages**:
+    - breadcrumb text
+    - sort select box text
+    - carousel titles
+    - edit buttons on product cards
+    - category/subcategory button text
+    - category/subcategory button background on hover
+
+- **Product Detail Page**:
+    - breadcrumb text
+    - product name
+    - tag icons
+    - size select box text/ title
+    - quantity title
+    - quantity button background
+    - random carosuel title
+
+- **Shopping Bag**:
+    - table titles
+    - quantity link/buttons
+    - product name
+
+- **Checkout**:
+    - placeholder text
+    - text
+
+- **Checkout Success**:
+    - order info text
+
+- **Blog/Blog Detail**
+    - blog titles
+    - links
+
+- **Contact**:
+    - text  
+
+
+<img src="readme/readme_images/dee2e6.png">
+
+I chose this colour for the background across the site. I felt that it enchanced the other colours and that they stood out well against it, helping to improve readability.  
+
+- **Site Wide**:
+    - background colour (apart from home page)
+    - footer background colour (apart from home page)
+    - main nav links
+    - nav links dropdowns background
+    - search box background
+
+- **Home page**:
+    - footer text  
+  
+#### **Secondary Colour Palette**  
+
+<img src="readme/readme_images/secondary_palette.png">
+
+I chose these colours for their similarity to the primary colour palette. I felt they worked well with the primary colour palette and highlighted certain elements without being overbearing, and while still offering enough differentiation for the user to notice the colour change.  
+
+
+<img src="readme/readme_images/ff077b.png">
+
+I choose this colour for its similarity to #ee6aa7 while being a little bolder and standing out better against the darker grey.  
+
+- **Site Wide**:
+    - Navlink dropdown text colour
+
+- **Products Page**:
+    - product name/price on cards  
+
+- **Product Detail Page**:
+    - product name/price on randowm carousel  
+
+<img src="readme/readme_images/c7cbcf.png">
+
+I choose this colour for its similarity to #dee2e6 while being a little bolder and standing out better against it.  
+
+- **Site Wide**:
+    - footer top border and box shadow (apart from home page)
+    - background of scroll button on hover
+    - scroll button icon
+
+- **Home Page**:
+    - unsubscribe link in home footer
+
+- **Products Page**:
+    - background on product card
+    - product card border
+    - background on category/subcategory badges
+    - text colour on category/subcategory badges on hover  
+
+<img src="readme/readme_images/8d9391.png">
+
+I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them and make them standout from the page.  
+
+
+- **Home Page**:
+    - divider in footer
+    - scroll button box shadow
+
+- **Products Page**:
+    - box shadow on category badges
+    - box shadow on product cards
+
+- **Shopping Bag**:
+    - remove from bag link  
+
+#### **Images**
+- Home page hero image:
+    - I chose this image as when I think of street, again I think of self-expression and creativity words I also associate with fashion. 
+
+- Dataset:
+    - I created my own dataset as I wanted the product images to fit with the overall aesthetic of the site and the message it is trying to send. 
+    - I used images from [Unsplash](https://unsplash.com/), [Pixabay](https://pixabay.com/) and [Pexels](https://www.pexels.com/). Full image credits can be found [here](IMAGE_CREDITS.md).
+    - All product info is ficticious.
+
+#### **Typography**
+- For the brand logo, page titles and headings I wanted a font that fit with the street art image, that was creative and artisitc.
+- I chose [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display?preview.text_type=custom&preview.text=The%20Velvet%20Goldmine&category=Display,Handwriting&sort=date&query=sed) as I felt it was had a graffiti/street art feel to it and a bit of an edge. 
+- Which also represented the products the store is selling - edgy, cool, artistic, creative
+- For the main home page title I chose [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker?preview.text=Discover%20Your%20Style&preview.text_type=custom). I chose this font for its readability while also fitting into the overall theme of graffiti/street art.
+- I felt that using Sedgwick Ave Display here would be too much for the home page and come across as messy. 
+- For the body text I chose [Quicksand](https://fonts.google.com/specimen/Quicksand?preview.text_type=custom&preview.text=The%20Velvet%20Goldmine&sort=date&query=quick). I felt it contrasted well with the artistic nature of Sedgwick Ave Display.
+- I felt it was a clean font with good readability and fit the overall aesthetic of the site.  
+
+
+#### **Design Decisions**
+- different heading fonts
+- search bar on left
+- categories carousel
+
+
+#### **Wireframes**
+- I used [Balsamiq](https://balsamiq.com/wireframes/) to create the wireframes for my project.
+- I create 3 sets of wireframes for Desktop, Tablet and Mobile.
+- To view the wireframes please click the links below:
+
+**Desktop**  
+- Desktop wireframes can be found [here](https://github.com/aineon/velvet-goldmine/tree/master/readme/wireframes/desktop_wireframes)  
+
+**Tablet**  
+- Tablet wireframes can be found [here](https://github.com/aineon/velvet-goldmine/tree/master/readme/wireframes/tablet_wireframes) 
+
+**Mobile** 
+ - Mobile wireframes an be found [here](https://github.com/aineon/Fvelvet-goldmine/tree/master/readme/wireframes/mobile_wireframes) 
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+
+## **Database Model**
+SQLlite was used in Development and PostgresSQL was used for Deployment
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+## **Features**
+### **CRUD Functionality**
+- While any user of the site can read the data, only admins/superusers can create, update and delete data on the site. 
+
+### **Existing Features**
+- The site contains 7 seperate custom apps. Each app has its own set of features.
+    - Home
+    - Products
+    - Bag
+    - Checkout
+    - Contact
+    - Blog
+    - Profile  
+- It also uses [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) to manage authentication, registration, account management and 3rd party account authentication.  
+
+#### **Site wide Features**
+- **_Toast Messages_**
+- There are 4 types of toast messages:
+    - Success
+    - Info
+    - Warning
+    - Error
+- They appear site wide when particular actions are carried out by the user
+- They provide feedback on the action taken
+
+- **_Automated Emails_**
+- Automated emails are sent to the user when certain actions are performed.
+    - Account verification email when a user registers for an account
+    - Password reset email
+    - Order confirmation email when a user completes an order
+    - Confirmation of message received when a user sends a message 
+    - Confirmation of newsletter sign up when a user signs up for the newsletter
+    - Confirmation of unsubscribe when a user unsubscribes from the newsletter
+
+- **_Navbar/Sidenav_**:
+    - To allow easy navigation across the site
+                        
+- **_Header_**:
+    - Identifies the site name
+    - Search bar on larger devices and search icon for dropdown search bar on smaller devices
+    - User icon: 
+        - With dropdown for login/registration links for logged out users
+        - Profile and logout links for logged in users
+        - Blog management, product management, profile and log out links for superusers
+    - Shopping bag icon:
+        - Displays current bag total
+        - links to shopping bag page
+    - Contact icon:
+        - links to contact page  
+
+- **_Delivery Banner_**
+    - Informs users of the free delivery threshold
+
+- **_Footer_**:
+    - Newsletter signup form to make it available site wide
+    - Newsletter unsubscribe links
+    - Links to social media pages (links open login pages to these sites as the pages don't exist)
+    - Link to contact page
+    - Copyright information 
+
+#### **Custom App Featues**
+#### **Home App**
+- Hero text
+- Shop Now button which links to the products page
+
+#### **Products App**
+**Products Page**:
+-  **_Category/Subcategory Carousel_**
+    - Rotating carousel that contains images and titles for categories/subcategories
+    - Each carousel cell is a link to the category/subcategory it represents
+- **_Breadcrumbs_**
+    - Allow users to track their file path and easily navigate back to previous pages without having to use the navbar 
+- **_Current Category/Subcategory Page title_**
+    - Identifies which category/subcategory the user is currently browsing
+- **_Category/Subcategory Badges_**
+    - Identifies the categories/subcategories linked to the current page
+    - Each badge is a link to that category/subcategory
+- **_Sort Box_**:
+    - Allows users to sort the products based on the defined criteria
+- **_Product Count_**:
+    - Tells the user how many products are on the current page 
+    - If a search has been performed informs user of the product count related to that search including what was searched for
+    - If not on *All Products* page contains a link back to *All Products* page
+- **_Product Cards_**:
+    - Links to the product detail page
+    - Displays product image, name and price
+    - For superusers contains edit/delete links 
+- **_Scroll Button_**:
+    - Appears when users scroll down 100px from the top of the page
+    - Brings user back to the top of the page when clicked  
+
+**Product Detail Page**:
+- **_Breadcrumbs_** 
+    - informs user of the category, subcategory and product name of the current page
+- **_Product Details_**
+    - Larger product image which opens the product image on a new page if clicked
+    - Product name
+    - Product Price
+    - Product description
+- **_Add to Favourites Icon_**
+    - Heart Icon with tooltip which allows logged in users to add that product to their favourites list
+    - If product is not a favourite tooltip appears with *Add to Favourites* text
+    - If product is in the users favourite list tooltip appears with *Remove from Favourites* text
+    - If user saves product toast success message is triggered informing the user they have saved the product with a link to *View Favourites*
+    - If user removes from favourites toast success message is triggered informing them that the product has been removed
+- **_Product tags_** 
+    - With the subcategory/category of the product where applicable
+- **_Edit/delete links_** 
+    - Only visible to superuser  
+- **_Size select box_** 
+    - For products that have sizes
+    - Dropdown lists sizes available
+- **_Quantity select box_** 
+    - Can be increased/decreased within the set range
+- **_Keep Shopping button_** 
+    - Links back to the *All Products* page
+- **_Add to bag button_** 
+    - Adds the current product along with the qty selected and size if applicable to the shopping bag.
+    - If a product is added to the bag a toast success message appears informing the user of 
+        - what has been added to the bag - name, price, size, qty
+        - if the bag total is below the free delivery threshold, informs the user how much more they need to spend to reach it
+        - button which brings the user to the secure checkout page
+- **_Random product carousel_**
+    - Generates a carousel of 7 random products 
+    - Each cell contains product image, name and price
+    - Links to that product detail page
+
+**Product Management**
+- Only accessible if superuser
+- Form to add a new product
+
+**Edit Product**
+- Only accessible if superuser
+- Loads selected product details for editing
+
+#### **Bag App**
+- **_Product Info_**
+    - product image, name, size (if applicable) and sku
+- **_Product Price_**
+    - price of individual product
+- **_Product Qty_**
+    - Current qty selected 
+    - Option to adjust qty or remove item from bag
+- **_Subtotal_**
+    - Subtotal for that item
+- **_Bag Total_**
+    - Total cost of all items in the bag
+- **_Delivery Cost_**
+    - Cost of delivery if below free delivery threshold
+- **_Grand Total_**
+    - Total cost of items and delivery
+- **_Free Delivery Threshold_**
+    - If free delivery threshold hold is not reached informs the user of how much more they need to spend to reach it
+- **_Keep Shopping Button_**
+    - Brings user back to *All Products* page
+- **_Secure Checkout Button_**
+    - Brings user to *Secure Checkout* page
+-  **_Category/Subcategory Carousel_**
+    - Rotating carousel that contains images and titles for categories/subcategories
+    - Each carousel cell is a link to the category/subcategory it represents
+- **_Scroll Button_**:
+    - Appears when users scroll down 100px from the top of the page
+    - Brings user back to the top of the page when clicked  
+
+#### **Checkout App**
+**Checkout Page**
+- **_User Details Form_**
+    - Name and email address of the user
+- **_Delvivery Details Form_**
+    - Delivery address for order
+    - If user is logged in there is an option to save the info for future use
+    - If user is not logged in links to log in or create an account if they would like to save the info for future use. 
+    - If info is saved it is display on the users profile page
+- **_Credit Card Form_**
+    - Prompts user to enter credit card details
+    - Informs the user of how much their card will be charged
+- If any of the forms are filled out incorrectly user is prompted to correct the errors
+- **_Adjust Bag Button_**
+    - Brings the user back to the *Shopping bag* page
+- **_Complete Order Button_**
+    - Processes the order 
+    - Redirects to *Checkout Success* page
+- **_Order Summary_**
+    - Product count
+    - Product image, name, qty, size (if applicable) and subtotal
+    - Order total
+    - Delivery charge
+    - Grand total  
+
+**Checkout Success Page**
+- Informs the user a confirmation email will be sent
+- All order details
+- All delivery details
+- Totals
+- Button brings user back to *All Products* page
+
+#### **Contact App**
+**Contact Page**
+- **_Message Form_**
+    - Sender details
+    - Message details
+- **_Send Button_**
+    - Sends message
+- **_Cancel Button_**
+    - Cancels the message
+
+**Newsletter Signup**
+- The newsletter signup form is located in the footer across the site
+- **_Sign Up Button_**
+    - Adds user to the newsletter mailing list
+
+**Newsletter Unsubcribe Page**
+- Can be accessed by the unsubscribe links in the footer
+- When clicked user is redirect to the unsubscribe page which holds the unsubscribe form
+- **_Unsubscribe Button_**
+    - Removes the user from the mailing list
+- **_Cancel Button_**
+    - Returns user to the *All Products* page
+
+#### **Blog App**
+**Blog Page**
+- **_Intro_**
+    - Explains the type of posts that users can expect to find in the blog
+- **_Contact Link_**
+    - Links to the contact page
+- **_Blog Posts_**
+    - Blog title
+    - Edit/delete buttons if superuser
+    - Author (if applicable)
+    - Image (if applicable)
+    - Date Posted
+    - Blog intro
+    - Credits if not original content
+- **_Read More Button_**
+    - Links to Blog detail page
+- **_Scroll Button_**:
+    - Appears when users scroll down 100px from the top of the page
+    - Brings user back to the top of the page when clicked  
+
+**Blog Post Detail Page**
+- **_Blog Post_**
+    - Blog title
+    - Edit/delete buttons if superuser
+    - Author (if applicable)
+    - Image (if applicable)
+    - Date Posted
+    - Blog intro
+    - Credits if not original content
+- **_Read Article Button_**
+    - Visible if not original content
+    - Links to full article page
+- **_Back to Blog Button_**
+    - Brings user back to Blog page
+- **_Scroll Button_**:
+    - Appears when users scroll down 100px from the top of the page
+    - Brings user back to the top of the page when clicked  
+
+**Blog Management**
+- Only accessible if superuser
+- Form to add blog post
+
+**Edit BlogPost**
+- Only accessible if superuser
+- Loads selected blog details for editing
+
+#### **Profiles App**
+**Profile Page**
+- Only accessible if registered user
+- Contains 4 tabs
+    - Favourites
+    - Order History
+    - Default Delivery Info
+    - Deactivate Account
+- **_Favourites Tab_**
+    - Keep Shopping Button - Returns user to the *All Products* page
+    - Contains any products that have been added to favourites
+    - For each product includes:
+        - Product details (same as product detail page)
+        - Favourite Icon to remove product from favourites
+        - Size select box
+        - Qty select box
+        - Add to bag button
+- **_Order History_**
+    - Contains info of previous orders
+- **_Default Delivery Info_**
+    - Form with delivery info
+    - Update button - to update current info
+- **_Deactivate Account_**
+    - Button to deactivate account
+    - Link to contact page
+
+### **Future Features**
+- Add logic to manage inventory
+- Allow registered users to securely save credit/debit card details for future use
+- Allow users to pay using Paypal
+- Allow users to comment on blog posts
+- Include New Arrivals and Vintage/Preloved section
+- Include FAQs section
+- Include Shipping and returns policy  
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+
+## **Technologies Used**
+### **Languages**
+- **HTML** - used to create the structure of the application
+- **CSS** - used to position and style the application 
+- **JavaScript** - used to for interactivity
+- **Python** - used to handle backend
+
+
+### **Libraries and Frameworks**
+- [Django]()
+- [Bootstrap4]()
+- [Stripe]()
+- [Google Fonts](https://fonts.google.com/) 
+- [Font Awesome](https://fontawesome.com/) 
+- [jQuery](https://code.jquery.com/) 
+- [Flickity]()
+- [hover.css](https://ianlunn.github.io/Hover/) 
+- [Pillow]()
+- [Django Crispy Forms]()
+- [Django Allauth]()
+- [Gunicorn]()
+- [Psycopg2]()
+- [Boto3]()  
+
+### **Project Management**
+- [Git](https://git-scm.com/) 
+- [Gitpod](https://gitpod.io/) 
+- [Github](https://github.com/) 
+- [Heroku](https://signup.heroku.com)
+- [AWS]()
+
+
+### **Tools**
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) 
+- [Balsamiq](https://balsamiq.com/wireframes/)
+- [Am I Responsive](http://ami.responsivedesign.is/)
+- [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) 
+- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB)
+- [Favicon](https://favicon.io/favicon-converter/) 
+- [Autoprefixer](https://autoprefixer.github.io/) 
+- [Compress PNG](https://compresspng.com/)
+- [jpg2png](https://jpg2png.com/)
+- [Color-hex](https://www.color-hex.com/)
+
+
+### **Resources**
+- [Django Docs]()
+- [cdnjs](https://cdnjs.com/)
+- [w3schools](https://www.w3schools.com/) 
+- [Stack Overflow](https://stackoverflow.com/)
+- Boutique Ado Project - [Code Institute](https://codeinstitute.net/) Full Stack Frameworks Module
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+## **Testing**
+Full testing documentation can be found [here](TESTING.md).
+
+##### [Back to Table of Contents](#table-of-contents)
+---
+
+## **Deployment**
+This project was developed using Gitpod IDE. The live version of this site is hosted using [Heroku](https://signup.heroku.com/).  
+
+To deploy this project follow the below steps.
+
+The live site can be viewed [here](https://the-velvet-goldmine.herokuapp.com/).  
+
+### **Requirements to run this app**
+- **Python3** 
+- **Django**
+- **Django Allauth**
+- **PIP** package installation
+
+
+
+### **Acknowledgements**
+Thank you to my mentor [Adegbenga Adeye](https://github.com/deye9) and CI tutor support for all their time and patience!
+
+---
+
+## **Disclaimer** 
+All images and content on this website is for educational purposes only.
+
+##### [Back to Table of Contents](#table-of-contents)
+
+--- 
