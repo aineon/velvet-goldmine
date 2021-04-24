@@ -18,13 +18,8 @@
 
 ### **Blog Images**
 - blog1 - Image by <a href="https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2561844">StockSnap</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2561844">Pixabay</a>
-
 - blog2 - Photo by [Ivan Oboleninov](https://www.pexels.com/@vanyaoboleninov) from [Pexels](https://www.pexels.com)
-
-- blog3 - Photo by [EVG Culture](https://www.pexels.com/@evgphotos) from [Pexels](https://www.pexels.com)
-
 - blog4 - Photo by <a href="https://unsplash.com/@amberjmartin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Amber Martin</a> on <a href="https://unsplash.com/s/photos/cotton?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
 - blog5 - [Pexels](https://www.pexels.com/photo/smoke-coming-out-of-factory-pipes-60575/)
 
 ##### [Back to Table of Contents](#table-of-contents)

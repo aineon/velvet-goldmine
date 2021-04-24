@@ -1,4 +1,6 @@
-<img src="/readme/readme_images/">
+<img src="/media/readme_images/">
+
+This project was my final Milestone project for [Code Institute](https://codeinstitute.net/) [Full Stack Diploma in Software Delvelopment](https://codeinstitute.net/full-stack-software-development-diploma/) - Full Stack Frameworks with Django Module.
 
 ## [**Table of Contents**](#table-of-contents)
 
@@ -79,6 +81,7 @@ The aim of this project was to build a fully functioning, visually appealling, e
     - *I want to recieve a confirmation of my order*
     - *I want to be able to checkout securely*
     - *I want to be able to contact the store*
+    - *I want confirmation that my message has been received*
     - *I want the option to sign up for a newsletter*
     - *I want confirmation that I have signed up for the newsletter*
     - *I want the option to unsubscribe from the newsletter*
@@ -90,7 +93,6 @@ The aim of this project was to build a fully functioning, visually appealling, e
     - *I want to view my bag total*
     - *I want the confirmation of my order to include the details of my order*
     - *I want to be informed of actions I make and whether they are successful or not*
-    - **
 
 - **As a registered user**:
     - *I want to be able to log in and out easily*
@@ -890,9 +892,34 @@ echo web: python3 manage.py > Procfile
 - Under **Manual Deploys** select **master** 
 - Click **Deploy Branch**
 - When the app has finished building, click **Open app** button on the top right of the page.
----
+
 
 ##### [Back to Table of Contents](#table-of-contents)
+---
+## **Credits**
+
+### **Code**
+- For the newsletter signup view I watched this [tutorial](https://www.youtube.com/watch?v=Hy94jBBgvpk) by [Master Code Online]() on [YouTube](https://www.youtube.com/)
+- For the newsletter unsubscribe view I watched this [tutorial]() by [Master Code Online]() on [YouTube](https://www.youtube.com/)
+- For the adding favourites view I watched this [tutorial](https://www.youtube.com/watch?v=H4QPHLmsZMU) by [Very Academy](https://www.youtube.com/channel/UC1mxuk7tuQT2D0qTMgKji3w) on [YouTube](https://www.youtube.com/)
+- For Gmail login I read this [article](https://whizzoe.medium.com/in-5-mins-set-up-google-login-to-sign-up-users-on-django-e71d5c38f5d5) by [Zoe Chow](https://whizzoe.medium.com/) on [Medium](https://medium.com/)
+- For Facebook login I read this [article](https://jinkwon711.medium.com/django-allauth-facebook-login-b536444cbc6b) by [Kwon Jinhwan](https://jinkwon711.medium.com/) on [Medium](https://medium.com/)  
+
+### **Content**
+- All product names, prices and descriptions are fictional
+- Hero image on home page -  Image by <a href="https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1209761">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1209761">Pixabay</a>
+- BlogPost - [5 homegrown Irish designers you can support during the pandemic](https://www.image.ie/style/fashion/5-homegrown-irish-designers-can-support-pandemic-188728) from [image.ie](https://www.image.ie/)
+- BlogPost - [The ugly side of fast fashion: This is the scary impact it’s having on our world](https://www.image.ie/editorial/ugly-fast-fashion-scary-impact-world-environment-142426) from [image.ie](https://www.image.ie/)
+- BlogPost - [Fabrics to avoid and embrace if you want to make more sustainable fashion choices](https://www.image.ie/editorial/sustainable-fabrics-146790) from [image.ie](https://www.image.ie/)
+- BlogPost - [10 Irish Fashion Brands You Should Know About](https://theculturetrip.com/europe/ireland/articles/10-irish-fashion-brands-you-should-know-about/) from [TheCutluretrip](https://theculturetrip.com/)
+- Icons were taken from [FontAwesome](https://fontawesome.com/)
+
+### **Media**
+- Product images were taken from [Unsplash](https://unsplash.com/), [Pixabay](https://pixabay.com/) and [Pexels](https://www.pexels.com/). 
+    - Full image credits can be found [here](IMAGE_CREDITS.md).  
+- Blogpost images were taken from [Unsplash](https://unsplash.com/), [Pixabay](https://pixabay.com/) and [Pexels](https://www.pexels.com/). 
+    - Full image credits can be found [here](IMAGE_CREDITS.md). 
+
 
 ### **Acknowledgements**
 Thank you to my mentor [Adegbenga Adeye](https://github.com/deye9) and CI tutor support for all their time and patience!
