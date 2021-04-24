@@ -27,7 +27,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
-# DEBUG = False
 
 
 ALLOWED_HOSTS = ['the-velvet-goldmine.herokuapp.com', 'localhost']
@@ -57,6 +56,7 @@ INSTALLED_APPS = [
     'blog',
     'crispy_forms',
     'storages',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -112,6 +112,8 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -159,6 +161,13 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 WSGI_APPLICATION = 'velvet_goldmine.wsgi.application'
+
+
+GRAPH_MODELS = {
+    'all_applications': False,
+    'group_models': True,
+    'app_labels': ["products", "checkout", "blog", "contact", "profiles"],
+}
 
 
 # Database

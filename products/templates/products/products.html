@@ -10,10 +10,12 @@
 {% endblock %}
 
 {% block content %}
+<main>
     <div class="container-fluid mb-5">
-       
+    <!--Category/subcategory carousel-->
         {% include 'products/includes/carousel.html' %}       
         <hr class="d-none d-lg-block">
+    <!--Breadcrumbs-->
         {% include 'products/includes/breadcrumbs.html' %}
         <div class="row">
             <div class="col text-center">
@@ -163,6 +165,7 @@
         </div>
         
     </div>
+</main>
 {% endblock %}
 
 {% block postloadjs %}

@@ -587,7 +587,6 @@ input[name='q']::placeholder {
 }
 
 /* Blog */
-
 .blog-logo {
     color: #ee6aa7;
     font-family: 'Sedgwick Ave Display', cursive; 
@@ -665,7 +664,6 @@ input[name='q']::placeholder {
 .fade {
     transition: none;
 }
-
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {

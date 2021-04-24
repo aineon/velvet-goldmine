@@ -28,7 +28,7 @@ class BlogForm(forms.ModelForm):
             'original_url': 'Article Link',
             'image': 'Image',
             'credit': 'Original Author/Posted By',
-            'source': 'www.example.com',
+            'source': 'Article Source: www.example.com',
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True
