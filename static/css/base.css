@@ -901,6 +901,7 @@ input[name='q']::placeholder {
         margin-bottom: 250px;
     }
 
+    .display-4,
     .display-3 {
         padding-top: 4.5rem;
     }
