@@ -2,7 +2,6 @@
     <small>
         <nav aria-label="breadcrumb" class="product-breadcrumb">
             <ol class="breadcrumb">
-            <!--   <li class="breadcrumb-item d-none d-md-block form-link-line"><a href="{% url 'products' %}">All Products</a></li> -->
         {% if product.category.name == 'dresses' or product.category.name == 'bottoms' or product.category.name == 'tops_ts' or product.category.name == 'outerwear'%}
                 <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
         {% endif %}
@@ -25,9 +24,7 @@
     <small>
         <nav aria-label="breadcrumb" class="mobile-breadcrumb">
             <ol class="breadcrumb">
-        {% for category in current_categories|slice:":1" %}
-            <!--  <li class="breadcrumb-item form-link-line d-none d-md-block"><a href="{% url 'products' %}">All Products</a></li>--> 
-                
+        {% for category in current_categories|slice:":1" %}     
             {% if current_categories|length > 1 %}
                  <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
             {% elif current_categories|length == 1 and category.name == 'dresses' or category.name == 'bottoms' or category.name == 'tops_ts' or category.name == 'outerwear' %}
@@ -47,7 +44,6 @@
         <nav aria-label="breadcrumb" class="mobile-breadcrumb">
             <ol class="breadcrumb">
         {% if not product %}
-             <!-- <li class="breadcrumb-item d-none d-md-block"><a href="{% url 'products' %}">All Products</a></li>-->  
              {% if current_subcategories %}
                 {% for subcategory in current_subcategories|slice:":1" %}
                     {% if subcategory.category.name == 'dresses' or subcategory.category.name == 'tops_ts' or subcategory.category.name == 'bottoms' %}  
