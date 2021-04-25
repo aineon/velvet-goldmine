@@ -60,7 +60,7 @@ body {
 
 /* Headers */
 .header-container {
-    padding-top: 164px;
+    padding-top: 10.25rem;
 }
 
 .bag-header {
@@ -68,8 +68,8 @@ body {
 }
 
 .banner {
-    border-bottom: 2px solid black;
-    box-shadow: 3px 3px 7px black;
+    border-bottom: 2px solid #000;
+    box-shadow: 3px 3px 7px #000;
 }
 
 .banner-text {
@@ -92,20 +92,25 @@ body {
     font-family: 'Sedgwick Ave Display', cursive;
     color:#ee6aa7;
     font-size: 2rem;
-    margin-top: 10px;
+    margin-top: .625rem;
 }
 
 .mobile-icon {
-        font-size: 1.5rem;
-        margin: 0;
-        color: #ee6aa7;
-        margin-right: 3px;
+    font-size: 1.25rem;
+    margin: 0;
+    color: #ee6aa7;
+    /*margin-right: 3px;*/
+}
+
+.mobile-icon-text {
+    font-size: xx-small;
+    color: #c7cbcf;
 }
 
 /* Bakground Colours */
 
 .bg-black {
-    background-color: black;
+    background-color: #000;
 }
 
 .bg-pink {
@@ -141,7 +146,7 @@ body {
     font-size: 1.75rem;
 }
 
-.fa-search {
+.search-icon {
     font-size: 1.5rem;
 }
 
@@ -183,24 +188,25 @@ a.icon-link {
 
 /* Home Page */
 .home-container {
-    margin-bottom: 130px;
+    margin-bottom: 8.125rem;
 }
 
-.display-3 {
-    font-weight: 500;
-    font-family: 'Permanent Marker', cursive;
-    padding-left: 1.5rem;
-    padding-top: 1.5rem;
-    font-size: 7rem;
-    text-shadow: 5px 5px 9px black;
-}
-
+.display-3,
 .display-4 {
     font-weight: 500;
     font-family: 'Permanent Marker', cursive;
+    text-shadow: 5px 5px 9px #000;
+}
+
+.display-3 {
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    font-size: 7rem;  
+}
+
+.display-4 {
     padding-top: 2.5rem;
     font-size: 6rem;
-    text-shadow: 5px 5px 9px black;
 }
 
 .home-text {
@@ -210,17 +216,17 @@ a.icon-link {
 /* Buttons */
 .shop-now-btn {
     background-color: #ee6aa7;
-    color: black;
+    color: #000;
     font-weight: 700;
     font-size: 1.75rem;
-    border: 3px solid black;
-    box-shadow: 7px 7px 9px black;
+    border: 3px solid #000;
+    box-shadow: 7px 7px 9px #000;
 }
 
 .shop-now-btn:hover,
 .shop-now-btn:active,
 .shop-now-btn:focus {
-    background-color: black;
+    background-color: #000;
     color: #ee6aa7;
     border: 3px solid #ee6aa7;
     box-shadow: 3px 3px 7px #ee6aa7;
@@ -233,33 +239,38 @@ a.icon-link {
 
 .qty-btn {
     background-color: #ee6aa7;
-    color: black;
+    color: #000;
 }
 
 .shop-btn {
     background-color: #ee6aa7;
-    color: black;
-    border: 2px solid black;
+    color: #000;
+    border: 2px solid #000;
     font-weight: 600;
-    box-shadow: 2px 2px 3px black; 
+    box-shadow: 2px 2px 3px #000; 
 }
 
 .shop-btn:hover {
-    background-color: black;
+    background-color: #000;
     color: #ee6aa7; 
+}
+
+.header-btn {
+    background-color: #000;
+    border-color: #000;
 }
 
 
 /* Carousels */
 .carousel-container {
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin-top: 2.5rem;
+    margin-bottom: 3.125rem;
 }
 .carousel-cell {
     width: 25%;
-    margin-right: 10px; 
-    max-height: 250px; 
-    min-height: 220px; 
+    margin-right: .625rem; 
+    max-height: 15.625rem; 
+    min-height: 11.25rem;
 }
 
 .carousel-img {
@@ -302,16 +313,16 @@ a.icon-link {
 .carousel-cell-bag,
 .carousel-cell-random {
     width: 15%;
-    margin-right: 10px;  
+    margin-right: .625rem;  
 }
 
 .carousel-cell-random {
-    height: 240px;
-    padding-bottom: 20px;
+    height: 15rem;
+    padding-bottom: 1.25rem;
 }
 
 .carousel-cell-bag {
-    height: 180px;
+    height: 11.25rem;
 }
 
 .carousel-header {
@@ -368,11 +379,16 @@ a.icon-link {
 }
 
 .product-breadcrumb {
-    padding-top: 50px;
+    padding-top: 3.125rem;
     padding-left: 5px;
 }
 
 /* Products/Product Details */
+.image-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 .product-name {
     font-size: 1.75rem;
     color: #ee6aa7;
@@ -431,7 +447,7 @@ option[selected],
 
 .update-qty {
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 1.5625rem;
     color: #ee6aa7;
 }
 
@@ -487,11 +503,11 @@ a.remove-item small:hover  {
 
 /* Scroll Button */
 .scroll-btn {
-    height: 42px;
-    width: 42px;
+    height: 2.625rem;
+    width: 2.625rem;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1.25rem;
+    right: 1.25rem;
     background-color: #ee6aa7;
     border-radius: 3px;
     box-shadow: 3px 3px 3px #85878a;     
@@ -552,7 +568,7 @@ input[name='q']::placeholder {
 .input-shadow.form-control:focus,
 .input-shadow.form-control:active {
    box-shadow:2px 2px 3px 1px #85878a;
-   border: 1px solid black;
+   border: 1px solid #000;
 }
 
  #id_image {
@@ -607,7 +623,7 @@ input[name='q']::placeholder {
 
 /* Tooltips - from stack overflow */
 .tooltip-inner {
-    max-width: 200px;
+    max-width: 12.5rem;
     padding: 3px 8px;
     color: #000;
     text-align: center;
@@ -628,8 +644,8 @@ input[name='q']::placeholder {
 
 .message-container {
     position: fixed;
-    top: 72px;
-    right: 15px;
+    top: 4.5rem;
+    right: 1rem;
     z-index: 99999999999;
 }
 
@@ -671,10 +687,10 @@ input[name='q']::placeholder {
     height: 0; 
     border-left: 10px solid transparent;
     border-right: 10px solid transparent; 
-    border-bottom: 10px solid black;
+    border-bottom: 10px solid #000;
     position: absolute;
     top: -10px;
-    right: 36px;
+    right: 2.25rem;
     padding-top:3px;
 }
 
@@ -718,7 +734,7 @@ input[name='q']::placeholder {
 .allauth-form-inner-content input:active,
 .allauth-form-inner-content input:focus {
    box-shadow:2px 2px 3px 1px #85878a;
-   border: 1px solid black;
+   border: 1px solid #000;
    background-color: white;
 }
 
@@ -734,18 +750,17 @@ input[name='q']::placeholder {
     background-color: #ee6aa7;
     color: #000;
     border: 2px solid #000;
-    box-shadow: 2px 2px 3px black; 
+    box-shadow: 2px 2px 3px #000; 
 }
 
 .allauth-form-inner-content input[type='submit']:hover {
-    background-color: black;
+    background-color: #000;
     color: #ee6aa7; 
 }
 
 .allauth-form-inner-content input::placeholder {
     color: #ee6aa7
 }
-
 
 .allauth-logo {
     margin-top: 1.5rem;
@@ -755,7 +770,7 @@ input[name='q']::placeholder {
 .social-btn {
     background-color: #ee6aa7;
     border: 2px solid #000;
-    margin-bottom: 10px;
+    margin-bottom: .625rem;
     width: 50%;
     font-weight: 600;
 }
@@ -770,10 +785,16 @@ input[name='q']::placeholder {
 }
 
 .allauth-carousel {
-    margin-top: 40px;
+    margin-top: 2.5rem;
 }
 
 /* Media Queries */
+
+@media only screen and (max-width: 375px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
 
 @media only screen and (max-width: 664px) {
     .shop-now-btn {
@@ -820,8 +841,8 @@ input[name='q']::placeholder {
     }
 
     .scroll-btn {
-        height: 36px;
-        width: 36px;
+        height: 2.25rem;
+        width: 2.25rem;
         font-size: 1rem; 
     }
 
@@ -856,15 +877,15 @@ input[name='q']::placeholder {
     }
     
     .home-container {
-        margin-bottom: 100px;
+        margin-bottom: 6.25rem;
+    }
+
+    .image-container {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 }
 
-/* @media only screen and (min-width: 768px) {
-    .home-container {
-        margin-bottom: 250px;
-    }
-} */
 
 @media only screen and (max-width: 768px) {
     .banner-text {
@@ -872,11 +893,15 @@ input[name='q']::placeholder {
     }
 
     .header-container {
-        padding-top: 100px;
+        padding-top: 7.5rem;
     } 
     
     .newsletter-signup{
         width: 75%;
+    }
+
+    .carousel-cell-bag {
+        height: 7.18rem;
     }
 }
 
@@ -898,7 +923,7 @@ input[name='q']::placeholder {
 
 @media only screen and (min-height: 900px) {
     .home-container {
-        margin-bottom: 250px;
+        margin-bottom: 15.625rem;
     }
 
     .display-4,

@@ -9,7 +9,7 @@
     <a class="nav-link mobile-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-search mobile-icon"></i></div>
-               <p class="my-0 small header-text">Search</p> 
+            <p class="m-0 small mobile-icon-text">Search</p>
         </div>
     </a>
     <div class="dropdown-menu border-0 w-100 rounded-0 my-0" aria-labelledby="mobile-search">
@@ -29,7 +29,8 @@
 </li>
 <li class="list-inline-item dropdown">
     <a class="nav-link mobile-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div><i class="fas fa-user mobile-icon" data-toggle="tooltip" data-placement="bottom" title="My Acccount"></i></div>
+        <div class="text-center"><i class="fas fa-user mobile-icon"></i></div>
+        <p class="m-0 small mobile-icon-text">Account</p>
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
@@ -49,10 +50,15 @@
     <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} nav-link mobile-link d-block d-lg-none" href="{% url 'view_bag' %}">
         <div class="text-center">
             <div>
-                <i class="mobile-icon fas fa-shopping-bag" data-toggle="tooltip" data-placement="bottom"
-                title={% if grand_total %}€{{ grand_total|floatformat:2 }}{% else %}€0.00{% endif %}> 
-                </i>
+                <i class="mobile-icon fas fa-shopping-bag"></i> 
             </div>
+            <p class="m-0 small mobile-icon-text">
+                {% if grand_total %}
+                    €{{ grand_total|floatformat:2 }}
+                {% else %}
+                    €0.00
+                {% endif %}
+            </p>
         </div>
     </a>
 </li>
