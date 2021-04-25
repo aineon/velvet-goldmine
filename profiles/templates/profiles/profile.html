@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col bag-header">
-                <h2 class="logo mb-4 text-center text-capitalize">{{ user.username }}'s Profile</h2>
+                <h1 class="logo mb-4 text-center text-capitalize">{{ user.username }}'s Profile</h1>
                 <hr>
             </div>
         </div>
@@ -99,7 +99,7 @@
                                         {% include 'products/includes/sizes.html' %} 
                     
                                             <div class="col-12 text-center">
-                                                <span class="pb-2 text-pink"><strong >Quantity:</strong></span>
+                                                <span class="text-pink"><strong >quantity:</strong></span>
                                                     <div class="form-group w-50 m-auto">
                                                         <div class="input-group mt-1">
                                                             <div class="input-group-prepend">
@@ -226,4 +226,6 @@
 
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
     <script type="text/javascript" src="{% static 'profiles/js/tabs.js' %}"></script>
+    
+    {% include 'products/includes/qty_input_script.html' %}
 {% endblock %}
