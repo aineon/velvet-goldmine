@@ -15,13 +15,13 @@
     <div class="container">
         <div class="row">
             <div class="col bag-header">
-                <h2 class="text-pink font-weight-bold mb-4 mobile-center">Get in touch</h2>
+                <h1 class="text-pink font-weight-bold mb-4 text-center">Get in touch</h1>
                 <hr>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6 offset-lg-3">
                 <p class="text-pink mobile-center">
                     For enquiries, opportunities, collaborations or just a bit of feedback, drop us a message 
                     <i class="fas fa-heart"></i>
@@ -31,7 +31,7 @@
 
         <!--Message form-->
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3 mb-3">
                 <form method="POST" action="{% url 'contact' %}">
                 {% csrf_token %}
                 {{ form|crispy }}
