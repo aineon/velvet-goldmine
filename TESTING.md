@@ -14,9 +14,7 @@
         - [Create Account](#create-account)
     - [Registered User](#registered-user)
     - [Superuser](#superuser)
-- [Manual Testing](#manual-testing)
-    
-    - 
+- [Manual Testing](#manual-testing) 
 - [Responsiveness](#responsiveness)
 - [Automated Testing](#automated-testing)
 - [Bugs and Issues](#bugs-and-issues)
@@ -131,7 +129,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 - When a user unsubscribes from the newsletter and email is sent confirming that they have unsubscribed
 
 **Blog**:
-**_I want to understand the mission and goals of the store_**
+**_I want to understand the mission and values of the store_**
 - The Intro on the blog page and the blog posts themselves help the user understand the mission of the store
 
 **Create Account**:
@@ -148,13 +146,27 @@ Each _user story_ was tested to ensure site meets user expectations.
 - The *Forgotten Password* link on the login page redirects users to the password reset page where they can enter their email address and recieve instructions on how to reset password
 
 **_I want to receive confirmation that I have registered for the site_**
-- 
-    - *I want to have a personal profile*
-    - *I want to be able to view my order history*
-    - *I want to be able to save my favourite products to my profile*
-    - *I want to be able to remove products from my favourites*
-    - *I want to be able to save my default delivery details*
-    - *I want to be able to easily update my delivery info*
+- When a users registers for an account an email is sent to the email address entered in the form confirming registration
+
+**_I want to have a personal profile_**
+- When a user registers for an account a personal profile page is automatically created for them
+
+**_I want to be able to view my order history_**
+- All previous order details can be found in the *Order History* tab on the profile page
+
+**_I want to be able to save my favourite products to my profile_**
+- Clicking on the heart icon on the product detail page allows registered users to add that item to their favourites
+- These favourites can be viewed or removed in the *Favourites* tab on the profile page
+
+**_I want to be able to remove products from my favourites_**
+- Clicking on the solid heart icon either on the product in the *Favourites tab* or on the product detail page will remove that product from the favourites
+
+**_I want to be able to save my default delivery details_**
+- Registered users can save default delivery details on during checkout by ensuring the *Save Details* box is checked
+- They can also save them on the profile page by filling out the form in the *Default Delivery Tab* and clicking *update info* button
+
+**_I want to be able to easily update my delivery info_**
+- Registered users can update their delivery info by completing the form on the *Default Delviery Info* tab on their profile page
     - *I want to be able to deactivate my account*
 
 **Superuser**:
