@@ -99,7 +99,6 @@ body {
     font-size: 1.25rem;
     margin: 0;
     color: #ee6aa7;
-    /*margin-right: 3px;*/
 }
 
 .mobile-icon-text {
@@ -107,7 +106,7 @@ body {
     color: #c7cbcf;
 }
 
-/* Bakground Colours */
+/* Background Colours */
 
 .bg-black {
     background-color: #000;
@@ -125,6 +124,10 @@ body {
 
 .text-pink {
     color: #ee6aa7;
+}
+
+.text-hot-pink {
+    color: #ff077b;
 }
 
 .text-black {
@@ -794,6 +797,16 @@ input[name='q']::placeholder {
     h1 {
         font-size: 2rem;
     }
+
+    .update-qty {
+        margin-left: 2rem;
+    }
+}
+
+@media only screen and (max-width: 664px) and (min-width: 375px) {
+    .update-qty {
+        margin-left: 4.5rem
+    }
 }
 
 @media only screen and (max-width: 664px) {
@@ -886,7 +899,6 @@ input[name='q']::placeholder {
     }
 }
 
-
 @media only screen and (max-width: 768px) {
     .banner-text {
         font-size: .85rem;
@@ -903,6 +915,7 @@ input[name='q']::placeholder {
     .carousel-cell-bag {
         height: 7.18rem;
     }
+
 }
 
 @media only screen and (min-width: 1020px) {
@@ -912,6 +925,10 @@ input[name='q']::placeholder {
 
     .newsletter-container {
         margin-bottom: 6.5rem;
+    }
+
+    .update-qty {
+        margin-left: 2.5rem;
     }
 }
 
