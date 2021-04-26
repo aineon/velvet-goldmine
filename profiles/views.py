@@ -1,8 +1,11 @@
 from django.shortcuts import (render, reverse, redirect,
                               get_object_or_404,
                               HttpResponseRedirect)
+from django.conf import settings
 from django.contrib import messages
 from django.utils.html import format_html
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string, get_template
 
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -106,6 +109,23 @@ def deactivate_account(request):
     """Deactivate users account"""
     user = request.user
     user.is_active = False
+    # Send email confirming account deactivation
+    from_email = settings.DEFAULT_FROM_EMAIL
+    to_email = [user.email]
+    subject = 'Account Deactivation Successful'
+    body = render_to_string(
+        'profiles/confirmation_emails/deactivate_account_confirm_body.txt')
+    deactivation_confirmation_email = EmailMultiAlternatives(
+                                        subject=subject,
+                                        body=body,
+                                        from_email=from_email,
+                                        to=to_email)
+    html_template = get_template(
+        'profiles/confirmation_emails/deactivate_account_confirm_body.html'
+        ).render()
+    deactivation_confirmation_email.attach_alternative(html_template,
+                                                       'text/html')
+    deactivation_confirmation_email.send()
     user.save()
     messages.success(request, 'Your account has been deactivated')
     return redirect('products')
