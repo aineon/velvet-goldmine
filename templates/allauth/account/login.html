@@ -22,7 +22,7 @@
 
 <div class="row">
     <div class="col-12 col-md-6 text-center">
-      <h4 class="text-pink">Log In</h4>
+      <h4 class="text-pink">Sign In</h4>
         <form class="login w-75 mx-auto" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form|crispy }}
@@ -39,7 +39,7 @@
 
     <div class="col-12 col-md-6 text-center">
       <div class="login-or text-pink font-weight-bold mb-3">
-        <h4>{% trans 'or' %} log in with social media</h4>
+        <h4>{% trans 'or' %} Sign in with social media</h4>
       </div>
         <div class="socialaccount_ballot">
           <ul class="socialaccount_providers list-unstyled">
