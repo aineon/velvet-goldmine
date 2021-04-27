@@ -1,87 +1,110 @@
 #profile-update-form .form-control {
-  border: 1px solid transparent;
-  border-radius: 2px;
-  background-color: white;
-  box-shadow: 1px 1px 3px 1px #ee6aa7;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-}
-
-#profile-update-form .form-control:active,
-#profile-update-form .form-control:focus {
-   box-shadow:2px 2px 3px 1px #85878a;
-   border: 1px solid black;
-}
-
-#profile-update-form input::placeholder {
-    color: #ee6aa7;
-}
-
-#id_default_country option:not(:first-child) {
-    color: #495057;
-}
-
-#id_default_country {
-    color: #ee6aa7;
-}
-
-.order-history {
-    max-height: 450px;
-    overflow-y: auto;
-}
-
-.order-number:hover {
-    color: #ee6aa7;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Tabs */
-.tab-container {
-    margin-bottom: 80px;
-}
-
-.tablinks {
-    background-color: #b1b4b8;
-    color: #ee6aa7;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 1rem;
-    width: 25%;
-    font-weight: 700;
-    box-shadow: 0 -3px 5px #c7cbcf, 0 3px 5px #c7cbcf;
-}
-
-.tabcontent {
-    display: none;
-    min-height: 80%;
-}
-
-.tab button {
-    background-color: #dee2e6;
-    color: #ee6aa7;
-}
-
-.tab button:hover {
-    background-color: #000;
-    color: #ee6aa7;
-}
-
-.tab button.active {
-    background-color: #ee6aa7;
-    color: #000;
-}
-
-.red-icon {
-    color: #cc0000;
-}
-
-@media only screen and (max-width: 425px){
-    .tablinks {
-        font-size: .8rem;
-        padding: 8px 10px;
-    }
-}
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 3px 1px #ee6aa7;
+            box-shadow: 1px 1px 3px 1px #ee6aa7;
+    -webkit-transition: box-shadow 150ms ease;
+    -webkit-transition: -webkit-box-shadow 150ms ease;
+    transition: -webkit-box-shadow 150ms ease;
+    -o-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
+  }
+  
+  #profile-update-form .form-control:active,
+  #profile-update-form .form-control:focus {
+     -webkit-box-shadow:2px 2px 3px 1px #85878a;
+             box-shadow:2px 2px 3px 1px #85878a;
+     border: 1px solid black;
+  }
+  
+  #profile-update-form input::-webkit-input-placeholder {
+      color: #ee6aa7;
+  }
+  
+  #profile-update-form input::-moz-placeholder {
+      color: #ee6aa7;
+  }
+  
+  #profile-update-form input:-ms-input-placeholder {
+      color: #ee6aa7;
+  }
+  
+  #profile-update-form input::-ms-input-placeholder {
+      color: #ee6aa7;
+  }
+  
+  #profile-update-form input::placeholder {
+      color: #ee6aa7;
+  }
+  
+  #id_default_country option:not(:first-child) {
+      color: #495057;
+  }
+  
+  #id_default_country {
+      color: #ee6aa7;
+  }
+  
+  .order-history {
+      max-height: 450px;
+      overflow-y: auto;
+  }
+  
+  .order-number:hover {
+      color: #ee6aa7;
+      font-weight: bold;
+      text-decoration: none;
+  }
+  
+  /* Tabs */
+  .tab-container {
+      margin-bottom: 80px;
+  }
+  
+  .tablinks {
+      background-color: #b1b4b8;
+      color: #ee6aa7;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 1rem;
+      width: 25%;
+      font-weight: 700;
+      -webkit-box-shadow: 0 -3px 5px #c7cbcf, 0 3px 5px #c7cbcf;
+              box-shadow: 0 -3px 5px #c7cbcf, 0 3px 5px #c7cbcf;
+  }
+  
+  .tabcontent {
+      display: none;
+      min-height: 80%;
+  }
+  
+  .tab button {
+      background-color: #dee2e6;
+      color: #ee6aa7;
+  }
+  
+  .tab button:hover {
+      background-color: #000;
+      color: #ee6aa7;
+  }
+  
+  .tab button.active {
+      background-color: #ee6aa7;
+      color: #000;
+  }
+  
+  .red-icon {
+      color: #cc0000;
+  }
+  
+  @media only screen and (max-width: 425px){
+      .tablinks {
+          font-size: .8rem;
+          padding: 8px 10px;
+      }
+  }
