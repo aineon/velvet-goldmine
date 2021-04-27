@@ -1,7 +1,7 @@
 <script type="text/javascript">
 
 // Disable +/- buttons outside 1-99 range
-    function handleEnableDisableBtns(itemId) {
+function handleEnableDisableBtns(itemId) {
         let currentValue = parseInt($(`#id_qty_${itemId}`).val());
         let minusDisabled = currentValue < 2;
         let plusDisabled = currentValue > 98;

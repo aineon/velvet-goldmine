@@ -33,7 +33,6 @@ def contact(request):
                 body,
                 settings.DEFAULT_FROM_EMAIL,
                 [sender_email],
-                fail_silently=False,
             )
 
         else:

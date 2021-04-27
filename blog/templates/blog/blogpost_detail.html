@@ -67,9 +67,9 @@
 
     <!--Links to full article and back to blog-->
         <div class="row">
-            <div class="col-10 offset-1">
+            <div class="col-12">
             {% if post.original_url %}
-                <a href="{{post.original_url}}" target="_blank" class="btn shop-btn rounded-0 float-right mr-1">Read the full article here</a>
+                <a href="{{post.original_url}}" target="_blank" class="btn shop-btn rounded-0 float-right mr-2">Read the full article here</a>
             {% endif %}
                 <a href="{% url 'all_blogposts' %}" class="btn shop-btn rounded-0 float-right mr-1">
                     <span><i class="fas fa-chevron-left pr-1"></i></span>Back to Blog</a>

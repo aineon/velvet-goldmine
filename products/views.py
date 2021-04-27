@@ -52,7 +52,7 @@ def all_products(request):
                 messages.error(request,
                                ("You didn't enter any search criteria!"))
                 return redirect(reverse('products'))
-
+            # Search for query in name, description, subcategory/category name
             queries = Q(name__icontains=query) | Q(
                         description__icontains=query) | Q(
                         subcategory__name__icontains=query) | Q(
