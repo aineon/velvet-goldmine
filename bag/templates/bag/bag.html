@@ -50,7 +50,7 @@
                                 €{{ item.product.price | calc_subtotal:item.quantity  }}</p>
                         </div>
                         <div class="col-12 col-sm-6">
-                            {% include 'bag/includes/qty_form.html' %}
+                            {% include 'bag/includes/qty_form_mobile.html' %}
                         </div>
                     </div>
                     <div class="row">
@@ -140,6 +140,7 @@
 {% block postloadjs %}
 {{ block.super }}
 
+{% include 'bag/includes/qty_input_script_mobile.html' %}
 {% include 'products/includes/qty_input_script.html' %}
 
 <script type="text/javascript">
@@ -159,11 +160,26 @@
 </script>
 
 <script type="text/javascript">
-    // Update quantity on click
-    $('.update-qty').click(function(e) {
-        let form = $(this).prev('.update-form');
-        form.submit();
+    // force qty_input to be between 0-99
+    $('.qty_input').keyup(function () {
+        let qtyVal = $(this).val();
+        if (qtyVal < 0 || qtyVal > 99 || qtyVal.length > 2) {
+            $(this).val('');
+            swal('Oops! Qty must be between 1-99', 'Please enter a valid quantity', 'error');
+        } else {
+            $(this).val(qtyVal);
+        }
     })
+
+    
+    // Update quantity on click
+    $('.update-qty').click(function() {
+        let form = $(this).siblings('form.update-form');
+        let qtyVal = parseInt($(form).find('.qty_input').val());
+        if (/^([0-9]|[1-9][0-9])$/.test(qtyVal)) {
+            form.submit();
+        }
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
@@ -179,5 +195,6 @@
          });
     })
 </script>
+
 
 {% endblock %}

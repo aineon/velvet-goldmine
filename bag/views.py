@@ -74,7 +74,7 @@ def adjust_bag(request, item_id):
             if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
             messages.success(request,
-                             (f'Removed size UK{size.upper()} '
+                             (f'Removed size UK{size} '
                               f'{product.name} from your bag'))
     else:
         if quantity > 0:
