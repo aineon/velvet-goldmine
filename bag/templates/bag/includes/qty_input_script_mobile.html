@@ -7,7 +7,7 @@
             let plusDisabled = currentValue > 98;
             $(`#decrement-qtyM_${itemId}`).prop('disabled', minusDisabled);
             $(`#increment-qtyM_${itemId}`).prop('disabled', plusDisabled);
-        }
+        };
     
     // Ensure proper enabling/disabling of all inputs on page load
         let allQtyInputsMobile = $('.qty_input');
@@ -39,7 +39,7 @@
             let currentValue = parseInt($(closestInput).val());
             $(closestInput).val(currentValue - 1);
             let itemId = $(this).data('item_id');
-            handleEnableDisableBtnsMobile(itemId)
+            handleEnableDisableBtnsMobile(itemId);
         });
     
     </script>

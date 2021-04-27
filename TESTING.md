@@ -9,6 +9,7 @@
         - [Products](#products)
         - [Shopping Bag](#shopping-bag)
         - [Checkout](#checkout)
+        - [Profiles](#profiles)
         - [Contact](#contact)
         - [Blog](#blog)
         - [Create Account](#create-account)
@@ -486,7 +487,6 @@ Each _user story_ was tested to ensure site meets user expectations.
         - Toast error message is triggered informing the user only store owners can do that 
         - User is redirected to the home page
 
-
 ### **Bag App**
 - Accessible to all users by clicking the shopping bag icon
 - Current bag total is visible below the bag icon across the site
@@ -580,6 +580,96 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Redirects user to the *All Products* page
 
 ### **Profiles App**
+- A personal profile is automatically created when a user registers and verfies their emaill address
+- Is accessible to logged in users via the *My Account* dropdown
+- Title displays the users username
+- The *Profile Page* consists of 4 tabs
+    - My Favourites
+    - Order History
+    - Delivery Info
+    - Deactivate Account
+- Each tab can be accessed by using the tab buttons
+    - Tab buttons change colour on hover
+    - Active button is a different colour 
+- **_My Favourites Tab_**
+    - If user has no favourites saved:
+        - Heading is displayed with the text *You haven't saved anything to your favourites*
+        - **_Find Favourites button_**
+            - Redirects user to the *All Products* page
+            - Changes colour on hover
+    - If user has saved products to their favourites:
+        - **_Keep Shopping Button_**
+            - Redirects user to the *All Products* page
+            - Changes colour on hover
+        - Each saved product is displayed as it is on the *Product Detail* Page
+        - **_Heart Icon_**:
+            - Pulses on hover
+            - Triggers tooltip on hover with "Remove from Favourites" 
+            - Icon is solid denoting that it is a favourite
+            - Clicking the icon:
+                - Clicking the icon will remove that product to their favourites 
+                - Toast success message is triggered informing the user that that product has been removed from their favourites 
+        - **_Category/Subcategory Tags_**
+            - Identifies which category/subcategory that product belongs to
+            - Each tag is a link that when clicked redirects user back to that category/subcategory page
+            - Each link is underlined on hover
+        - **_Size Select Box_**:
+            - Only visible on products with sizes
+            - Allows users to choose a desired size from the options available
+            - Clicking the arrow triggers a dropdown of available sizes
+        - **_Quantity Select Box_**:
+            - Allows users to select a quantity for the current product
+            - Quantity can be increased or decreased using the plus or minus buttons within the set range (1 -99)
+            - Minus button is disabled if quantity is 1
+            - Plus button is disabled if quantity is 99
+            - Quantity can also be adjusted by entering a numeric value in the box
+            - If the quantity selected is outside the set range the user is informed that the qty must be between 1 and 99
+        - **_Add to Bag Button_**:
+            - Clicking adds the current product along with the size and qty selected to the bag
+            - Triggers a toast success message: 
+                - informing the user that the product has been added to the bag including the product name, size and quantity.
+            - Changes colour on hover
+- **_Order History Tab_**
+    - If user has no previous orders:
+        - Heading is displayed with the text *You haven't placed any orders*
+        - **_Go shopping button_**
+            - Redirects user to the *All Products* page
+            - Changes colour on hover
+    - If user has placed orders before the order details are displayed here including:
+        - Orders are displayed by the most recent first
+        - **_Order Number_**
+            - When clicked user is redirected to the checkout success page of that order and the order details are displayed
+            - Toast info message is triggered informing the user that this is a past order confirmation and includes the order number for that order
+            - **_Back to Profile Button_**
+                - Redirects the user back to the *Profile Page*
+                - Changes colour on hover
+        - Date, items, qty, sizes and the order total
+- **_Delivery Info Tab_**
+    - Contains the Default Delivery info form
+    - Box shadow of active input field changes colour - from pink to black
+    - Placeholders for each input field inform the user of what information is expected for each field
+    - If user has previously saved delivery info either on the checkout page or by updating the form the form is pre populated with that info
+    - If user has not previously saved delivery info the form will be empty
+    - User can update/save the info in the form by filling out the details and clicking the *update information* button
+    - **_Update Information Button_**
+        - Updates the delivery info of the user
+        - Triggers a Toast success message informing the user their information has been updated
+        - Changes colour on hover
+- **_Deactivate Account Tab_**  
+    - Contains a button which allows users to deactivate their account
+    - Clicking the deactivate account button will trigger a modal asking the user to confirm they want to deactivate their account
+        - Close button cancels the action and closes the modal
+        - Clicking the deactivate account button will deactivate the account
+    - Deactivated users will no longer be able to sign in or view their profile
+    - Confirmation email is sent to the user informing them their account has been deactivated
+    - Users are redirected to the *All Products Page*
+    - **_here link_**
+        - Redirects user to the *Contact* page
+        - Is bold on hover
+- **_Scroll Button_**:
+    - Appears when the user scrolls down 100px from the top of the page.
+    - When clicked returns the user to the top of the page.
+    - Changes colour on hover
 
 ### **Contact App**
 #### **Contact Page**
@@ -812,7 +902,8 @@ Each _user story_ was tested to ensure site meets user expectations.
     - A generated list of 7 random products
     - Each cell contains product image, name and price
     - Each cell is a link to that product
-    - Clicking on a cell redirects user to the *Product Detail* Page of that product  
+    - Clicking on a cell redirects user to the *Product Detail* Page of that product
+
 ## **Responsive Design**
 The app was developed using the _Mobile First_ philosophy.
 
@@ -860,7 +951,7 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 ---
 ## **Automated Testing**
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) - to validate HTML
-    - All errors thrown were related to jinja templating
+    - All errors thrown were related to templating
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - to vaildate CSS Code
     - no errors found
 - [JShint](https://jshint.com/) - to validate Javascript code
@@ -871,7 +962,18 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - no overflow detected
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - generated the below reports:
 
-
+#### **Home App**
+**Home Page**
+- **Desktop**
+    - Performance: 88
+    - Accessiblity: 100
+    - Best Practices: 100
+    - SEO: 100
+- **Mobile**
+    - Performance: 65 - due to background image size
+    - Accessiblity: 100
+    - Best Practices: 100
+    - SEO: 100
 
 
 

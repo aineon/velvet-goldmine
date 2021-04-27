@@ -7,7 +7,7 @@ function handleEnableDisableBtns(itemId) {
         let plusDisabled = currentValue > 98;
         $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
-    }
+    };
 
 // Ensure proper enabling/disabling of all inputs on page load
     let allQtyInputs = $('.qty_input');
@@ -39,7 +39,7 @@ function handleEnableDisableBtns(itemId) {
         let currentValue = parseInt($(closestInput).val());
         $(closestInput).val(currentValue - 1);
         let itemId = $(this).data('item_id');
-        handleEnableDisableBtns(itemId)
+        handleEnableDisableBtns(itemId);
     });
 
 </script>

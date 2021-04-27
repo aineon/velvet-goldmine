@@ -1,7 +1,7 @@
 {% if product %}
-    <small>
-        <nav aria-label="breadcrumb" class="product-breadcrumb">
-            <ol class="breadcrumb">
+    
+    <nav aria-label="breadcrumb" class="product-breadcrumb small">
+        <ol class="breadcrumb">
         {% if product.category.name == 'dresses' or product.category.name == 'bottoms' or product.category.name == 'tops_ts' or product.category.name == 'outerwear'%}
                 <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
         {% endif %}
@@ -15,15 +15,15 @@
             {% endif %}
         {% endif %}
                 <li class="breadcrumb-item font-weight-bold">{{product.name}}</li>
-            </ol>
-        </nav>
-    </small>
+        </ol>
+    </nav>
+    
 {% endif %}
 
 {% if current_categories %}
-    <small>
-        <nav aria-label="breadcrumb" class="mobile-breadcrumb">
-            <ol class="breadcrumb">
+    
+    <nav aria-label="breadcrumb" class="mobile-breadcrumb small">
+        <ol class="breadcrumb">
         {% for category in current_categories|slice:":1" %}     
             {% if current_categories|length > 1 %}
                  <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
@@ -34,15 +34,15 @@
                 <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{category.name}}">{{category.friendly_name}}</a></li>
             {% endif %}
         {% endfor %}
-            </ol>
-        </nav>
-    </small>
+        </ol>
+    </nav>
+   
 
 {% else %}
   
-    <small>
-        <nav aria-label="breadcrumb" class="mobile-breadcrumb">
-            <ol class="breadcrumb">
+   
+    <nav aria-label="breadcrumb" class="mobile-breadcrumb small">
+        <ol class="breadcrumb">
         {% if not product %}
              {% if current_subcategories %}
                 {% for subcategory in current_subcategories|slice:":1" %}
@@ -66,8 +66,8 @@
                 {% endfor %}
             {% endif %}
         {% endif %}
-            </ol>       
-        </nav>
-    </small>
+        </ol>     
+    </nav>
+    
 {% endif %}
 
