@@ -363,7 +363,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 <img src="/media/readme_images/models_auth.png">
 
 3. All Models
-<img src="/media_readme_images/models_all.png">
+<img src="/media/readme_images/models_all.png">
 
 
 ##### [Back to Table of Contents](#table-of-contents)
@@ -383,6 +383,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
     - Blog
     - Profile  
 - It also uses [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) to manage authentication, registration, account management and 3rd party account authentication.  
+- It uses [Stipe Payments Infratructure](https://stripe.com/) to manage the payment system.
 
 #### **Site wide Features**
 - **_Toast Messages_**
@@ -696,6 +697,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 - [Gunicorn](https://gunicorn.org/)
 - [Psycopg2](https://pypi.org/project/psycopg2/)
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)  
+- [Sweet Alert](https://sweetalert.js.org/)
 
 ### **Project Management**
 - [Git](https://git-scm.com/) 
