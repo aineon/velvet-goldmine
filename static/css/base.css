@@ -23,7 +23,8 @@ body {
 
 .dropdown-menu {
     background-color: #dee2e6;    
-    box-shadow: 0px 8px 16px 5px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px 8px 16px 5px rgba(0,0,0,0.7);    
+            box-shadow: 0px 8px 16px 5px rgba(0,0,0,0.7);
 }
 
 .dropdown-item {
@@ -69,7 +70,8 @@ body {
 
 .banner {
     border-bottom: 2px solid #000;
-    box-shadow: 3px 3px 7px #000;
+    -webkit-box-shadow: 3px 3px 7px #000;
+            box-shadow: 3px 3px 7px #000;
 }
 
 .banner-text {
@@ -137,9 +139,15 @@ body {
 /* Icons */
 /* from Bulma */
 .icon {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
 }
@@ -223,7 +231,8 @@ a.icon-link {
     font-weight: 700;
     font-size: 1.75rem;
     border: 3px solid #000;
-    box-shadow: 7px 7px 9px #000;
+    -webkit-box-shadow: 7px 7px 9px #000;
+            box-shadow: 7px 7px 9px #000;
 }
 
 .shop-now-btn:hover,
@@ -232,7 +241,8 @@ a.icon-link {
     background-color: #000;
     color: #ee6aa7;
     border: 3px solid #ee6aa7;
-    box-shadow: 3px 3px 7px #ee6aa7;
+    -webkit-box-shadow: 3px 3px 7px #ee6aa7;
+            box-shadow: 3px 3px 7px #ee6aa7;
 }
 
 .btn-grey {
@@ -250,7 +260,8 @@ a.icon-link {
     color: #000;
     border: 2px solid #000;
     font-weight: 600;
-    box-shadow: 2px 2px 3px #000; 
+    -webkit-box-shadow: 2px 2px 3px #000;
+            box-shadow: 2px 2px 3px #000; 
 }
 
 .shop-btn:hover {
@@ -295,7 +306,9 @@ a.icon-link {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     color: #ee6aa7 !important;
     font-family: 'Sedgwick Ave Display', cursive;
     font-weight: 700;
@@ -345,7 +358,8 @@ a.icon-link {
 /* Cards */
 .card {
     border-radius: 5px;   
-    box-shadow: 5px 5px 7px #85878a;
+    -webkit-box-shadow: 5px 5px 7px #85878a;   
+            box-shadow: 5px 5px 7px #85878a;
     border: 2px solid #c7cbcf;
     background-color: #c7cbcf;
 }
@@ -408,7 +422,8 @@ a.icon-link {
     border: 2px solid #c7cbcf;
     margin-right: 2px;
     font-size: 1rem;
-    box-shadow: 2px 2px 4px #85878a;   
+    -webkit-box-shadow: 2px 2px 4px #85878a;
+            box-shadow: 2px 2px 4px #85878a;   
     padding: .5rem;
 }
 
@@ -503,6 +518,7 @@ a.remove-item small:hover  {
 .tag-link:hover {
     font-weight: bold;
 }
+
 .hide {
     display: none;
 }
@@ -516,7 +532,8 @@ a.remove-item small:hover  {
     right: 1.75rem;
     background-color: #ee6aa7;
     border-radius: 3px;
-    box-shadow: 3px 3px 3px #85878a;     
+    -webkit-box-shadow: 3px 3px 3px #85878a;
+            box-shadow: 3px 3px 3px #85878a;     
     font-size: 1.5rem; 
     z-index: 99999999;
 }
@@ -536,14 +553,15 @@ a.remove-item small:hover  {
     background-color: #dee2e6;
     color: #ee6aa7;
     border-top: 2px solid #c7cbcf;
-    box-shadow: 0 -2px 5px #c7cbcf;
+    -webkit-box-shadow: 0 -2px 5px #c7cbcf;
+            box-shadow: 0 -2px 5px #c7cbcf;
     bottom: 0;
 }
 
 .home-overlay {
     height: 100%;
 	width: 100%;
-	background: rgba(0,0,0,0.6);
+	background: rgba(0,0,0,0.7);
 	z-index: -1;  
 }
 
@@ -561,24 +579,43 @@ a.remove-item small:hover  {
 }
 
 /* Forms */
+input[name='q']::-webkit-input-placeholder {
+    color: #ee6aa7;
+    font-family: 'Quicksand', sans-serif;
+}
+input[name='q']::-moz-placeholder {
+    color: #ee6aa7;
+    font-family: 'Quicksand', sans-serif;
+}
+input[name='q']:-ms-input-placeholder {
+    color: #ee6aa7;
+    font-family: 'Quicksand', sans-serif;
+}
+input[name='q']::-ms-input-placeholder {
+    color: #ee6aa7;
+    font-family: 'Quicksand', sans-serif;
+}
 input[name='q']::placeholder {
     color: #ee6aa7;
     font-family: 'Quicksand', sans-serif;
 }
 
 .input-shadow {
-    box-shadow: 1px 1px 3px 1px #ee6aa7;
+    -webkit-box-shadow: 1px 1px 3px 1px #ee6aa7;
+            box-shadow: 1px 1px 3px 1px #ee6aa7;
     border: 1px solid transparent; 
 }
 
 .input-shadow.form-control:focus,
 .input-shadow.form-control:active {
-   box-shadow:2px 2px 3px 1px #85878a;
+   -webkit-box-shadow:2px 2px 3px 1px #85878a;
+           box-shadow:2px 2px 3px 1px #85878a;
    border: 1px solid #000;
 }
 
  #id_image {
-     box-shadow: none;
+     -webkit-box-shadow: none;
+             box-shadow: none;
      border: none;
  }
 
@@ -684,6 +721,8 @@ input[name='q']::placeholder {
 }
 
 .fade {
+    -webkit-transition: none;
+    -o-transition: none;
     transition: none;
 }
 
@@ -732,14 +771,20 @@ input[name='q']::placeholder {
   border: 1px solid transparent;
   border-radius: 2px;
   background-color: white;
-  box-shadow: 1px 1px 3px 1px #ee6aa7;
+  -webkit-box-shadow: 1px 1px 3px 1px #ee6aa7;
+          box-shadow: 1px 1px 3px 1px #ee6aa7;
   -webkit-transition: box-shadow 150ms ease;
+  -webkit-transition: -webkit-box-shadow 150ms ease;
+  transition: -webkit-box-shadow 150ms ease;
+  -o-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, -webkit-box-shadow 150ms ease;
 }
 
 .allauth-form-inner-content input:active,
 .allauth-form-inner-content input:focus {
-   box-shadow:2px 2px 3px 1px #85878a;
+   -webkit-box-shadow:2px 2px 3px 1px #85878a;
+           box-shadow:2px 2px 3px 1px #85878a;
    border: 1px solid #000;
    background-color: white;
 }
@@ -749,19 +794,37 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content input[type='checkbox'] {
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .allauth-form-inner-content input[type='submit'] {
     background-color: #ee6aa7;
     color: #000;
     border: 2px solid #000;
-    box-shadow: 2px 2px 3px #000; 
+    -webkit-box-shadow: 2px 2px 3px #000;
+            box-shadow: 2px 2px 3px #000; 
 }
 
 .allauth-form-inner-content input[type='submit']:hover {
     background-color: #000;
     color: #ee6aa7; 
+}
+
+.allauth-form-inner-content input::-webkit-input-placeholder {
+    color: #ee6aa7
+}
+
+.allauth-form-inner-content input::-moz-placeholder {
+    color: #ee6aa7
+}
+
+.allauth-form-inner-content input:-ms-input-placeholder {
+    color: #ee6aa7
+}
+
+.allauth-form-inner-content input::-ms-input-placeholder {
+    color: #ee6aa7
 }
 
 .allauth-form-inner-content input::placeholder {
