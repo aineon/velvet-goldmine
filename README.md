@@ -10,6 +10,7 @@ This project was my final Milestone project for [Code Institute](https://codeins
     - [User Stories](#user-stories)
     - [Design Process](#design-process)
         * [Development Process](#development-process)
+        * [Desgin Decisions](#design-decisions)
         * [Colour Scheme](#colour-scheme)
         * [Images](#images)
         * [Typography](#typography)
@@ -61,7 +62,7 @@ The aim of this project was to build a fully functioning, visually appealling, e
     - to encourage users to return to the site
     - to encourage users to learn more about Irish Fashion
     - to encourage users to learn more about Sustainable Fashion
-    - to help users understand the mission and goals of the owner of the site
+    - to help users understand the mission and values of the owner of the site
     - to curate a blog refleting the views of the owner
     - to add, edit and delete products
 
@@ -121,7 +122,9 @@ The aim of this project was to build a fully functioning, visually appealling, e
 
 
 ### **Design Process**
-- As a dedicated follower of fashion myself, I wanted to design a site that envoked what I feel when I think about fashion. To me fashion is a form of self-expression, creativity and style, not just what is trendy at the moment or the latest look or what celebrities are wearing.  Clothing can help you feel confident, can boost your self-esteem and even cheer you up when your not feeling great. This was what I thought about while designing this site.
+- As a dedicated follower of fashion myself, I wanted to design a site that envoked what I feel when I think about fashion. To me fashion is a form of self-expression, creativity and style, not just what is trendy at the moment or the latest look or what celebrities are wearing.  Clothing can help you feel confident, can boost your self-esteem and even cheer you up when your not feeling great. This was what I thought about while designing this site. 
+I wanted words like *cool*, *edgy*, *retro*, *stylish*, *creative*, *vibrant* to be what a user thinks of when they visit the site and to associate those words with themselves by extension.
+I used imagery, colour and fonts that I felt captured these feelings and emotions.
 - I wanted the app to be bright, colourful and visually appealling.
 - I wanted the app to be intuitive and easy to navigate
 - I wanted to achieve a clean, uncluttered aesthetic
@@ -129,7 +132,7 @@ The aim of this project was to build a fully functioning, visually appealling, e
 - I used various [Bootstrap4](https://getbootstrap.com/) classes and components to enchance and structure different elements.
 - I wanted the site to be responsive across all commonly used devices.
 
- #### **Development Process**
+#### **Development Process**
  Once I decided to build a clothing store, I broke the development process down into stages to help me manage the project.
  - Figure out what I as a user want/like and expect from an online store.
     - What elements enchance the online shopping experience for me
@@ -154,6 +157,64 @@ The aim of this project was to build a fully functioning, visually appealling, e
     - Create the blog app - basic logic, functionality, structure and style
 - Add logic and functionality for additional features
 - Adjust layout and styling
+
+#### **Design Decisions**
+**From an owners perspcective**:
+- **_Random Product Carousel_**
+    - As an owner I would like to keep visitors on the site for as long as possible and for them to spend money.
+    - A lot of the time when a user visits a site they are looking for a particular product or a particular category of products - shoes or dresses or tops etc, and so may limit their search of the site to that particular category.
+    - By displaying a random group of products on particular pages it was my intention for visitors to see a selection of products that they might not otherwise have seen and to encouarge them to spend more time on the site browsing other categories outside of the original reason for their visit and hopefully purchase something they had not originally intended to buy!
+
+- **_Adding Favourites_**
+    - By allowing users to save products to their favourites it will increase the chance of them buying that particular product, if not on this visit then at a later date.
+    - It also increases the chances that the user will return to the site, therefore increasing the chances that they will make a purchase.
+    - It also helps encourage users to create an account so that they can avail of that feature.
+
+- **_Category/Subcategory Carousel_**
+    - Encourages users to search through categories they may not have intended to browse and spend more time on the site.
+
+- **_Blog_**
+    - I felt the blog was a chance to convey the values of the store to the users.
+    - With people becoming more conscious of their fashion choices, seeking out sustainable fabrics and reducing the impact their buying choices have on the environment I felt it was important for users to understand that those concerns were being addressed by the store. And that we as a business also care about the impact on the environment and being more sustainable.
+    - It can also be used as a tool for users who would like to learn more about sustainable fashion practices and hopefully encourage them to adapt some of those practices themselves.
+    - It will encourage like minded users to shop in the store.
+
+**From a users perspecctive**:
+- **_Category/Subcategory Carousel_**
+    - I was never really a fan of online shopping myself, I found most online stores clunky, and navigation between categorys was always a bit of a chore, but obviously, like everyone, I've had to adapt my shopping habits over the last year with retail stores being closed due to the pandemic. 
+    - My main problem with online shopping was navigation. A lot of the time you had to navigate back to the start or back to a parent category to get to another subcategory.
+    - With that in mind I wanted to make navigation between product categories as easy as possible.
+    - Including the carousel at the top of each products page allows the user to easily navigate around the site without ever having to go back to the *All Products* page or even use the navbar
+    - It also allowed the user to see exactly what type of products were available in the store easily.
+
+- **_Adding Favourites_**
+    - I felt it was important for users to be able to save products they like and have thm available on their profile so they could easily find them again if they wanted to purchase them
+
+- **_Blog_**
+    - For users with an interest in fashion outside of just buying clothes, particularly in the Irish fashion industry and sustainable fashion practices it is a resource where they can learn more.
+
+**General design decisions**
+- **_Brand Logo_**
+    - I placed the Brand Logo in the center of the header as I felt it played an important part in creating the overall aesthetic of the store.
+    - I wanted it to be the focal point of the header
+- **_Search Bar_**
+    - I placed this to the left (on larger devices) as I felt it was important that it was placed in the header and available throughout the store. 
+    - I also felt the the header was more balanced with the brand logo in the centre and the search bar and icons on either side.
+- **_Box Shadows_**
+    - I used box shadows to make elements stand off the page and create more depth.
+    - I felt they contributed to the overall aesthetic and really enchanced the product cards and buttons.
+    - I felt that using them on the header and footer added a degree of seperation to the different sections of the page without being overbearing.
+    - I used a pink box shadow on all form inputs to add a little bit of colour to those pages and to enhance the forms themselves and keep them inline with the aesthetic of the rest of the site.
+- **_Footer Backgrounds_**
+    - I felt that the grey footer on the home page did not fit with the overall aesthetic of the page and cut the page up too much. 
+    - I decided on the opaque overlay over the image as the image is an important part of the aesthetic and wanted it to keep the home page as clean as possible with image as the focal point
+    - I used the same background colour as the body for the footer across the rest of the site as I wanted the page to flow naturally and not be chopped up by using a different colour
+    - I used the box shadow on the top border to give a subtle degree of seperation between the content and the footer.
+- **_Interchanging title fonts_**
+    - I used the Sedgwick Ave Display font for most of the page headings as that font is integral to the overall aesthetic.
+    - However on some pages I felt it was a little over bearing and reduced readibility so I reverted to the body font - Quicksand - for a cleaner look on those pages.
+- **_Carousels_**
+    - I hid the carousels on smaller devices as I felt they made the pages a bit cluttered and busy and more a distraction than an enhancement.
 
 #### **Colour Scheme**
 - I wanted the colour scheme to be bold, bright and vibrant, feelings which are envoked when I think of fashion, while still being easily readable.  
@@ -323,12 +384,6 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 - I felt that using Sedgwick Ave Display here would be too much for the home page and come across as messy. 
 - For the body text I chose [Quicksand](https://fonts.google.com/specimen/Quicksand?preview.text_type=custom&preview.text=The%20Velvet%20Goldmine&sort=date&query=quick). I felt it contrasted well with the artistic nature of Sedgwick Ave Display.
 - I felt it was a clean font with good readability and fit the overall aesthetic of the site.  
-
-
-#### **Design Decisions**
-- different heading fonts
-- search bar on left
-- categories carousel
 
 
 #### **Wireframes**

@@ -313,6 +313,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Carousel arrows can be used to move the carousel left or right
     - Each cell is a link to that category/subcategory
     - When clicked user is redirected to that page
+    - Only visible on medium or larger devices
 - **_Page Title_**:
     - Displays the name of the current page
 - **_Breadcrumbs_**:
@@ -372,7 +373,7 @@ Each _user story_ was tested to ensure site meets user expectations.
             - Clicking it will remove that product from their favourites
             - Toast success message is triggered informing the user that the product has been removed from their favourites
             - Returns the icon to outline
-        If the user in **_not_** logged in:
+        - If the user in **_not_** logged in:
             - Clicking on the icon triggers a toast error message informing the user that they must be logged in to save a product and includes links to sign in or sign up
             - Sign in/up links redirects user to relevant page when clicked
 - **_Category/Subcategory Tags_**:
@@ -415,7 +416,8 @@ Each _user story_ was tested to ensure site meets user expectations.
     - A generated list of 7 random products
     - Each cell contains product image, name and price
     - Each cell is a link to that product
-    - Clicking on a cell redirects user to the *Product Detail* Page of that product  
+    - Clicking on a cell redirects user to the *Product Detail* Page of that product 
+    - Only visible on medium or larger devices 
 
 #### **Add Product Page**:
 - Only accessible to superuser through the Product Management Link under the My Account icon in the header
@@ -525,6 +527,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Carousel arrows can be used to move the carousel left or right
     - Each cell is a link to that category/subcategory
     - When clicked user is redirected to that page
+    - Only visible on medium or larger devices
 
 ### **Checkout App**
 #### **Checkout Page**:
@@ -856,6 +859,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Each cell contains product image, name and price
     - Each cell is a link to that product
     - Clicking on a cell redirects user to the *Product Detail* Page of that product  
+    - Only visible on medium or larger devices
 
 #### **Sign Out Page**
 - Accessisble to logged users via the *My Account* dropdown
@@ -874,6 +878,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Each cell contains product image, name and price
     - Each cell is a link to that product
     - Clicking on a cell redirects user to the *Product Detail* Page of that product  
+    - Only visible on medium or larger devices
 
 #### **Register Page**
 - Accessisble to logged out users via the *My Account* dropdown
@@ -903,6 +908,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Each cell contains product image, name and price
     - Each cell is a link to that product
     - Clicking on a cell redirects user to the *Product Detail* Page of that product
+    - Only visible on medium or larger devices
 
 ## **Responsive Design**
 The app was developed using the _Mobile First_ philosophy.
@@ -957,7 +963,7 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 - [JShint](https://jshint.com/) - to validate Javascript code
     - no errors found
 - [PEP8 Online](http://pep8online.com/) 
-    - no errors found
+    - 4 errors relating to file paths that are too long. 
 - [Python Checker](https://www.pythonchecker.com/) - no errors found
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - no overflow detected
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - generated the below reports:
@@ -966,49 +972,220 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 **Home Page**
 - **Desktop**
     - Performance: 88
-    - Accessiblity: 100
-    - Best Practices: 100
-    - SEO: 100
+    - Accessiblity: 84
+    - Best Practices: 93
+    - SEO: 89
 - **Mobile**
-    - Performance: 65 - due to background image size
-    - Accessiblity: 100
-    - Best Practices: 100
-    - SEO: 100
+    - Performance: 63
+    - Accessiblity: 86
+    - Best Practices: 93
+    - SEO: 91
 
+#### **Products App**
+**All Products Page**
+- **Desktop**
+    - Performance: 62
+    - Accessiblity: 81
+    - Best Practices: 93
+    - SEO: 80
+- **Mobile**
+    - Performance: 45
+    - Accessiblity: 83
+    - Best Practices: 87
+    - SEO: 83
 
+**Product Detail Page**
+- **Desktop**
+    - Performance: 96
+    - Accessiblity: 73
+    - Best Practices: 93
+    - SEO: 90
+- **Mobile**
+    - Performance: 56
+    - Accessiblity: 78
+    - Best Practices: 87
+    - SEO: 92
 
+**Edit/Add BlogPost Page**
+- There were issues affectin the run of lighthouse on this page as it was redirected to the sign in page
+
+#### **Bag App**
+**Shopping Bag Page**
+- **Desktop**
+    - Performance: 70
+    - Accessiblity: 81
+    - Best Practices: 93
+    - SEO: 80
+- **Mobile**
+    - Performance: 68
+    - Accessiblity: 81
+    - Best Practices: 93
+    - SEO: 82
+
+#### **Checkout App**
+- There were issues affectin the run of lighthouse on this page as it was redirected to the products page
+
+#### **Blog App**
+**Blog Page**
+- **Desktop**
+    - Performance: 97
+    - Accessiblity: 83
+    - Best Practices: 93
+    - SEO: 80
+- **Mobile**
+    - Performance: 69
+    - Accessiblity: 83
+    - Best Practices: 93
+    - SEO: 83
+    
+**Blog Detail Page**
+- **Desktop**
+    - Performance: 85
+    - Accessiblity: 83
+    - Best Practices: 93
+    - SEO: 80
+- **Mobile**
+    - Performance: 67
+    - Accessiblity: 83
+    - Best Practices: 93
+    - SEO: 83
+
+**Edit/Add BlogPost Page**
+- There were issues affectin the run of lighthouse on this page as it was redirected to the sign page
+
+#### **Contact App**
+**Contact Page**
+- **Desktop**
+    - Performance: 97
+    - Accessiblity: 79
+    - Best Practices: 93
+    - SEO: 89
+- **Mobile**
+    - Performance: 73
+    - Accessiblity: 79
+    - Best Practices: 93
+    - SEO: 91
+
+**Newsletter Unsubscribe Page**
+- **Desktop**
+    - Performance: 95
+    - Accessiblity: 79
+    - Best Practices: 93
+    - SEO: 89
+- **Mobile**
+    - Performance: 63
+    - Accessiblity: 79
+    - Best Practices: 93
+    - SEO: 91
+
+#### **Profiles App**
+- Lighthouse was unable to generate a report for this page
+
+#### [**Table of Contents**](#table-of-contents)
+---
 
 ## **Bugs and Issues**
 
 ### **Resolved**
 
 **_issue_**:
-
+- Subcategory names not displaying for categories on products pages
 
 **_fix_**:
+- Identify the subcategories related to each category
+- Attach them to that category
+- Needed a bigger query set:
+```
+       if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+            subcategories = Subcategory.objects.filter(category__in=categories)
+```
 
+**_issue_**:
+- Contact confirmation emails not pulling in template variables/ sender email address
 
+**_fix_**:
+- Needed to create an instance of the contact form to pull the relevant info
+- Add the instance to the email
+```
+   instance = form.save()
+    sender_email = instance.email
+    subject = render_to_string(
+        'contact/confirmation_emails/message_confirmation_subject.txt',
+        {'instance': instance})
+    body = render_to_string(
+        'contact/confirmation_emails/message_confirmation_body.txt',
+        {'instance': instance,
+        'contact_email': settings.DEFAULT_FROM_EMAIL})
+```
+**_issue_**:
+- This was only an issue in deployment
+- Newsletter unsubscribe form throwing a ValueError `invalid email address`
 
-Bugs
+**_fix_**: 
+- *to_email* in send_mail function was wrapped in brackets.
+- Removed the brackets and it worked fine
+```
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        to_email,
+            )
+```
+**_issue_**:
+- Unable to add favourites to userprofile
 
+**_fix_**:
+- Needed to get all products then filter for favourites
+```
+    products = Product.objects.all()
+    fav_products = products.filter(favourites=request.user)
+    is_favourite = True
+```
+- Add fav_products to context
 
+**_issue_**:
+- View/function pattern error for favourite product view
 
-subcategory names not displaying for categories
-- identify the sub categories related to each category
-- attach them to that category
-- needed a bigger query set
+**_fix_**:
+- I was initially trying to return the product detail page which was throwing the error.
+- Changed the return from render to HTTPResponsedirect  
+`   return HttpResponseRedirect(request.META['HTTP_REFERER'])`
 
+**_issue_**:
+- +/- buttons not being disabled at 1 / 99 on the *Shopping Bag Page*
+- After refreactoring the shopping bag there was 2 qty forms on the page and the javascript responsible for disabling the buttons was only picking up the first form
 
-bug 
+**_fix_**:
+- Created a second qty form with unique id's and additional javascript to handle this form seperately.
 
-contact confirmation emails not pulling in template variables/ sender email address
-needed to create an instance of the contact form to pull the relevant info
+**_issue_**:
+- Although the +/- buttons were being disable outside of the set range the user could manaually enter a numeric value outside of the set range and add it to the bag.
 
-adding favourites to userprofile
-needed to get all products then filter for favourites
+**_fix_**:
+- Added some javascript to enforce the 0 - 99 range, preventing the user from manaully entering anything about 99 into the input.
+```
+    $('.qty_input').keyup(function () {
+        let qtyVal = $(this).val();
+        if (qtyVal < 0 || qtyVal > 99 || qtyVal.length > 2) {
+            $(this).val('');
+            swal('Oops! Qty must be between 1-99', 'Please enter a valid quantity', 'error');
+        } else {
+            $(this).val(qtyVal);
+        }
+    });
 
-view/function pattern error for favourite product view. change return from render to HTTPResponsedirect
-
+    $('.update-qty').click(function() {
+        let form = $(this).siblings('form.update-form');
+        let qtyVal = parseInt($(form).find('.qty_input').val());
+        if (/^([0-9]|[1-9][0-9])$/.test(qtyVal)) {
+            form.submit();
+        }
+    });
+```
 
 #### [**Table of Contents**](#table-of-contents)
 ---
