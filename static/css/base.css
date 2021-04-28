@@ -47,7 +47,7 @@ body {
 /* Background Image */
 
 .home-bg {
-    background: url('/media/home_bg.png');  
+    background: url('/media/home_bg.png'); 
 }
 
 .bg-image {
@@ -106,6 +106,33 @@ body {
 .mobile-icon-text {
     font-size: xx-small;
     color: #c7cbcf;
+}
+
+/* Home Page */
+.home-container {
+    padding-bottom: 8.125rem;
+}
+
+.display-3,
+.display-4 {
+    font-weight: 500;
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 5px 5px 9px #000;
+}
+
+.display-3 {
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    font-size: 7rem;  
+}
+
+.display-4 {
+    padding-top: 2.5rem;
+    font-size: 6rem;
+}
+
+.home-text {
+    background-color: rgba(222, 226, 230, 0.2);
 }
 
 /* Background Colours */
@@ -196,34 +223,6 @@ a.icon-link {
     color: #cc0000;
 }
 
-
-/* Home Page */
-.home-container {
-    margin-bottom: 8.125rem;
-}
-
-.display-3,
-.display-4 {
-    font-weight: 500;
-    font-family: 'Permanent Marker', cursive;
-    text-shadow: 5px 5px 9px #000;
-}
-
-.display-3 {
-    padding-left: 1.5rem;
-    padding-top: 1.5rem;
-    font-size: 7rem;  
-}
-
-.display-4 {
-    padding-top: 2.5rem;
-    font-size: 6rem;
-}
-
-.home-text {
-    background-color: rgba(222, 226, 230, 0.2); 
-}
-
 /* Buttons */
 .shop-now-btn {
     background-color: #ee6aa7;
@@ -269,11 +268,18 @@ a.icon-link {
     color: #ee6aa7; 
 }
 
-.header-btn {
-    background-color: #000;
-    border-color: #000;
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 0 0 3px 0;
+    color: #85878a;
+    cursor: pointer;
+    font-size: 95%;
 }
 
+.delete-btn:hover {
+    font-weight: bold;
+}
 
 /* Carousels */
 .carousel-container {
@@ -576,6 +582,10 @@ a.remove-item small:hover  {
 
 .newsletter-signup {
     width: 50%;
+}
+
+.footer-text {
+    font-weight: 500;
 }
 
 /* Forms */
@@ -956,23 +966,30 @@ input[name='q']::placeholder {
     }
     
     .home-container {
-        margin-bottom: 6.25rem;
+        padding-bottom: 6.25rem;
     }
 
     .image-container {
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
+
+    
+    .header-container {
+        padding-top: 6.5rem;
+    } 
+}
+
+@media only screen and (max-width: 768px) and (min-width: 662px) {
+    .header-container {
+        padding-top: 7.5rem;
+    } 
 }
 
 @media only screen and (max-width: 768px) {
     .banner-text {
         font-size: .85rem;
     }
-
-    .header-container {
-        padding-top: 7.5rem;
-    } 
     
     .newsletter-signup{
         width: 75%;
@@ -1006,7 +1023,7 @@ input[name='q']::placeholder {
 
 @media only screen and (min-height: 900px) {
     .home-container {
-        margin-bottom: 15.625rem;
+        padding-bottom: 15.625rem;
     }
 
     .display-4,
