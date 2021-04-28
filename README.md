@@ -10,7 +10,7 @@ This project was my final Milestone project for [Code Institute](https://codeins
     - [User Stories](#user-stories)
     - [Design Process](#design-process)
         * [Development Process](#development-process)
-        * [Desgin Decisions](#design-decisions)
+        * [Design Decisions](#design-decisions)
         * [Colour Scheme](#colour-scheme)
         * [Images](#images)
         * [Typography](#typography)

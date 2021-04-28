@@ -5,7 +5,7 @@
             <div class="col-12 col-md-6 text-center">
                 <h4 class="text-pink font-weight-bold text-center pt-2">Newsletter</h4>
                 <hr class="w-75 grey-divider">
-                <p class="text-pink text-center">
+                <p class="text-pink text-center footer-text">
                     Sign up to our fortnightly newsletter to get the exclusive on new arrivals, 
                     special offers, new collaborations and all things fashion directly to your inbox!
                 </p>
@@ -13,11 +13,11 @@
                     <div class="form-group mx-auto mb-1 newsletter-signup">
                         {% csrf_token %}
                         {{ news_sub_form|crispy }}   
-                        <small class="text-pink text-center p-2">We'll never share your email address with anybody else.</small> 
+                        <small class="text-pink text-center p-2 footer-text">We'll never share your email address with anybody else.</small> 
                     </div>
                     <button type="submit" class="btn btn-sm shop-btn rounded-0 text-center text-uppercase">Sign Up</button>
                 </form>
-                <small class="text-pink text-center">If you want to <a href="{% url 'newsletter_unsubscribe' %}" class="form-link-line">unsubscribe</a> 
+                <small class="text-pink text-center footer-text">If you want to <a href="{% url 'newsletter_unsubscribe' %}" class="form-link-line">unsubscribe</a> 
                     from our newsletter please click <a href="{% url 'newsletter_unsubscribe' %}" class="form-link-line">here</a> 
                 </small>
             </div>
@@ -26,12 +26,12 @@
         
         <!--Social media and contact form links-->
             <div class="col-12 col-md-6 text-center">
-                <h4 class="text-pink font-weight-bold text-center pt-2">Social Media</h4>
+                <h4 class="text-pink text-center font-weight-bold pt-2">Social Media</h4>
                     <hr class="w-75 grey-divider">
-                    <p class="text-pink text-center">
+                    <p class="text-pink text-center footer-text">
                         Follow us on social media for the latest news, collections and collaborations.
                     </p>
-                    <ul class="list-inline">
+                    <ul class="list-inline pl-2">
                         <li class="list-inline-item">
                             <a href="https://www.facebook.com/" target="_blank" aria-label="Like us on Facebook">
                              <i class="fab fa-facebook-f footer-icon p-2 hvr-grow"></i>
@@ -51,7 +51,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="mb-0">
+                    <p class="mb-0 footer-text">
                         Or contact us directly
                     </p>
                     <a href="{% url 'contact' %}"> <i class="fas fa-envelope footer-icon p-2 hvr-grow"></i></a>
