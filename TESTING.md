@@ -342,7 +342,12 @@ Each _user story_ was tested to ensure site meets user expectations.
     - If user is **_Superuser_** *Edit* and *Delete* links are visible
     - Clicking the *Edit* link redirects superuser to the *Edit Product* page
     - A toast info message is triggered informing the superuser of what product they are editing
-    - Clicking the *Delete* link deletes the product
+    - Clicking the *Delete* link triggers a *Confirm Delete* modal
+        - Identifies the product that will be deleted
+        - **_Cancel Button_**
+            - Cancels action, closes modal
+        - **_Delete Button_**
+            - Deletes the product
     - A toast info message is triggered informing the superuser of the product that has been deleted.
 - **_Scroll Button_**:
     - Appears when the user scrolls down 100px from the top of the page.
@@ -384,7 +389,12 @@ Each _user story_ was tested to ensure site meets user expectations.
     - If user is **_Superuser_** *Edit* and *Delete* links are visible
     - Clicking the *Edit* link redirects superuser to the *Edit Product* page
     - A toast info message is triggered informing the superuser of what product they are editing
-    - Clicking the *Delete* link deletes the product
+    - Clicking the *Delete* link triggers a *Confirm Delete* modal
+        - Identifies the product that will be deleted
+        - **_Cancel Button_**
+            - Cancels action, closes modal
+        - **_Delete Button_**
+            - Deletes the product
     - A toast info message is triggered informing the superuser of the product that has been deleted.
     - Edit/delete links are bold on hover
 - **_Size Select Box_**:
@@ -481,7 +491,12 @@ Each _user story_ was tested to ensure site meets user expectations.
 
 #### **Delete Product**:
 - Only accessible to superuser through the *delete link on the product cards or product detail page
-- When the Delete link is clicked the product on which the link was clicked is deleted
+- Clicking the *Delete* link triggers a *Confirm Delete* modal
+        - Identifies the product that will be deleted
+        - **_Cancel Button_**
+            - Cancels action, closes modal
+        - **_Delete Button_**
+            - Deletes the product
 - A toast success message is triggered informing the user of the product that was deleted
 - If user tries to access delete via the url:
     - View is secured by @login required decorator which redirects any user not logged in back to the Sign In page
@@ -726,7 +741,12 @@ Each _user story_ was tested to ensure site meets user expectations.
     - If user is **_Superuser_** *Edit* and *Delete* links are visible
     - Clicking the *Edit* link redirects superuser to the *Edit Blog* page
     - A toast info message is triggered informing the superuser of what Blogpost they are editing
-    - Clicking the *Delete* link deletes the Blogpost
+    - Clicking the *Delete* link triggers a *Confirm Delete* modal
+        - Identifies the Post that will be deleted
+        - **_Cancel Button_**
+            - Cancels action, closes modal
+        - **_Delete Button_**
+            - Deletes the post
     - A toast info message is triggered informing the superuser of the blogpost that has been deleted.
     - Edit/delete links are bold on hover
 - **_Read More Button_**
@@ -747,7 +767,12 @@ Each _user story_ was tested to ensure site meets user expectations.
     - If user is **_Superuser_** *Edit* and *Delete* links are visible
     - Clicking the *Edit* link redirects superuser to the *Edit Blog* page
     - A toast info message is triggered informing the superuser of what Blogpost they are editing
-    - Clicking the *Delete* link deletes the Blogpost
+    - Clicking the *Delete* link triggers a *Confirm Delete* modal
+        - Identifies the Post that will be deleted
+        - **_Cancel Button_**
+            - Cancels action, closes modal
+        - **_Delete Button_**
+            - Deletes the post
     - A toast info message is triggered informing the superuser of the blogpost that has been deleted.
     - Edit/delete links are bold on hover
 - **_Back to Blog Button_**
@@ -812,7 +837,12 @@ Each _user story_ was tested to ensure site meets user expectations.
 
 #### **Delete Blogpost**:
 - Only accessible to superuser through the *delete link on the blog or blog detail page
-- When the Delete link is clicked the blogpost on which the link was clicked is deleted
+- Clicking the *Delete* link triggers a *Confirm Delete* modal
+        - Identifies the Post that will be deleted
+        - **_Cancel Button_**
+            - Cancels action, closes modal
+        - **_Delete Button_**
+            - Deletes the post
 - A toast success message is triggered informing the user of the blogpost that was deleted
 - If user tries to access delete via the url:
     - View is secured by @login required decorator which redirects any user not logged in back to the Sign In page
