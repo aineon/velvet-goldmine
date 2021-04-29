@@ -44,8 +44,8 @@ body {
 .small.header-text {
     font-size: 60%;
 }
-/* Background Image */
 
+/* Background Image */
 .home-bg {
     background: url('/media/home_bg.png'); 
 }
@@ -85,7 +85,6 @@ body {
 }
 
 /* Mobile Header */
-
 .mobile-list {
     padding-left: 0;
 }
@@ -136,7 +135,6 @@ body {
 }
 
 /* Background Colours */
-
 .bg-black {
     background-color: #000;
 }
@@ -150,7 +148,6 @@ body {
 }
 
 /* Text Colours */
-
 .text-pink {
     color: #ee6aa7;
 }
@@ -390,7 +387,6 @@ a.icon-link {
 }
 
 /* Breadcrumbs */
-
 .breadcrumb {
     padding: 0;
     background-color: #dee2e6;
@@ -421,7 +417,7 @@ a.icon-link {
     font-size: 1.25rem;
 }
 
-/* Bagdges */
+/* Badges */
 .category-badge {
     color: #ee6aa7;
     background-color: #c7cbcf;
@@ -468,7 +464,6 @@ option[selected],
 }
 
 /* Links */
-
 .update-qty {
     cursor: pointer;
     margin-left: 1.5625rem;
@@ -593,18 +588,22 @@ input[name='q']::-webkit-input-placeholder {
     color: #ee6aa7;
     font-family: 'Quicksand', sans-serif;
 }
+
 input[name='q']::-moz-placeholder {
     color: #ee6aa7;
     font-family: 'Quicksand', sans-serif;
 }
+
 input[name='q']:-ms-input-placeholder {
     color: #ee6aa7;
     font-family: 'Quicksand', sans-serif;
 }
+
 input[name='q']::-ms-input-placeholder {
     color: #ee6aa7;
     font-family: 'Quicksand', sans-serif;
 }
+
 input[name='q']::placeholder {
     color: #ee6aa7;
     font-family: 'Quicksand', sans-serif;
@@ -623,11 +622,11 @@ input[name='q']::placeholder {
    border: 1px solid #000;
 }
 
- #id_image {
+#id_image {
      -webkit-box-shadow: none;
              box-shadow: none;
      border: none;
- }
+}
 
 .btn-file {
     position: relative;
@@ -683,8 +682,7 @@ input[name='q']::placeholder {
     background-color: #ee6aa7;
     border-radius: .25rem;
     font-weight: 600;
-    font-family: 'Quicksand', sans-serif;
-    
+    font-family: 'Quicksand', sans-serif;   
 }
 
 .tooltip.bs-tooltip-auto[x-placement^=right] .arrow::before, .tooltip.bs-tooltip-right .arrow::before {
@@ -694,7 +692,6 @@ input[name='q']::placeholder {
 }
 
 /* Toasts */
-
 .message-container {
     position: fixed;
     top: 4.5rem;
@@ -991,14 +988,13 @@ input[name='q']::placeholder {
         font-size: .85rem;
     }
     
-    .newsletter-signup{
+    .newsletter-signup {
         width: 75%;
     }
 
     .carousel-cell-bag {
         height: 7.18rem;
     }
-
 }
 
 @media only screen and (min-width: 1020px) {
