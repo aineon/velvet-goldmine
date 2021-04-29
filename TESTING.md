@@ -9,7 +9,6 @@
         - [Products](#products)
         - [Shopping Bag](#shopping-bag)
         - [Checkout](#checkout)
-        - [Profiles](#profiles)
         - [Contact](#contact)
         - [Blog](#blog)
         - [Create Account](#create-account)
@@ -23,6 +22,7 @@
     - [Products App](#products-app)
     - [Bag App](#bag-app)
     - [Checkout App](#checkout-app)
+    - [Profiles App](#profiles-app)
     - [Contact App](#contact-app)
     - [Blog App](#blog-app)
     - [Authentication and Authorization](#authentication-and-authorization)
@@ -35,7 +35,7 @@
 ## **User Stories**
 Each _user story_ was tested to ensure site meets user expectations.
 
-### **Anonymus User**
+### **Anonymous User**
 
 ### **General**   
 **_I want to immediately understand the purpose of the site_**
@@ -63,7 +63,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 - If a user navigates to a specific category/subcategory of products there is a *Back to All Products* link which will bring the user back to the *All Products* page
 
 **_I want products to be sorted into relevant categories_**
-- All Products are sorted into relevant and inituitive categories and subcategories
+- All Products are sorted into relevant and intuitive categories and subcategories
 - Categories and subcategories are accessible through the navbar or the carousel across all product pages
 
 **_I want to be able to search the site for a specific product_**
@@ -107,7 +107,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 - I receive clear errors if information has been entered incorrectly
 - I credit card form follows common format
 
-**_I want to recieve a confirmation of my order_**
+**_I want to receive a confirmation of my order_**
 - When an order has been processed successfully the user is redirected to the *Checkout Success* page where all the order details are displayed
 - An email is also sent to the email address provided by the user on the *Checkout Page* with the full order details and delivery details
 
@@ -154,7 +154,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 - Clicking on the user icon in the header gives the user the option to log in or out and redirects them to the relevant page when clicked
 
 **_I want to be able to reset my password_**
-- The *Forgotten Password* link on the login page redirects users to the password reset page where they can enter their email address and recieve instructions on how to reset password
+- The *Forgotten Password* link on the login page redirects users to the password reset page where they can enter their email address and receive instructions on how to reset password
 
 **_I want to receive confirmation that I have registered for the site_**
 - When a users registers for an account an email is sent to the email address entered in the form confirming registration
@@ -180,7 +180,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 - Registered users can update their delivery info by completing the form on the *Delivery Info* tab on their profile page
 
 **_I want to be able to deactivate my account_**
-- Registered users can deactivate their account using the *Deactivate Acccount* button in the deactivate account tab.
+- Registered users can deactivate their account using the *Deactivate Account* button in the deactivate account tab.
 
 **_I want to receive confirmation my account has been deactivated_**
 - When a user deactivates their account they are sent and email confirming the account has been deactivated.
@@ -243,7 +243,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Hovering over an item in the dropdown highlights that item
  - **_Nav brand logo_** clicked to ensure it returns user to index.html
  - **_Access_**:
-    - *Anonymus user* only has access to relevant links:
+    - *Anonymous user* only has access to relevant links:
         - In the main nav:
             - 'All Products', 'Clothing', 'Footwear', 'Swimwear', 'Accessories', 'Blog'
         - In the header: 
@@ -282,11 +282,11 @@ Each _user story_ was tested to ensure site meets user expectations.
 
 #### **Footer**
 - Visible across the site at all device sizes
-- **_Newsletter Setion_**:
+- **_Newsletter Section_**:
     - A valid email address must be added to the form to submit it
     - If the form is not valid the user is informed
     - If the form is valid: 
-        - and the users clicks the *Sign Up* button that email address will be added to the newsletter mailing list if it does not aleady exist in the database
+        - and the users clicks the *Sign Up* button that email address will be added to the newsletter mailing list if it does not already exist in the database
         - If the email address does not exist a toast success message is triggered informing the user they have been added to the mailing list
         - A confirmation email is sent to that email address informing the user they have signed up for the newsletter and includes a link they can follow if they wish to unsubscribe
         - If the email address does exist a toast error message is triggered informing the user that that email address already exists in the database 
@@ -295,7 +295,7 @@ Each _user story_ was tested to ensure site meets user expectations.
         - Submits the form if it is valid
         - Refreshes the page 
     - **_Unsubscribe Links_**:
-        - The words *unsubsrcibe* and *here* in the text below the *Sign Up* button redirect the user to the *Unsubscribe Page*
+        - The words *unsubscribe* and *here* in the text below the *Sign Up* button redirect the user to the *Unsubscribe Page*
 - **_Social Media Section_**:
     - Each of the social media icons redirect the user to those sites (sign up pages as pages don't exist for this site)
     - Icons grow when hovered over
@@ -399,7 +399,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Edit/delete links are bold on hover
 - **_Size Select Box_**:
     - Only visible on products with sizes
-    - Differents size box options for clothing and footwear
+    - Different size box options for clothing and footwear
     - Allows users to choose a desired size from the options available
     - Clicking the arrow triggers a dropdown of available sizes
 - **_Quantity Select Box_**:
@@ -555,7 +555,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Auto focus is on the first field
     - Box shadow of active input field changes colour - from pink to black
     - Required inputs are marked with a *
-    - If it is the first time a registered user is making a purchase or an anonymus user is making a purchase are fields are empty
+    - If it is the first time a registered user is making a purchase or an anonymous user is making a purchase are fields are empty
     - If a logged in user is making a purchase and has previously saved delivery details the form will be populate with those details
     - If the user is anonymous there is a link below the delivery details inviting them to create an account or login if they wish to save their details
         - The *log in* link redirects to the sign in page
@@ -572,7 +572,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 - **_Complete Order Button_**:
     - If Form is **_valid_**:
         - Loading spinner appears while payment is being processed
-        - User is redirect to *Chekout Success* page
+        - User is redirect to *Checkout Success* page
         - Toast success message is triggered informing the user that the order was successfully processed
             - It includes the order number - which is unique and automatically generated for each order
             - Also informs the user that a confirmation email will be sent to the email address provided in the form
@@ -598,7 +598,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Redirects user to the *All Products* page
 
 ### **Profiles App**
-- A personal profile is automatically created when a user registers and verfies their emaill address
+- A personal profile is automatically created when a user registers and verifies their email address
 - Is accessible to logged in users via the *My Account* dropdown
 - Title displays the users username
 - The *Profile Page* consists of 4 tabs
@@ -712,8 +712,8 @@ Each _user story_ was tested to ensure site meets user expectations.
 #### **Newsletter Unsubscribe Page**
 - Can be accessed by all users by clicking the links in the footer
 - Can be accessed via the link in the sign up confirmation email
-- If an invalid email address format is entered useris informed
-- If a vaild email address that exists in the database is entered:
+- If an invalid email address format is entered user is informed
+- If a valid email address that exists in the database is entered:
     - Toast success message is triggered informing the user their email address has been removed from the mailing list
     - A confirmation email is sent informing the user they have been unsubscribed from the mailing list and will no longer receive newsletter emails
     - Page is refreshed
@@ -752,7 +752,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 - **_Read More Button_**
     - Redirects user to the Blogpost detail page for that post
 - If post is not original content:
-    - Orignal Author is credited with a link to the original article
+    - Original Author is credited with a link to the original article
     - **_Original Article Link_**
         - Opens the original article in a new page
     - Origin of the post is credited and when clicked opens the origin site in a new page
@@ -852,7 +852,7 @@ Each _user story_ was tested to ensure site meets user expectations.
 
 ### **Authentication and Authorization**
 #### **Sign In Page**
-- Accessisble to all logged out users via the *My Account* dropdown
+- Accessible to all logged out users via the *My Account* dropdown
 - **_Sign up here link_**
     - Redirects users to the Register page
     - Is bold on hover
@@ -892,7 +892,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Only visible on medium or larger devices
 
 #### **Sign Out Page**
-- Accessisble to logged users via the *My Account* dropdown
+- Accessible to logged users via the *My Account* dropdown
 - **_Cancel Button_**
     - Redirects user to *All Products* page without logging them out
     - Changes colour on hover
@@ -911,7 +911,7 @@ Each _user story_ was tested to ensure site meets user expectations.
     - Only visible on medium or larger devices
 
 #### **Register Page**
-- Accessisble to logged out users via the *My Account* dropdown
+- Accessible to logged out users via the *My Account* dropdown
 - **_sign in link_**
     - Redirects user to *Sign In* page
     - Is bold on hover
@@ -976,7 +976,7 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 - Mobile L - 425px
 - Tablet - 768px
 - Laptop - 1024px
-- Destop - 1440px
+- Desktop - 1440px
 
  It was also tested physically on various devices including:
  - Hauwei P20 Pro
@@ -988,7 +988,7 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 ## **Automated Testing**
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) - to validate HTML
     - All errors thrown were related to templating
-- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - to vaildate CSS Code
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - to validate CSS Code
     - no errors found
 - [JShint](https://jshint.com/) - to validate Javascript code
     - no errors found
@@ -1002,12 +1002,12 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 **Home Page**
 - **Desktop**
     - Performance: 88
-    - Accessiblity: 84
+    - Accessibility: 84
     - Best Practices: 93
     - SEO: 89
 - **Mobile**
     - Performance: 63
-    - Accessiblity: 86
+    - Accessibility: 86
     - Best Practices: 93
     - SEO: 91
 
@@ -1015,96 +1015,96 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 **All Products Page**
 - **Desktop**
     - Performance: 62
-    - Accessiblity: 81
+    - Accessibility: 81
     - Best Practices: 93
     - SEO: 80
 - **Mobile**
     - Performance: 45
-    - Accessiblity: 83
+    - Accessibility: 83
     - Best Practices: 87
     - SEO: 83
 
 **Product Detail Page**
 - **Desktop**
     - Performance: 96
-    - Accessiblity: 73
+    - Accessibility: 73
     - Best Practices: 93
     - SEO: 90
 - **Mobile**
     - Performance: 56
-    - Accessiblity: 78
+    - Accessibility: 78
     - Best Practices: 87
     - SEO: 92
 
 **Edit/Add BlogPost Page**
-- There were issues affectin the run of lighthouse on this page as it was redirected to the sign in page
+- There were issues affecting the run of lighthouse on this page as it was redirected to the sign in page
 
 #### **Bag App**
 **Shopping Bag Page**
 - **Desktop**
     - Performance: 70
-    - Accessiblity: 81
+    - Accessibility: 81
     - Best Practices: 93
     - SEO: 80
 - **Mobile**
     - Performance: 68
-    - Accessiblity: 81
+    - Accessibility: 81
     - Best Practices: 93
     - SEO: 82
 
 #### **Checkout App**
-- There were issues affectin the run of lighthouse on this page as it was redirected to the products page
+- There were issues affecting the run of lighthouse on this page as it was redirected to the products page
 
 #### **Blog App**
 **Blog Page**
 - **Desktop**
     - Performance: 97
-    - Accessiblity: 83
+    - Accessibility: 83
     - Best Practices: 93
     - SEO: 80
 - **Mobile**
     - Performance: 69
-    - Accessiblity: 83
+    - Accessibility: 83
     - Best Practices: 93
     - SEO: 83
     
 **Blog Detail Page**
 - **Desktop**
     - Performance: 85
-    - Accessiblity: 83
+    - Accessibility: 83
     - Best Practices: 93
     - SEO: 80
 - **Mobile**
     - Performance: 67
-    - Accessiblity: 83
+    - Accessibility: 83
     - Best Practices: 93
     - SEO: 83
 
 **Edit/Add BlogPost Page**
-- There were issues affectin the run of lighthouse on this page as it was redirected to the sign page
+- There were issues affecting the run of lighthouse on this page as it was redirected to the sign page
 
 #### **Contact App**
 **Contact Page**
 - **Desktop**
     - Performance: 97
-    - Accessiblity: 79
+    - Accessibility: 79
     - Best Practices: 93
     - SEO: 89
 - **Mobile**
     - Performance: 73
-    - Accessiblity: 79
+    - Accessibility: 79
     - Best Practices: 93
     - SEO: 91
 
 **Newsletter Unsubscribe Page**
 - **Desktop**
     - Performance: 95
-    - Accessiblity: 79
+    - Accessibility: 79
     - Best Practices: 93
     - SEO: 89
 - **Mobile**
     - Performance: 63
-    - Accessiblity: 79
+    - Accessibility: 79
     - Best Practices: 93
     - SEO: 91
 
@@ -1187,16 +1187,16 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
 
 **_issue_**:
 - +/- buttons not being disabled at 1 / 99 on the *Shopping Bag Page*
-- After refreactoring the shopping bag there was 2 qty forms on the page and the javascript responsible for disabling the buttons was only picking up the first form
+- After refactoring the shopping bag there was 2 qty forms on the page and the javascript responsible for disabling the buttons was only picking up the first form
 
 **_fix_**:
-- Created a second qty form with unique id's and additional javascript to handle this form seperately.
+- Created a second qty form with unique id's and additional javascript to handle this form separately.
 
 **_issue_**:
-- Although the +/- buttons were being disable outside of the set range the user could manaually enter a numeric value outside of the set range and add it to the bag.
+- Although the +/- buttons were being disable outside of the set range the user could manually enter a numeric value outside of the set range and add it to the bag.
 
 **_fix_**:
-- Added some javascript to enforce the 0 - 99 range, preventing the user from manaully entering anything about 99 into the input.
+- Added some javascript to enforce the 0 - 99 range, preventing the user from manually entering anything about 99 into the input.
 ```
     $('.qty_input').keyup(function () {
         let qtyVal = $(this).val();
@@ -1216,6 +1216,15 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
         }
     });
 ```
+**_issue_**:
+- On small devices the *My Account* dropdown was pushed off the screen
+
+**_fix_**:
+- Added bootstraps `dropleft` class to the dropdown menu on small and medium devices
+
+### **Existing**
+- Although the product and blog models have been set up with slug fields to use absolute urls, I did not implement during this version of the build due to time constraints.
+- I left them set up as they will be implemented in future versions of the project, particularly as the products app grows and expands.
 
 #### [**Table of Contents**](#table-of-contents)
 ---

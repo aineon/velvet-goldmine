@@ -1,6 +1,6 @@
 <img src="/media/readme_images/mockup.png">
 
-This project was my final Milestone project for [Code Institute](https://codeinstitute.net/) [Full Stack Diploma in Software Delvelopment](https://codeinstitute.net/full-stack-software-development-diploma/) - Full Stack Frameworks with Django Module.
+This project was my final Milestone project for [Code Institute](https://codeinstitute.net/) [Full Stack Diploma in Software Development](https://codeinstitute.net/full-stack-software-development-diploma/) - Full Stack Frameworks with Django Module.
 
 ## [**Table of Contents**](#table-of-contents)
 
@@ -49,10 +49,10 @@ This project was my final Milestone project for [Code Institute](https://codeins
 
 ## **UX** 
 ### **Overview**
-An e-commerce site selling womens apparel. Users are able to browse and shop anonymously or register for an account to unlock additional features such as saving default delivery info, order history and save favourite products. 
+An e-commerce site selling women's apparel. Users are able to browse and shop anonymously or register for an account to unlock additional features such as saving default delivery info, order history and save favourite products. 
 
 ### **Project Goals**
-The aim of this project was to build a fully functioning, visually appealling, e-commerce site. 
+The aim of this project was to build a fully functioning, visually appealing, e-commerce site. 
 
 - As an owner my goals were:
     - to encourage users to visit the site
@@ -63,79 +63,99 @@ The aim of this project was to build a fully functioning, visually appealling, e
     - to encourage users to learn more about Irish Fashion
     - to encourage users to learn more about Sustainable Fashion
     - to help users understand the mission and values of the owner of the site
-    - to curate a blog refleting the views of the owner
+    - to curate a blog reflecting the views of the owner
     - to add, edit and delete products
 
-### **User Stories**
-- **As an anonymus user**:
-    - *I want to immediately understand the purpose of the site*
-    - *I want to be able to easily navigate through the site*
-    - *I want to see a list of available products*
-    - *I want products to be sorted into relevant categories*
-    - *I want to be able to search the site for a specific product*
-    - *I want to be able to view the individual product details*
-    - *I want to be able to select the size of a product*
-    - *I want to be able to adjust the quantity of a product*
-    - *I want to easily view my shopping bag*
-    - *I want to be able to remove items from my shopping bag*
-    - *I want to view the details of what is in my bag*
-    - *I want to recieve a confirmation of my order*
-    - *I want to be able to checkout securely*
-    - *I want to be able to contact the store*
-    - *I want confirmation that my message has been received*
-    - *I want the option to sign up for a newsletter*
-    - *I want confirmation that I have signed up for the newsletter*
-    - *I want the option to unsubscribe from the newsletter*
-    - *I want to receive confirmation that I have unsubscribed from the newsletter*
-    - *I want to understand the mission and values of the store*
-    - *I want a site that appeals to me visually*
-    - *I want to be able to create and account*
-    - *I want to know where I am on the site at any time*
-    - *I want to view my bag total*
-    - *I want the confirmation of my order to include the details of my order*
-    - *I want to be informed of actions I make and whether they are successful or not*
+### **User Stories**  
 
-- **As a registered user**:
-    - *I want to be able to log in and out easily*
-    - *I want to be able to reset my password*
-    - *I want to receive confirmation that I have registered for the site*
-    - *I want to have a personal profile*
-    - *I want to be able to view my order history*
-    - *I want to be able to save my favourite products to my profile*
-    - *I want to be able to remove products from my favourites*
-    - *I want to be able to save my default delivery details*
-    - *I want to be able to easily update my delivery info*
-    - *I want to be able to deactivate my account*
+#### **As an Anonymous User:**
 
-- **As a super user**:
-    - *I want to be able to access the admin panel*
-    - *I want to be able to add/edit/delete categories*
-    - *I want to ba able to add/edit/delete subcategories*
-    - *I want to be able to add new products*
-    - *I want to be able to edit/delete existing products*
-    - *I want to be able to add new blog posts*
-    - *I want to be able to edit/delete existing blog posts*
-    - *I want to be able to view/manage users of the site*
-    - *I want to be able to view/manage messages from users*
-    - *I want to be able to view/manage newsletter subscriptions*
-    - *I want to be able to view/manage orders*
+**General**   
+- _I want to immediately understand the purpose of the site_
+- _I want to be able to easily navigate through the site_
+- _I want a site that appeals to me visually_
+- _I want to know where I am on the site at any time_
+- _I want to be informed of actions I make and whether they are successful or not_**
+
+**Products**   
+- _I want to see a list of available products_
+- _I want products to be sorted into relevant categories_
+- _I want to be able to search the site for a specific product_
+- _I want to be able to view the individual product details_
+- _I want to be able to select the size of a product_
+- _I want to be able to adjust the quantity of a product_
+
+**Shopping Bag**  
+- _I want to easily view my shopping bag_
+- _I want to easily view my bag total_
+- _I want to be able to remove items from my shopping bag_
+- _I want to be able to adjust the quantity of items in my shopping bag_
+- _I want to see any changes I make to my bag reflected in the bag totals_
+- _I want to view the details of what is in my bag_
+
+**Checkout**  
+- _I want to be able to checkout securely_
+- _I want to receive a confirmation of my order_
+- _I want the confirmation of my order to include the details of my order_
+
+**Contact**
+- _I want to be able to contact the store_
+- _I want confirmation that my message has been received_
+- _I want the option to sign up for a newsletter_
+- _I want confirmation that I have signed up for the newsletter_
+- _I want the option to unsubscribe from the newsletter_
+- _I want to receive confirmation that I have unsubscribed from the newsletter_
+
+**Blog**
+-  _I want to understand the mission and values of the store_
+
+**Create Account**   
+- _I want to be able to create an account_
+
+#### **As a Registered User:** 
+- _I want to be able to log in and out easily_
+- _I want to be able to reset my password_
+- _I want to receive confirmation that I have registered for the site_
+- _I want to have a personal profile_
+- _I want to be able to view my order history_
+- _I want to be able to save my favourite products to my profile_
+- _I want to be able to remove products from my favourites_
+- _I want to be able to save my default delivery details_
+- _I want to be able to easily update my delivery info_
+- _I want to be able to deactivate my account_
+- _I want to receive confirmation my account has been deactivated_
+
+
+### **As a Superuser:**
+- _I want to be able to access the admin panel_
+- _I want to be able to add/edit/delete categories_
+- _I want to ba able to add/edit/delete subcategories_
+- _I want to be able to add new products_
+- _I want to be able to edit/delete existing products_
+- _I want to be able to add new blog posts_
+- _I want to be able to edit/delete existing blog posts_
+- _I want to be able to view/manage users of the site_
+- _I want to be able to view/manage messages from users_
+- _I want to be able to view/manage newsletter subscriptions_
+- _I want to be able to view/manage orders_
+
 
 
 ### **Design Process**
-- As a dedicated follower of fashion myself, I wanted to design a site that envoked what I feel when I think about fashion. To me fashion is a form of self-expression, creativity and style, not just what is trendy at the moment or the latest look or what celebrities are wearing.  Clothing can help you feel confident, can boost your self-esteem and even cheer you up when your not feeling great. This was what I thought about while designing this site. 
+- As a dedicated follower of fashion myself, I wanted to design a site that evoked what I feel when I think about fashion. To me fashion is a form of self-expression, creativity and style, not just what is trendy at the moment or the latest look or what celebrities are wearing.  Clothing can help you feel confident, can boost your self-esteem and even cheer you up when your not feeling great. This was what I thought about while designing this site. 
 I wanted words like *cool*, *edgy*, *retro*, *stylish*, *creative*, *vibrant* to be what a user thinks of when they visit the site and to associate those words with themselves by extension.
 I used imagery, colour and fonts that I felt captured these feelings and emotions.
-- I wanted the app to be bright, colourful and visually appealling.
+- I wanted the app to be bright, colourful and visually appealing.
 - I wanted the app to be intuitive and easy to navigate
 - I wanted to achieve a clean, uncluttered aesthetic
 - I used [Bootstrap4](https://getbootstrap.com/) for the layout and structure of the site
-- I used various [Bootstrap4](https://getbootstrap.com/) classes and components to enchance and structure different elements.
+- I used various [Bootstrap4](https://getbootstrap.com/) classes and components to enhance and structure different elements.
 - I wanted the site to be responsive across all commonly used devices.
 
 #### **Development Process**
  Once I decided to build a clothing store, I broke the development process down into stages to help me manage the project.
  - Figure out what I as a user want/like and expect from an online store.
-    - What elements enchance the online shopping experience for me
+    - What elements enhance the online shopping experience for me
     - What don't I like when shopping online
     - What is the minimum I expect from an online store
 - Decide on a general colour scheme
@@ -159,11 +179,11 @@ I used imagery, colour and fonts that I felt captured these feelings and emotion
 - Adjust layout and styling
 
 #### **Design Decisions**
-**From an owners perspcective**:
+**From an owners perspective**:
 - **_Random Product Carousel_**
     - As an owner I would like to keep visitors on the site for as long as possible and for them to spend money.
     - A lot of the time when a user visits a site they are looking for a particular product or a particular category of products - shoes or dresses or tops etc, and so may limit their search of the site to that particular category.
-    - By displaying a random group of products on particular pages it was my intention for visitors to see a selection of products that they might not otherwise have seen and to encouarge them to spend more time on the site browsing other categories outside of the original reason for their visit and hopefully purchase something they had not originally intended to buy!
+    - By displaying a random group of products on particular pages it was my intention for visitors to see a selection of products that they might not otherwise have seen and to encourage them to spend more time on the site browsing other categories outside of the original reason for their visit and hopefully purchase something they had not originally intended to buy!
 
 - **_Adding Favourites_**
     - By allowing users to save products to their favourites it will increase the chance of them buying that particular product, if not on this visit then at a later date.
@@ -179,9 +199,9 @@ I used imagery, colour and fonts that I felt captured these feelings and emotion
     - It can also be used as a tool for users who would like to learn more about sustainable fashion practices and hopefully encourage them to adapt some of those practices themselves.
     - It will encourage like minded users to shop in the store.
 
-**From a users perspecctive**:
+**From a users perspective**:
 - **_Category/Subcategory Carousel_**
-    - I was never really a fan of online shopping myself, I found most online stores clunky, and navigation between categorys was always a bit of a chore, but obviously, like everyone, I've had to adapt my shopping habits over the last year with retail stores being closed due to the pandemic. 
+    - I was never really a fan of online shopping myself, I found most online stores clunky, and navigation between categories was always a bit of a chore, but obviously, like everyone, I've had to adapt my shopping habits over the last year with retail stores being closed due to the pandemic. 
     - My main problem with online shopping was navigation. A lot of the time you had to navigate back to the start or back to a parent category to get to another subcategory.
     - With that in mind I wanted to make navigation between product categories as easy as possible.
     - Including the carousel at the top of each products page allows the user to easily navigate around the site without ever having to go back to the *All Products* page or even use the navbar
@@ -202,22 +222,22 @@ I used imagery, colour and fonts that I felt captured these feelings and emotion
     - I also felt the the header was more balanced with the brand logo in the centre and the search bar and icons on either side.
 - **_Box Shadows_**
     - I used box shadows to make elements stand off the page and create more depth.
-    - I felt they contributed to the overall aesthetic and really enchanced the product cards and buttons.
-    - I felt that using them on the header and footer added a degree of seperation to the different sections of the page without being overbearing.
+    - I felt they contributed to the overall aesthetic and really enhanced the product cards and buttons.
+    - I felt that using them on the header and footer added a degree of separation to the different sections of the page without being overbearing.
     - I used a pink box shadow on all form inputs to add a little bit of colour to those pages and to enhance the forms themselves and keep them inline with the aesthetic of the rest of the site.
 - **_Footer Backgrounds_**
     - I felt that the grey footer on the home page did not fit with the overall aesthetic of the page and cut the page up too much. 
     - I decided on the opaque overlay over the image as the image is an important part of the aesthetic and wanted it to keep the home page as clean as possible with image as the focal point
     - I used the same background colour as the body for the footer across the rest of the site as I wanted the page to flow naturally and not be chopped up by using a different colour
-    - I used the box shadow on the top border to give a subtle degree of seperation between the content and the footer.
+    - I used the box shadow on the top border to give a subtle degree of separation between the content and the footer.
 - **_Interchanging title fonts_**
     - I used the Sedgwick Ave Display font for most of the page headings as that font is integral to the overall aesthetic.
-    - However on some pages I felt it was a little over bearing and reduced readibility so I reverted to the body font - Quicksand - for a cleaner look on those pages.
+    - However on some pages I felt it was a little over bearing and reduced readability so I reverted to the body font - Quicksand - for a cleaner look on those pages.
 - **_Carousels_**
     - I hid the carousels on smaller devices as I felt they made the pages a bit cluttered and busy and more a distraction than an enhancement.
 
 #### **Colour Scheme**
-- I wanted the colour scheme to be bold, bright and vibrant, feelings which are envoked when I think of fashion, while still being easily readable.  
+- I wanted the colour scheme to be bold, bright and vibrant, feelings which are evoked when I think of fashion, while still being easily readable.  
 
 **Colour Palette**
 
@@ -232,7 +252,7 @@ I chose #000, #ee6aa7 and #dee2e6 as my primary colour palette. I felt these col
 
 <img src="/media/readme_images/black.png">
 
-I chose this colour for the as it enchancd any colour it was paired with, helping to improve readability.  
+I chose this colour for the as it enhanced any colour it was paired with, helping to improve readability.  
 
 - **Site Wide**:
     - background for navbar/main header
@@ -277,7 +297,7 @@ I chose this colour as it stood out well against #000 and #dee2e6, and was brigh
     - size select box text/ title
     - quantity title
     - quantity button background
-    - random carosuel title
+    - random carousel title
 
 - **Shopping Bag**:
     - table titles
@@ -301,7 +321,7 @@ I chose this colour as it stood out well against #000 and #dee2e6, and was brigh
 
 <img src="/media/readme_images/dee2e6.png">
 
-I chose this colour for the background across the site. I felt that it enchanced the other colours and that they stood out well against it, helping to improve readability.  
+I chose this colour for the background across the site. I felt that it enhanced the other colours and that they stood out well against it, helping to improve readability.  
 
 - **Site Wide**:
     - background colour (apart from home page)
@@ -331,7 +351,7 @@ I choose this colour for its similarity to #ee6aa7 while being a little bolder a
     - product name/price on cards  
 
 - **Product Detail Page**:
-    - product name/price on randowm carousel  
+    - product name/price on random carousel  
 
 <img src="/media/readme_images/c7cbcf.png">
 
@@ -353,7 +373,7 @@ I choose this colour for its similarity to #dee2e6 while being a little bolder a
 
 <img src="/media/readme_images/8d9391.png">
 
-I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them and make them standout from the page.  
+I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enhance them and make them standout from the page.  
 
 
 - **Home Page**:
@@ -374,10 +394,10 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 - Dataset:
     - I created my own dataset as I wanted the product images to fit with the overall aesthetic of the site and the message it is trying to send. 
     - I used images from [Unsplash](https://unsplash.com/), [Pixabay](https://pixabay.com/) and [Pexels](https://www.pexels.com/). Full image credits can be found [here](IMAGE_CREDITS.md).
-    - All product info is ficticious.
+    - All product info is fictitious.
 
 #### **Typography**
-- For the brand logo, page titles and headings I wanted a font that fit with the street art image, that was creative and artisitc.
+- For the brand logo, page titles and headings I wanted a font that fit with the street art image, that was creative and artistic.
 - I chose [Sedgwick Ave Display](https://fonts.google.com/specimen/Sedgwick+Ave+Display?preview.text_type=custom&preview.text=The%20Velvet%20Goldmine&category=Display,Handwriting&sort=date&query=sed) as I felt it was had a graffiti/street art feel to it and a bit of an edge. 
 - Which also represented the products the store is selling - edgy, cool, artistic, creative
 - For the main home page title I chose [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker?preview.text=Discover%20Your%20Style&preview.text_type=custom). I chose this font for its readability while also fitting into the overall theme of graffiti/street art.
@@ -398,7 +418,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 - Tablet wireframes can be found [here](https://github.com/aineon/velvet-goldmine/tree/master/wireframes/tablet_wireframes) 
 
 **Mobile** 
- - Mobile wireframes an be found [here](https://github.com/aineon/Fvelvet-goldmine/tree/master/wireframes/mobile_wireframes) 
+ - Mobile wireframes an be found [here](https://github.com/aineon/velvet-goldmine/tree/master/wireframes/mobile_wireframes) 
 
 ##### [Back to Table of Contents](#table-of-contents)
 ---
@@ -429,7 +449,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 - While any user of the site can read the data, only admins/superusers can create, update and delete data on the site. 
 
 ### **Existing Features**
-- The site contains 7 seperate custom apps. Each app has its own set of features.
+- The site contains 7 separate custom apps. Each app has its own set of features.
     - Home
     - Products
     - Bag
@@ -438,7 +458,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
     - Blog
     - Profile  
 - It also uses [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) to manage authentication, registration, account management and 3rd party account authentication.  
-- It uses [Stipe Payments Infratructure](https://stripe.com/) to manage the payment system.
+- It uses [Stipe Payments Infrastructure](https://stripe.com/) to manage the payment system.
 
 #### **Site wide Features**
 - **_Toast Messages_**
@@ -485,7 +505,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
     - Link to contact page
     - Copyright information 
 
-#### **Custom App Featues**
+#### **Custom App Features**
 #### **Home App**
 - Hero text
 - Shop Now button which links to the products page
@@ -593,7 +613,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 **Checkout Page**
 - **_User Details Form_**
     - Name and email address of the user
-- **_Delvivery Details Form_**
+- **_Delivery Details Form_**
     - Delivery address for order
     - If user is logged in there is an option to save the info for future use
     - If user is not logged in links to log in or create an account if they would like to save the info for future use. 
@@ -636,7 +656,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enchance them
 - **_Sign Up Button_**
     - Adds user to the newsletter mailing list
 
-**Newsletter Unsubcribe Page**
+**Newsletter Unsubscribe Page**
 - Can be accessed by the unsubscribe links in the footer
 - When clicked user is redirect to the unsubscribe page which holds the unsubscribe form
 - **_Unsubscribe Button_**
