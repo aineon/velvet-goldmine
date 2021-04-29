@@ -51,6 +51,8 @@ This project was my final Milestone project for [Code Institute](https://codeins
 ### **Overview**
 An e-commerce site selling women's apparel. Users are able to browse and shop anonymously or register for an account to unlock additional features such as saving default delivery info, order history and save favourite products. 
 
+The live site can be viewed [here](https://the-velvet-goldmine.herokuapp.com/)
+
 ### **Project Goals**
 The aim of this project was to build a fully functioning, visually appealing, e-commerce site. 
 
@@ -462,22 +464,23 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enhance them 
 
 #### **Site wide Features**
 - **_Toast Messages_**
-- There are 4 types of toast messages:
-    - Success
-    - Info
-    - Warning
-    - Error
-- They appear site wide when particular actions are performed by the user
-- They provide feedback on the action taken
+    - There are 4 types of toast messages:
+        - Success
+        - Info
+        - Warning
+        - Error
+    - They appear site wide when particular actions are performed by the user
+    - They provide feedback on the action taken
 
 - **_Automated Emails_**
-- Automated emails are sent to the user when certain actions are performed.
-    - Account verification email when a user registers for an account
-    - Password reset email
-    - Order confirmation email when a user completes an order
-    - Confirmation of message received when a user sends a message 
-    - Confirmation of newsletter sign up when a user signs up for the newsletter
-    - Confirmation of unsubscribe when a user unsubscribes from the newsletter
+    - Automated emails are sent to the user when certain actions are performed.
+        - Account verification email when a user registers for an account
+        - Password reset email
+        - Order confirmation email when a user completes an order
+        - Confirmation of message received when a user sends a message 
+        - Confirmation of newsletter sign up when a user signs up for the newsletter
+        - Confirmation of unsubscribe when a user unsubscribes from the newsletter
+        - Confirms when a user deactivates their account
 
 - **_Navbar/Sidenav_**:
     - To allow easy navigation across the site
@@ -822,6 +825,7 @@ The live site can be viewed [here](https://the-velvet-goldmine.herokuapp.com/).
 - **Python3** 
 - **Django**
 - **Django Allauth**
+- **Stripe**
 - **PIP** package installation
 - The full list of requirements is in the requirements.txt file
 
@@ -852,12 +856,12 @@ and selecting **_Download ZIP_**
 ### **AWS**
 [AWS](https://aws.amazon.com/console/) was used to host the static and media files for this project in deployment. To set up AWS please follow the steps below:
 - navigate to aws.amazon.com
-- create an account
-- search for S3 and click on it
+    - create an account
+    - search for S3 and click on it
 - **Create a new bucket**   
     - select the region closest to you
-- uncheck block all public access
-- click create bucket
+    - uncheck block all public access
+    - click create bucket
 - In the **properties section**:
     - turn on static web hosting
     - fill in some default values for the index and error documents
@@ -961,7 +965,8 @@ echo web: python3 manage.py > Procfile
 | STRIPE_PUBLIC_KEY             | `<STRIPE_PUBLIC_KEY>`
 | STRIPE_SECRET_KEY             | `<STRIPE_SECRET_KEY>`
 | STRIPE_WH_SECRET              | `<STRIPE_WH_SECRET>`   
-| USE_AWS                       | `True`       
+| USE_AWS                       | `True`   
+      
 
 
 - Go back to the **Deploy** tab
@@ -980,11 +985,12 @@ echo web: python3 manage.py > Procfile
 - For the newsletter unsubscribe view I watched this [tutorial]() by [Master Code Online]() on [YouTube](https://www.youtube.com/)
 - For the adding favourites view I watched this [tutorial](https://www.youtube.com/watch?v=H4QPHLmsZMU) by [Very Academy](https://www.youtube.com/channel/UC1mxuk7tuQT2D0qTMgKji3w) on [YouTube](https://www.youtube.com/)
 - For Gmail login I read this [article](https://whizzoe.medium.com/in-5-mins-set-up-google-login-to-sign-up-users-on-django-e71d5c38f5d5) by [Zoe Chow](https://whizzoe.medium.com/) on [Medium](https://medium.com/)
-- For Facebook login I read this [article](https://jinkwon711.medium.com/django-allauth-facebook-login-b536444cbc6b) by [Kwon Jinhwan](https://jinkwon711.medium.com/) on [Medium](https://medium.com/)  
+- For Facebook login I read this [article](https://jinkwon711.medium.com/django-allauth-facebook-login-b536444cbc6b) by [Kwon Jinhwan](https://jinkwon711.medium.com/) on [Medium](https://medium.com/) 
+- Tooltips styling - From [Stack Overflow](https://stackoverflow.com/questions/36143382/re-color-tooltip-in-bootstrap-4?noredirect=1&lq=1)
+- Tabs functionality on Profile page - [w3schools](https://www.w3schools.com/howto/howto_js_tabs.asp)
 
 ### **Content**
 - All product names, prices and descriptions are fictional
-- Hero image on home page -  Image by <a href="https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1209761">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1209761">Pixabay</a>
 - BlogPost - [5 homegrown Irish designers you can support during the pandemic](https://www.image.ie/style/fashion/5-homegrown-irish-designers-can-support-pandemic-188728) from [image.ie](https://www.image.ie/)
 - BlogPost - [The ugly side of fast fashion: This is the scary impact it’s having on our world](https://www.image.ie/editorial/ugly-fast-fashion-scary-impact-world-environment-142426) from [image.ie](https://www.image.ie/)
 - BlogPost - [Fabrics to avoid and embrace if you want to make more sustainable fashion choices](https://www.image.ie/editorial/sustainable-fabrics-146790) from [image.ie](https://www.image.ie/)
@@ -992,10 +998,12 @@ echo web: python3 manage.py > Procfile
 - Icons were taken from [FontAwesome](https://fontawesome.com/)
 
 ### **Media**
+- Hero image on home page -  Image by <a href="https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1209761">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1209761">Pixabay</a>
 - Product images were taken from [Unsplash](https://unsplash.com/), [Pixabay](https://pixabay.com/) and [Pexels](https://www.pexels.com/). 
     - Full image credits can be found [here](IMAGE_CREDITS.md).  
 - Blogpost images were taken from [Unsplash](https://unsplash.com/), [Pixabay](https://pixabay.com/) and [Pexels](https://www.pexels.com/). 
     - Full image credits can be found [here](IMAGE_CREDITS.md). 
+- No Image image and Logo for error pages - created by me 
 
 
 ### **Acknowledgements**
