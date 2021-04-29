@@ -63,7 +63,7 @@
                         </div>
                     </div>
 
-                    {% for item in order.lineitems.all %}
+                {% for item in order.lineitems.all %}
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-pink font-weight-bold">
@@ -74,7 +74,7 @@
                             <p class="small mb-0">{{ item.quantity }} @ €{{ item.product.price }} each</p>
                         </div>
                     </div>
-                    {% endfor %}
+                {% endfor %}
 
                 <!--Delivery details-->
                     <div class="row">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
 
-                    {% if order.street_address2 %}
+                {% if order.street_address2 %}
                     <div class="row del-details">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-pink font-weight-bold">Address 2</p>
@@ -110,9 +110,9 @@
                             <p class="mb-0">{{ order.street_address1 }}</p>
                         </div>
                     </div>
-                    {% endif %}
+                {% endif %}
 
-                    {% if order.county %}
+                {% if order.county %}
                     <div class="row del-details">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-pink font-weight-bold">County</p>
@@ -121,7 +121,7 @@
                             <p class="mb-0">{{ order.county }}</p>
                         </div>
                     </div>
-                    {% endif %}
+                {% endif %}
 
                     <div class="row del-details">
                         <div class="col-12 col-md-4">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
 
-                    {% if order.postcode %}
+                {% if order.postcode %}
                     <div class="row del-details">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-pink font-weight-bold">Post Code</p>
@@ -141,7 +141,7 @@
                             <p class="mb-0">{{ order.postcode }}</p>
                         </div>
                     </div>
-                    {% endif %}
+                {% endif %}
 
                     <div class="row del-details">
                         <div class="col-12 col-md-4">
@@ -198,24 +198,19 @@
             </div>
         </div>
 
+    <!--If user is viewing a past order-->  
         <div class="row">
 			<div class="col-12 col-lg-7 text-right">
                 {% if from_profile %}
                    <a href="{% url 'profile' %}" class="btn shop-btn rounded-0 my-2">
-                        <span class="icon mr-2">
-                            <i class="fas fa-angle-left"></i>
-                        </span>
+                        <span class="icon mr-2"><i class="fas fa-angle-left"></i></span>
                         <span class="text-uppercase">Back to Profile</span>
                     </a>
                 {% else %}
                     <a href="{% url 'products' %}" class="btn shop-btn rounded-0 my-2">
-                        <span class="icon mr-2">
-                            <i class="fas fa-heart"></i>
-                        </span>
+                        <span class="icon mr-2"><i class="fas fa-heart"></i></span>
                         <span class="text-uppercase">Find your next love!</span>
-                        <span class="icon mr-2">
-                            <i class="fas fa-heart"></i>
-                        </span>
+                        <span class="icon mr-2"><i class="fas fa-heart"></i></span>
                     </a>
                 {% endif %}
 			</div>

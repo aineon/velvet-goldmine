@@ -1,19 +1,20 @@
 <div class="rand-carousel-container d-none d-md-block mb-4">
+    <!--Display 7 random products in a carousel-->
     <div class="random-carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "cellAlign": "left", "contain": true }'>
         {% for product in rand_products %}
         <div class="carousel-cell-random">
             <div>
-                {% if product.image %}
+            {% if product.image %}
                 <a href="{% url 'product_detail' product.id %}">
                     <img class="card-img-top img-fluid carousel-img-random" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
-                {% else %}
+            {% else %}
                 <a href="{% url 'product_detail' product.id %}">
                     <img class="card-img-top img-fluid carousel-img-random" src="{{ MEDIA_URL }}no_image.png" alt="{{ product.name }}">
                 </a>
-                {% endif %}
-                    <p class="mb-0 text-center carousel-body">{{ product.name }}</p>
-                    <p class="mb-0 text-center carousel-body">€{{ product.price }}</p>  
+            {% endif %}
+                <p class="mb-0 text-center carousel-body">{{ product.name }}</p>
+                <p class="mb-0 text-center carousel-body">€{{ product.price }}</p>  
             </div>
         </div>
         {% endfor %}  

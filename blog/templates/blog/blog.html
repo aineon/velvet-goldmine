@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-12">
                     <!--Edit/Delete buttons for superuser-->
-                        {% if request.user.is_superuser %}
+                    {% if request.user.is_superuser %}
                         <small class="float-right mr-3">
                             <a class="text-pink form-link" href="{% url 'edit_blogpost' post.id %}">Edit</a>
                             <span class="text-black">| </span> 
@@ -65,7 +65,7 @@
                                 Delete
                             </button>
                         </small>
-                        {% endif %}
+                    {% endif %}
 
                     <!--Delete Blogpost Modal -->
                     <div class="modal fade" id="deleteB_{{post.id}}" tabindex="-1" aria-labelledby="deleteBModal" aria-hidden="true">
@@ -138,13 +138,14 @@
                         </div>
                      </div>   
                 
+                    <!--If not original content display source/credit-->
                     <div class="row">
                         <div class="col-10 offset-1 mt-4">
                             <p class="text-muted float-right">
                                 <small class="mt-4 pr-1">
                                     <em>{% if post.credit %} credit: {{post.credit}}{% endif %} 
                                         {% if post.original_url %}
-                                        <a href="{{post.original_url}}" target="_blank" class="form-link">original article</a> 
+                                            <a href="{{post.original_url}}" target="_blank" class="form-link">original article</a> 
                                         {% endif %}
                                         {% if post.source %} 
                                         - posted by: 
@@ -173,6 +174,7 @@
 
 {% block postloadjs %}
 {{ block.super }} 
+
     <script type="text/javascript">
     //Scroll to top btn
         $(window).scroll(function(){
@@ -188,4 +190,5 @@
         });
 
     </script>
+
 {% endblock %}

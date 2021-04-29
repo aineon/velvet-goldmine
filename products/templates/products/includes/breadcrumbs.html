@@ -1,46 +1,39 @@
 {% if product %}
-    
     <nav aria-label="breadcrumb" class="product-breadcrumb small">
         <ol class="breadcrumb">
-        {% if product.category.name == 'dresses' or product.category.name == 'bottoms' or product.category.name == 'tops_ts' or product.category.name == 'outerwear'%}
-                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
-        {% endif %}
-                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{ product.category.name }}">{{product.category.friendly_name}}</a></li>
+            {% if product.category.name == 'dresses' or product.category.name == 'bottoms' or product.category.name == 'tops_ts' or product.category.name == 'outerwear'%}
+                <li class="breadcrumb-item form-link-line pl-1"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
+            {% endif %}
+                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></li>
         {% if product.subcategory %}
             {% if product.subcategory.name == 'earrings' or product.subcategory.name == 'bracelets' or product.subcategory.name == 'necklaces' %}  
                 <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?subcategory=earrings,necklaces,bracelets">Jewellery</a></li> 
-                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">{{product.subcategory.friendly_name}}</a></li>
+                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">{{ product.subcategory.friendly_name }}</a></li>
             {% else %}
-                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">{{product.subcategory.friendly_name}}</a></li>
+                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?subcategory={{ product.subcategory.name }}">{{ product.subcategory.friendly_name }}</a></li>
             {% endif %}
         {% endif %}
                 <li class="breadcrumb-item font-weight-bold">{{product.name}}</li>
         </ol>
-    </nav>
-    
+    </nav> 
 {% endif %}
 
 {% if current_categories %}
-    
     <nav aria-label="breadcrumb" class="mobile-breadcrumb small">
         <ol class="breadcrumb">
         {% for category in current_categories|slice:":1" %}     
             {% if current_categories|length > 1 %}
-                 <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
+                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li> 
             {% elif current_categories|length == 1 and category.name == 'dresses' or category.name == 'bottoms' or category.name == 'tops_ts' or category.name == 'outerwear' %}
                 <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li>
-                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{ category.name }}">{{category.friendly_name}}</a></li>
+                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{ category.name }}">{{ category.friendly_name }}</a></li>
             {% elif current_categories|length == 1 and category.name != 'dresses' or category.name != 'bottoms' or category.name != 'tops_ts' or category.name != 'outwear'%}
-                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{category.name}}">{{category.friendly_name}}</a></li>
+                <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{category.name}}">{{ category.friendly_name }}</a></li>
             {% endif %}
         {% endfor %}
         </ol>
     </nav>
-   
-
 {% else %}
-  
-   
     <nav aria-label="breadcrumb" class="mobile-breadcrumb small">
         <ol class="breadcrumb">
         {% if not product %}
@@ -49,7 +42,7 @@
                     {% if subcategory.category.name == 'dresses' or subcategory.category.name == 'tops_ts' or subcategory.category.name == 'bottoms' %}  
                         <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category=dresses,bottoms,tops_ts,outerwear">Clothing</a></li>
                     {% endif %} 
-                        <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{ subcategory.category.name }}">{{ subcategory.category.friendly_name}}</a></li>    
+                        <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?category={{ subcategory.category.name }}">{{ subcategory.category.friendly_name }}</a></li>    
                     
                     {% if current_subcategories|length > 1 and subcategory.category.name == 'accessories'  %}  
                         <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?subcategory=earrings,necklaces,bracelets">Jewellery</a></li> 
@@ -58,9 +51,9 @@
                     {% if current_subcategories|length == 1 %}
                         {% if subcategory.name == 'earrings' or subcategory.name == 'bracelets' or subcategory.name == 'necklaces' %}  
                             <li class="breadcrumb-item form-link-line"><a href="{% url 'products' %}?subcategory=earrings,necklaces,bracelets">Jewellery</a></li> 
-                            <li class="breadcrumb-item form-link-line" aria-current="page">{{subcategory.friendly_name}}</li>
+                            <li class="breadcrumb-item form-link-line" aria-current="page">{{ subcategory.friendly_name }}</li>
                         {% else %}
-                            <li class="breadcrumb-item font-weight-bold" aria-current="page">{{subcategory.friendly_name}}</li>
+                            <li class="breadcrumb-item font-weight-bold" aria-current="page">{{ subcategory.friendly_name }}</li>
                         {% endif %}
                     {% endif %}
                 {% endfor %}
@@ -68,6 +61,5 @@
         {% endif %}
         </ol>     
     </nav>
-    
 {% endif %}
 

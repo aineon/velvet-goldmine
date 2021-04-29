@@ -18,12 +18,13 @@
             <div class="col-10 offset-1 text-center">
                 <h1 class="text-pink font-weight-bold text-capitalize">{{ post.title }}</h1>
                     <p class="text-center mb-0">
-                {% if post.author %}
-                            <em>by: {{ post.author }}</em>  
-                {% endif %}
+                    {% if post.author %}
+                        <em>by: {{ post.author }}</em>  
+                    {% endif %}
                     </p>
             </div>
         </div>
+
     <!--Blog post image-->
         <div class="row">
             <div class="col-10 offset-1 mt-4">
@@ -38,7 +39,7 @@
     <!--Blog post date & edit/delete buttons for superuser-->
         <div class="row">
             <div class="col-10 offset-1 mt-3">
-                <span class="float-left">{{post.date_created|date:'j F, Y' }}</span> 
+                <span class="float-left">{{ post.date_created|date:'j F, Y' }}</span> 
             {% if request.user.is_superuser %}
                 <small class="mr-3 float-right">
                     <a class="text-pink form-link" href="{% url 'edit_blogpost' post.id %}">Edit</a>
@@ -78,13 +79,13 @@
         <div class="row">
             <div class="col-10 offset-1">
                 <p class="mb-2 float-left">{{ post.intro }}</p>
-                <p class="mb-4 float-left">{{post.section_one}}</p>
-                {% if post.section_two %}
-                <p class="mb-4 float-left">{{post.section_two}}</p>
-                {% endif %}
-                {% if post.section_three %}
-                <p class="mb-4 float-left">{{post.section_three}}</p>
-                {% endif %}
+                <p class="mb-4 float-left">{{ post.section_one }}</p>
+            {% if post.section_two %}
+                <p class="mb-4 float-left">{{ post.section_two }}</p>
+            {% endif %}
+            {% if post.section_three %}
+                <p class="mb-4 float-left">{{ post.section_three }}</p>
+            {% endif %}
             </div>
         </div>
 
@@ -99,7 +100,7 @@
             </div>
         </div>
         
-    <!--Blogpost credits-->
+    <!--Blogpost credits if not original content-->
         <div class="row">
             <div class="col-10 offset-1 float-right text-pink">
                 <small class="text-muted">
@@ -122,7 +123,6 @@
                 <i class="fas fa-angle-double-up grey-icon mx-auto my-auto"></i>
             </a>	
         </div>
-
     </div>
 </main>
 {% endblock %}

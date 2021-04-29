@@ -25,6 +25,7 @@
         </div>
     </div>
 
+    <!--Tab Buttons-->
     <div class="tab-container">
         <div class="row">
             <div class="col-12">
@@ -138,6 +139,7 @@
                         </li>
                         <hr class="w-50">
                     {% empty %}
+                    <!--IF user has no products saved-->
                         <div class="text-center text-pink font-weight-bold mt-3">
                             <h2 class="mb-4 px-2">You haven't saved anything to your favourites</h2>
                             <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">
@@ -203,7 +205,7 @@
                         </button>
                 </div>
                 <div class="modal-body text-center">
-                    <p>Are you sure you want to deactivate the account for <strong class="text-hot-pink">{{ user.username }}</strong>?</p>
+                    <p>Are you sure you want to deactivate the account for <strong class="text-pink">{{ user.username }}</strong>?</p>
                     <p>If you choose to deactivate your account you will no longer be able to sign in or view your profile.</p>
                 </div>
                 <div class="modal-footer">

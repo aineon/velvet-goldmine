@@ -1,4 +1,5 @@
 <div class="order-history table-responsive d-none d-md-block">
+<!--Display order history on larger devices-->
     <table class="table table-sm table-borderless">
         <thead class="text-center">
         {% for order in orders %}
@@ -25,9 +26,9 @@
                     {% for item in order.lineitems.all %}
                         <li>
                             {{ item.product.name }} 
-                            {% if item.product.has_sizes %}
-                                - Size UK{{ item.product_size }}
-                            {% endif %}
+                        {% if item.product.has_sizes %}
+                            - Size UK{{ item.product_size }}
+                        {% endif %}
                             x{{ item.quantity }}
                         </li> 
                     {% endfor %}
@@ -36,6 +37,7 @@
                 <td>€{{ order.grand_total }}</td>
             </tr>
         {% empty %}
+        <!--If user has no previous orders-->
             <div class="text-center font-weight-bold mt-3">
                 <h2 class="text-pink mb-4 px-2">You haven't placed any orders</h2>
                 <a href="{% url 'products' %}" class="btn shop-btn rounded-0 text-uppercase">Go Shopping!</a>
