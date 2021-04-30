@@ -128,7 +128,7 @@ The aim of this project was to build a fully functioning, visually appealing, e-
 - _I want to receive confirmation my account has been deactivated_
 
 
-### **As a Superuser:**
+#### **As a Superuser:**
 - _I want to be able to access the admin panel_
 - _I want to be able to add/edit/delete categories_
 - _I want to ba able to add/edit/delete subcategories_
