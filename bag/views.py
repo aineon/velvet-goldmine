@@ -34,7 +34,7 @@ def add_to_bag(request, item_id):
                 bag[item_id]['items_by_size'][size] = quantity
                 messages.success(request, (f'Added {product.name} '
                                            f'size UK{size} x '
-                                           f'{bag[item_id]}'
+                                           f'{bag[item_id]["items_by_size"][size]}'
                                            ' to your bag'))
         else:
             bag[item_id] = {'items_by_size': {size: quantity}}
