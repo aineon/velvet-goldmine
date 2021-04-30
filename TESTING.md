@@ -994,6 +994,7 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
     - no errors found
 - [PEP8 Online](http://pep8online.com/) 
     - 4 errors relating to file paths that are too long. 
+    - 1 error relating to `f'string` in add to bag view is too long
 - [Python Checker](https://www.pythonchecker.com/) - no errors found
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - no overflow detected
 - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) - generated the below reports:
