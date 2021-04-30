@@ -741,12 +741,12 @@ Each _user story_ was tested to ensure site meets user expectations.
     - If user is **_Superuser_** *Edit* and *Delete* links are visible
     - Clicking the *Edit* link redirects superuser to the *Edit Blog* page
     - A toast info message is triggered informing the superuser of what Blogpost they are editing
-    - Clicking the *Delete* link triggers a *Confirm Delete* modal
+    - Clicking the *Delete* link triggers a *Confirm Delete* modal  
         - Identifies the Post that will be deleted
-        - **_Cancel Button_**
+        - **_Cancel Button_**  
             - Cancels action, closes modal
-        - **_Delete Button_**
-            - Deletes the post
+        - **_Delete Button_**  
+            - Deletes the post  
     - A toast info message is triggered informing the superuser of the blogpost that has been deleted.
     - Edit/delete links are bold on hover
 - **_Read More Button_**
@@ -767,12 +767,12 @@ Each _user story_ was tested to ensure site meets user expectations.
     - If user is **_Superuser_** *Edit* and *Delete* links are visible
     - Clicking the *Edit* link redirects superuser to the *Edit Blog* page
     - A toast info message is triggered informing the superuser of what Blogpost they are editing
-    - Clicking the *Delete* link triggers a *Confirm Delete* modal
-        - Identifies the Post that will be deleted
-        - **_Cancel Button_**
-            - Cancels action, closes modal
-        - **_Delete Button_**
-            - Deletes the post
+    - Clicking the *Delete* link triggers a *Confirm Delete* modal  
+        - Identifies the Post that will be deleted  
+        - **_Cancel Button_**  
+            - Cancels action, closes modal  
+        - **_Delete Button_**  
+            - Deletes the post  
     - A toast info message is triggered informing the superuser of the blogpost that has been deleted.
     - Edit/delete links are bold on hover
 - **_Back to Blog Button_**
@@ -1205,14 +1205,6 @@ Using [DevTools](https://developers.google.com/web/tools/chrome-devtools) respon
             swal('Oops! Qty must be between 1-99', 'Please enter a valid quantity', 'error');
         } else {
             $(this).val(qtyVal);
-        }
-    });
-
-    $('.update-qty').click(function() {
-        let form = $(this).siblings('form.update-form');
-        let qtyVal = parseInt($(form).find('.qty_input').val());
-        if (/^([0-9]|[1-9][0-9])$/.test(qtyVal)) {
-            form.submit();
         }
     });
 ```

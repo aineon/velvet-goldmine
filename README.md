@@ -77,7 +77,7 @@ The aim of this project was to build a fully functioning, visually appealing, e-
 - _I want to be able to easily navigate through the site_
 - _I want a site that appeals to me visually_
 - _I want to know where I am on the site at any time_
-- _I want to be informed of actions I make and whether they are successful or not_**
+- _I want to be informed of actions I make and whether they are successful or not_
 
 **Products**   
 - _I want to see a list of available products_
@@ -523,7 +523,7 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enhance them 
 - **_Current Category/Subcategory Page title_**
     - Identifies which category/subcategory the user is currently browsing
 - **_Category/Subcategory Badges_**
-    - Identifies the categories/subcategories linked to the current page
+    - Identifies the categories/subcategories related to the current page
     - Each badge is a link to that category/subcategory
 - **_Sort Box_**:
     - Allows users to sort the products based on the defined criteria
@@ -582,6 +582,10 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enhance them 
 **Edit Product**
 - Only accessible if superuser
 - Loads selected product details for editing
+
+**Delete Product**
+- Only accessible if superuser
+- Triggers modal which can be used to delete product  
 
 #### **Bag App**
 - **_Product Info_**
@@ -712,6 +716,10 @@ I choose this colour for its similarity to #dee2e6 and #c7cbcf, to enhance them 
 **Edit BlogPost**
 - Only accessible if superuser
 - Loads selected blog details for editing
+
+**Delete BlogPost**
+- Only accessible if superuser
+- Triggers modal which can be used to delete blogpost
 
 #### **Profiles App**
 **Profile Page**
