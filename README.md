@@ -838,7 +838,8 @@ The live site can be viewed [here](https://the-velvet-goldmine.herokuapp.com/).
 - The full list of requirements is in the requirements.txt file
 
 ### **Locally**
-To run this project locally, follow the below steps:
+To run this project locally, follow the below steps:  
+
 To clone this project from Github:
 - Click the [Velvet Goldmine Repository Link](https://github.com/aineon/velvet-goldmine)
 - From the repository click the **Code** button
