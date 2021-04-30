@@ -733,6 +733,10 @@ input[name='q']::placeholder {
     border-top: transparent;
 }
 
+.bg-yellow {
+    background-color: #ffd700;
+}
+
 .fade {
     -webkit-transition: none;
     -o-transition: none;
@@ -978,7 +982,7 @@ input[name='q']::placeholder {
     }
 
     .header-container {
-        padding-top: 6.5rem;
+        padding-top: 5rem;
     } 
 }
 
